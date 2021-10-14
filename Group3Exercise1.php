@@ -5,7 +5,6 @@ abstract class DBInstance
     protected $id;
     protected abstract function getID();
 }
-//inheritance
 class Product extends DBInstance
 {
     protected $name;
@@ -23,7 +22,7 @@ class Product extends DBInstance
     {
         switch ($fname) {
             case 'setDetails': //params: price, categ, desc, size
-                if ($args[1] < 6 && $args[1] >= 0) {
+                if ($args[1] <= 6 && $args[1] >= 0) {
                     $counter = count($args);
                     // $priceCatString = "Price: $args[0] Categ: " . $args[1];
                     switch ($counter) {
@@ -39,7 +38,7 @@ class Product extends DBInstance
                             $this->description = $args[2];
                             break;
                         default:
-                            echo 'admk;n';
+                            echo 'Arguments for setDetails() can only be 2 or 3.';
                     }
                 }
                 break;
@@ -49,27 +48,18 @@ class Product extends DBInstance
     {
         return $this->id;
     }
-    // function getPrice()
-    // {
-    // }
-    function display()
-    {  //overriden  
-    }
-}
-class SleepingEssentials extends Product
-{
+    //overriden  
     function getCategory()
     {
         switch ($this->category) {
             case 0:
-                return 'Eye Mask';
-            case 1:
-                return 'Pillow Case';
+                return 'Others';
             default:
                 return 'No Category';
         }
     }
-    function display()
+    //overriden  
+    function displayProduct()
     {
         echo
         "ProductID: " . $this->id . "<br/>" .
@@ -79,19 +69,35 @@ class SleepingEssentials extends Product
             "Description: " . $this->description . "<br/>";
     }
 }
+//inheritance
+class SleepingEssentials extends Product
+{
+    function getCategory()
+    {
+        switch ($this->category) {
+            case 1:
+                return 'Eye Mask';
+            case 2:
+                return 'Pillow Case';
+            default:
+                return 'No Category';
+        }
+    }
+}
+//inheritance
 class SleepWear extends Product
 {
     private $size;
     function getCategory()
     {
         switch ($this->category) {
-            case 2:
-                return 'Shorts';
             case 3:
-                return 'Pajama';
+                return 'Shorts';
             case 4:
-                return 'Nightdress';
+                return 'Pajama';
             case 5:
+                return 'Nightdress';
+            case 6:
                 return 'Loungewear';
             default:
                 return 'No Category';
@@ -110,12 +116,12 @@ class SleepWear extends Product
                 echo 'Error setting size';
         }
     }
-    // function getSize()
-    // {
-    //     return $this->size;
-    // }
+    function getSize()
+    {
+        return $this->size;
+    }
     //override
-    function display()
+    function displayProduct()
     {
         echo
         "ProductID: " . $this->id . "<br/>" .
@@ -128,8 +134,10 @@ class SleepWear extends Product
 }
 
 $newProduct = new SleepWear('1', "Long Pajama");
-$newProduct->setDetails(10, 3, "jgpi ap fawd fnwe fiwe n fwne fadjfiwope fsd ");
+$newProduct->setDetails(10, 4, "jgpi ap fawd fnwe fiwe n fwne fadjfiwope fsd ");
 $newProduct->setSize(0);
-$newProduct->display();
-
-// $newProduct2 = new SleepingEssentials('1', "Long Pajama");
+$newProduct->displayProduct();
+echo "<br/>";
+$newProduct2 = new SleepingEssentials('1', "Long Pajama");
+$newProduct2->setDetails(100, 2, 'afoew afojawpefj waef we');
+$newProduct2->displayProduct();
