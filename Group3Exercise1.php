@@ -1,8 +1,25 @@
 <?php
-//abstraction
 abstract class DBInstance
 {
     protected $id;
+    protected function idExist($id, $src)
+    {
+        //check if id exists in
+        $exists = false;
+        switch ($src) {
+            case 'administrator':
+                // check id existance in administrator db 
+                return $exists;
+            case 'product':
+                // check id existance in products db 
+                return $exists;
+            case 'inquiry':
+                // check id existance in inquiries db 
+                return $exists;
+            default:
+                return true;
+        }
+    }
     protected abstract function getID();
 }
 class Administrator extends DBInstance
@@ -14,7 +31,8 @@ class Administrator extends DBInstance
 
     public function __construct($id, $email, $password, $firstName, $lastName)
     {
-        $this->id = $id;
+        if (!$this->idExist($id, 'administrator'))
+            $this->id = $id;
         $this->email = $email;
         $this->password = $password;
         $this->firstName = $firstName;
@@ -34,7 +52,8 @@ class Inquiry extends DBInstance
 
     public function __construct($id, $meassage, $date, $senderEmail)
     {
-        $this->id = $id;
+        if (!$this->idExist($id, 'inquiry'))
+            $this->id = $id;
         $this->meassage = $meassage;
         $this->date = $date;
         $this->senderEmail = $senderEmail;
@@ -65,7 +84,8 @@ class Product extends DBInstance
 
     public function __construct($id, $name)
     {
-        $this->id = $id;
+        if (!$this->idExist($id, 'product'))
+            $this->id = $id;
         $this->name = $name;
     }
     //overloading
@@ -120,7 +140,6 @@ class Product extends DBInstance
             "Description: " . $this->description . "<br/>";
     }
 }
-//inheritance
 class SleepingEssentials extends Product
 {
     function getCategory()
@@ -135,7 +154,6 @@ class SleepingEssentials extends Product
         }
     }
 }
-//inheritance
 class SleepWear extends Product
 {
     private $size;
@@ -189,6 +207,7 @@ $newProduct->setDetails(10, 4, "jgpi ap fawd fnwe fiwe n fwne fadjfiwope fsd ");
 $newProduct->setSize(0);
 $newProduct->displayProduct();
 echo "<br/>";
-$newProduct2 = new SleepingEssentials('1', "Long Pajama");
-$newProduct2->setDetails(100, 2, 'afoew afojawpefj waef we');
+$newProduct2 = new SleepingEssentials('2', "Black Eye Mask");
+$newProduct2->setDetails(100, 1, 'afoew afojawpefj waef we');
 $newProduct2->displayProduct();
+echo "<br/>";
