@@ -5,6 +5,57 @@ abstract class DBInstance
     protected $id;
     protected abstract function getID();
 }
+class Administrator extends DBInstance
+{
+    private $email;
+    private $firstName;
+    private $lastName;
+    private $password;
+
+    public function __construct($id, $email, $password, $firstName, $lastName)
+    {
+        $this->id = $id;
+        $this->email = $email;
+        $this->password = $password;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+    }
+    public function getID()
+    {
+        return $this->id;
+    }
+}
+class Inquiry extends DBInstance
+{
+    private $message;
+    private $date;
+    private $senderEmail;
+    private $read = [false, ''];
+
+    public function __construct($id, $meassage, $date, $senderEmail)
+    {
+        $this->id = $id;
+        $this->meassage = $meassage;
+        $this->date = $date;
+        $this->senderEmail = $senderEmail;
+    }
+    // public function viewInquiry($date) {
+    //     $this->read = [true,$date]; 
+    // }
+    // public function inquiryReadStatus() {
+    //     return $this->read[0];
+    // }
+    // public function inquiryReadDate() {
+    //     return $this->read[1];
+    // }
+    // public function getMessageContent() {
+    //     return [$this->message, $this->senderEmail];
+    // }
+    public function getID()
+    {
+        return $this->id;
+    }
+}
 class Product extends DBInstance
 {
     protected $name;
