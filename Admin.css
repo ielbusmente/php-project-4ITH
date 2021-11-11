@@ -1,0 +1,17 @@
+/* Inquiries */
+
+.inquiries-title {
+    position: absolute;
+    width: 245px;
+    height: 31px;
+    left: 21px;
+    top: 122px;
+
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 58px;
+
+    color: #D8C47F;
+
+}
+
