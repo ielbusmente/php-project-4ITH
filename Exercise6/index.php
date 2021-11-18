@@ -93,9 +93,9 @@ function dbconnect($action, $input)
                                     <div class="form-group">
                                         <input type="text" name="id" class="form-control" placeholder="Input ID" value="" required />
                                     </div>
-                                    <div class="form-group text-center">
-
+                                    <div class="form-group text-center ">
                                         <input type="submit" name="view_one" class="btnContactSubmit" value="Search using ID" />
+
                                         <div style="color:#fff;">
                                             <?php
                                             if (isset($_POST['view_one'])) {
@@ -109,8 +109,9 @@ function dbconnect($action, $input)
 
                                 </form>
                                 <form method='post'>
-                                    <div class="form-group text-center">
+                                    <div class="form-group text-center  ">
                                         <input type="submit" name="view_all" class="btnContactSubmit" value="View All" />
+
                                         <div style="color:#fff;">
                                             <?php
                                             if (isset($_POST['view_all'])) {
