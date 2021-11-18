@@ -9,8 +9,14 @@
     cursor: pointer;
     margin-right: 6%;
     background-color: white;
-    color: blue;
+    color: #3F3A5F;
     margin-top: 4%;
+}
+
+.btnContactSubmit:hover{
+    background-color: #3F3A5F ;
+    color: white;
+
 }
 .register .nav-tabs .nav-link:hover{
     border: none;
@@ -29,12 +35,12 @@
 .register-heading{
     margin-left: 21%;
     margin-bottom: 10%;
-    color: #e9ecef;
+    color: white;
 }
 .register-heading h1{
     margin-left: 21%;
     margin-bottom: 10%;
-    color: #e9ecef;
+    color: white;
 }
 .btnLoginSubmit{
     border: none;
@@ -50,7 +56,8 @@
     color: #f8f9fa;
 }
 .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, #3F3A5F, #9EBAF3);
+
     margin-top: 3%;
     padding: 3%;
     border-radius: 2.5rem;
