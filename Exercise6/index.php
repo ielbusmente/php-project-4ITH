@@ -23,7 +23,7 @@ function dbconnect($action, $input)
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "User ID: " . $row['id'] . "<br/>First Name: " . $row['firstName'] . "<br/>Last Name: " . $row['lastName'] . "<br/>Email: " . $row['email'] . "<br/><br/>";
+                echo "<br/>User ID: " . $row['id'] . "<br/>First Name: " . $row['firstName'] . "<br/>Last Name: " . $row['lastName'] . "<br/>Email: " . $row['email'] . "<br/><br/>";
             }
         } else {
             echo '0 results';
@@ -86,17 +86,40 @@ function dbconnect($action, $input)
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show text-align m-4 form-new active" id="view" role="tabpanel" aria-labelledby="view-tab">
-                        <h3 class="register-heading"> View Form </h3>
+                        <h3 class="register-heading text-center"> View Form </h3>
                         <div class="row register-form">
                             <div class="col-md-12">
                                 <form method="post">
                                     <div class="form-group">
-                                        <input type="text" name="LGform1_user" class="form-control" placeholder="Input ID" value="" required="" />
+                                        <input type="text" name="id" class="form-control" placeholder="Input ID" value="" required />
                                     </div>
                                     <div class="form-group text-center">
-                                        <input type="submit" name="LGform1" class="btnContactSubmit" value="Search " />
-                                        <input type="submit" name="LGform2" class="btnContactSubmit" value="Search Specific ID " />
+
+                                        <input type="submit" name="view_one" class="btnContactSubmit" value="Search using ID" />
+                                        <div style="color:#fff;">
+                                            <?php
+                                            if (isset($_POST['view_one'])) {
+                                                if (!empty($_POST['id'])) {
+                                                    dbconnect('view_one',  $_POST['id']);
+                                                }
+                                            }
+                                            ?>
+                                        </div>
                                     </div>
+
+                                </form>
+                                <form method='post'>
+                                    <div class="form-group text-center">
+                                        <input type="submit" name="view_all" class="btnContactSubmit" value="View All" />
+                                        <div style="color:#fff;">
+                                            <?php
+                                            if (isset($_POST['view_all'])) {
+                                                dbconnect('view_all',  '');
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
@@ -106,6 +129,9 @@ function dbconnect($action, $input)
                         <div class="row register-form">
                             <div class="col-md-12">
                                 <form method="post">
+                                    <div class="form-group">
+                                        <input type="text" name="id" class="form-control" placeholder="ID" value="" required="" />
+                                    </div>
                                     <div class="form-group">
                                         <input type="text" name="firstName" class="form-control" placeholder="First Name" value="" required="" />
                                     </div>
@@ -118,15 +144,13 @@ function dbconnect($action, $input)
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control" placeholder="Password" value="" required="" />
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" name="id" class="form-control" placeholder="ID" value="" required="" />
-                                    </div>
+
                                     <div class="form-group text-center">
                                         <input type="submit" name="insert" class="btnContactSubmit" value="Insert" />
                                     </div>
                                     <?php
                                     if (isset($_POST['insert'])) {
-                                        if (!$_POST['id'] && !$_POST['firstName'] && !$_POST['lastName'] && !$_POST['email'] && !$_POST['password']) {
+                                        if (!empty($_POST['id']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email']) && !empty($_POST['password'])) {
                                             dbconnect('insert', [$_POST['id'], $_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['password']]);
                                         }
                                     }
