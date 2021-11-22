@@ -1,3 +1,4 @@
+
 .social-link {
     width: 30px;
     height: 30px;
@@ -17,3 +18,12 @@
     text-decoration: none;
     color: #555;
   }
+
+.nav-link:hover, .nav-link:focus {
+  color: #0a58ca;
+  border-bottom: 3px solid #d8c47f;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #d8c47f;
+}

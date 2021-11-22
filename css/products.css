@@ -17,7 +17,7 @@
   --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
+  --bs-yellow: #bfad6d;
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
@@ -48,7 +48,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 191, 173, 109;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -3953,11 +3953,16 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #0a58ca;
+  border-bottom: 3px solid #d8c47f;
 }
 .nav-link.disabled {
   color: #6c757d;
   pointer-events: none;
   cursor: default;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #d8c47f;
 }
 
 .nav-tabs {
@@ -4062,6 +4067,7 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  margin-left: auto;
 }
 .navbar-nav .nav-link {
   padding-right: 0;

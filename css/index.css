@@ -3953,11 +3953,16 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: #0a58ca;
+  border-bottom: 3px solid #d8c47f;
 }
 .nav-link.disabled {
   color: #6c757d;
   pointer-events: none;
   cursor: default;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #d8c47f;
 }
 
 .nav-tabs {
@@ -3973,6 +3978,7 @@ textarea.form-control-lg {
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;
   isolation: isolate;
+
 }
 .nav-tabs .nav-link.disabled {
   color: #6c757d;
@@ -4000,6 +4006,9 @@ textarea.form-control-lg {
 .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #0d6efd;
+
+    
+  border-bottom: 3px solid #d8c47f;
 }
 
 .nav-fill > .nav-link,
@@ -4062,6 +4071,8 @@ textarea.form-control-lg {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  margin-left: auto;
+
 }
 .navbar-nav .nav-link {
   padding-right: 0;
