@@ -12,7 +12,7 @@
 
 <body>
     <!-- Navigation -->
-    <?php include 'navbar.php'; ?>
+    <?php include 'php-templates/navbar.php'; ?>
     <!-- Masthead-->
     <header class="masthead">
         <div class="container position-relative">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- Footer-->
-    <?php include 'footer.php'; ?>
+    <?php include 'php-templates/footer.php'; ?>
 </body>
 
 </html>

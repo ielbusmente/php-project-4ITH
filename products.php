@@ -12,7 +12,7 @@
 
 <body>
     <!-- Navigation-->
-    <?php include 'navbar.php'; ?>
+    <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -237,7 +237,7 @@
         </div>
     </section>
     <!-- Footer-->
-    <?php include 'footer.php'; ?>
+    <?php include 'php-templates/footer.php'; ?>
 </body>
 
 </html>

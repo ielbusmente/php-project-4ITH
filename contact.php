@@ -22,7 +22,7 @@ if (isset($_POST['insert'])) {
 
 <body>
     <!-- Navigation-->
-    <?php include 'navbar.php'; ?>
+    <?php include 'php-templates/navbar.php'; ?>
     <!-- Contact section-->
     <section class="bg-light py-5">
         <div class="container px-5 my-5 px-5">
@@ -79,7 +79,7 @@ if (isset($_POST['insert'])) {
             <br><br><br>
     </section>
     <!-- Footer-->
-    <?php include 'footer.php'; ?>
+    <?php include 'php-templates/footer.php'; ?>
 </body>
 
 </html>
