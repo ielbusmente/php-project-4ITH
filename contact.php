@@ -44,7 +44,7 @@ class Inquiry extends DBInstance
     {
         return "INSERT INTO `inquiry` (
             `id`, `email`, `date`, `name`, `message`, `readBool`, `readDate`) 
-            VALUES (NULL, '" . $this->senderEmail . "', '" .
+            VALUES (" . ((($this->id) === NULL) ? 'NULL' : ($this->id)) . ", '" . $this->senderEmail . "', '" .
             $this->date . "', '" . $this->name  . "', '" .
             $this->message  . "', " . $this->read[0]  .
             ", " . ((($this->read[1]) === NULL) ? 'NULL' : ($this->read[1])) . ")";
@@ -81,12 +81,14 @@ function dbconnect($act, $inp)
     $conn = mysqli_connect($dbhost, $dbuser,  $dbpass, $dbname);
     if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);
+        echo "DB Connection Failed";
     }
 
     if ($act === 'insert') {
         $inq = new Inquiry(null, $inp[2], date("Y-m-d"), $inp[0], $inp[1]);
         $conn->query($inq->insertStr());
         // echo $inq->insertStr();
+        echo "DB Connection Failed";
     }
     $conn->close();
 }
