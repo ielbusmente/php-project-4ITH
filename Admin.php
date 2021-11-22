@@ -1,31 +1,29 @@
+<?php include 'php-templates/classes.php' ?>
+<?php include 'php-templates/db.php' ?>
 <?php
+// $inquiries = dbconnect('retrieve', null);
+
+
 if (isset($_POST['logout'])) {
     session_start();
     setcookie("session-token", "", time() - 1);
     session_destroy();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include 'php-templates/meta.php'; ?>
+    <?php include 'php-templates/adminhead.php'; ?>
     <link rel="stylesheet" href="css/admin.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://kit.fontawesome.com/274d8634a7.js" crossorigin="anonymous"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <title>Sleepy Admin</title>
 </head>
 
 <body>
-
     <?php
     session_start();
     if (!(isset($_SESSION['username']) && isset($_SESSION['password'])) || !($_COOKIE['session-token'] === "d93jkdg23jkds")) {
