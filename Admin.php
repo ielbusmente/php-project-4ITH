@@ -39,7 +39,7 @@ if (isset($_POST['logout'])) {
         <img class="logo" src="assets/sleepy_text.png" height="80" alt="logo">
         <img class="logo2" src="assets/moon.png" height="60">
 
-        <div class="collapse navbar-collapse" id="navbar1">
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item active">
                     <a class="nav-link text-dark" href="#"> Inbox &nbsp;
