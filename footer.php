@@ -23,6 +23,11 @@
           <p class="text-white">
             Your Sleeping Essentials.
           </p>
+
+          <p class="text-white">
+            <i class="bi bi-geo-alt-fill"></i>&nbsp; 
+            Taytay, Rizal
+          </p>
         </div>
         <!--Grid column-->
 
