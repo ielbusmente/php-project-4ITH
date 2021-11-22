@@ -11294,3 +11294,9 @@ textarea.form-control-lg {
   width: 4rem;
   font-size: 2rem;
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #d8c47f !important;
+  border: none;
+  box-shadow: none;
+}
