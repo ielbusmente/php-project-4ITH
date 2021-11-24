@@ -4,15 +4,15 @@
 <html lang="en">
 
 <head>
-    <?php include 'php-templates/head.php'; ?>
+    <?php include '../../php-templates/head.php'; ?>
     <title>Products</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/products.css" rel="stylesheet" />
+    <link href="../../css/products.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Navigation-->
-    <?php include 'php-templates/navbar.php'; ?>
+    <?php include '../../php-templates/navbar.php'; ?>
     <!-- Header-->
     <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -50,7 +50,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/midnightblue.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/midnightblue.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -71,7 +71,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/blushluxe.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/blushluxe.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -101,7 +101,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/pearlwhite.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/pearlwhite.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -123,7 +123,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/1.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/1.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -145,7 +145,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/2.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/2.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -167,7 +167,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/3.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/3.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -189,7 +189,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/4.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/4.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -211,7 +211,7 @@
                         <!-- Sale badge-->
                         <!-- <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div> -->
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets/img/5.jpg" alt="..." />
+                        <img class="card-img-top" src="../../assets/img/5.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -237,7 +237,7 @@
         </div>
     </section>
     <!-- Footer-->
-    <?php include 'php-templates/footer.php'; ?>
+    <?php include '../../php-templates/footer.php'; ?>
 </body>
 
 </html>

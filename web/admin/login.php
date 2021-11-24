@@ -14,10 +14,11 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 
 <head>
-  <?php include 'php-templates/meta.php'; ?>
-  <?php include 'php-templates/adminhead.php'; ?>
+  <?php
+  include '../../php-templates/meta.php';
+  include '../../php-templates/adminhead.php'; ?>
   <title>Sleepy Login</title>
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="../../css/login.css">
 </head>
 
 <body>
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
     <div id="formContent">
       <!-- Icon -->
       <div class="fadeIn first">
-        <img src="assets/sleepy.png" id="icon" alt="Icon" />
+        <img src="../../assets/sleepy.png" id="icon" alt="Icon" />
       </div>
 
       <!-- Login Form -->
