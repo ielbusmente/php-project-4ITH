@@ -41,12 +41,19 @@ class Inquiry extends DBInstance
     }
     public function insertStr()
     {
+        // mysqli_real_escape_string - protection for the database
+        include 'dbconnect.php';
+        $id = mysqli_real_escape_string($conn, (($this->id) === NULL) ? 'NULL' : "'" . $this->id . "'");
+        $senderEmail = "'" . mysqli_real_escape_string($conn, $this->senderEmail) . "'";
+        $date =  mysqli_real_escape_string($conn, (($this->date) === NULL) ? 'NULL' : "'" . $this->date . "'");
+        $name = "'" . mysqli_real_escape_string($conn, $this->name) . "'";
+        $message = "'" . mysqli_real_escape_string($conn, $this->message) . "'";
+        $readBool = mysqli_real_escape_string($conn, $this->read[0]);
+        $readDate = mysqli_real_escape_string($conn, (($this->read[1]) === NULL) ? 'NULL' : "'" . ($this->read[1]) . "'");
+        $conn->close();
         return "INSERT INTO `inquiry` (
             `id`, `email`, `date`, `name`, `message`, `readBool`, `readDate`) 
-            VALUES (" . ((($this->id) === NULL) ? 'NULL' : ($this->id)) . ", '" . $this->senderEmail . "', '" .
-            $this->date . "', '" . $this->name  . "', '" .
-            $this->message  . "', " . $this->read[0]  .
-            ", " . ((($this->read[1]) === NULL) ? 'NULL' : ($this->read[1])) . ")";
+            VALUES ($id, $senderEmail, $date, $name, $message, $readBool, $readDate)";
     }
     // public function viewInquiry($date) {
     //     $this->read = [true,$date]; 
