@@ -23,20 +23,6 @@ body {
   flex-direction: column;
   /* overflow: hidden; */
 }
-.inquiries-title {
-  /* position: absolute; */
-  /* width: 245px; */
-  /* height: 31px; */
-  /* left: 21px;
-  top: 122px; */
-  padding: 10px;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 58px;
-
-  color: #d8c47f;
-}
-
 /* .container{max-width:1170px; margin:auto;} */
 img {
   max-width: 100%;
@@ -236,3 +222,18 @@ img {
   height: 60vh;
   overflow-y: auto;
 }
+
+/* .inquiries-title { */
+/* color: #fff; */
+/* position: absolute; */
+/* width: 245px; */
+/* height: 31px; */
+/* left: 21px;
+  top: 122px; */
+/* padding: 10px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+
+  color: #d8c47f; */
+/* } */

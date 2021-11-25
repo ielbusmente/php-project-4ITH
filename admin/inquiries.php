@@ -1,81 +1,26 @@
  <?php
-    $admin = true;
-    include '../php-templates/classes/Inquiry.php';
-    include '../php-templates/db.php';
-    // $inquiries = dbconnect('retrieve', null);
+    $page = 'inbox';
+    include 'php-templates/base.php';
 
-    if (isset($_POST['logout'])) {
-        session_start();
-        // setcookie("session-token", "", time() - 1);
-        session_destroy();
-        header('Location: login.php');
-    }
     ?>
  <!DOCTYPE html>
  <html lang="en">
 
  <head>
      <?php include '../php-templates/meta.php';
-        include '../php-templates/adminhead.php'; ?>
-     <!-- Favicon -->
-     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-     <link rel="stylesheet" href="../css/admin.css">
-     <script src="https://kit.fontawesome.com/274d8634a7.js" crossorigin="anonymous"></script>
-     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
-     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-     <title>Sleepy Admin</title>
+        include '../php-templates/adminhead.php';
+        include 'php-templates/private-head.php';
+        ?>
+
+     <title>Sleepy Inbox</title>
  </head>
 
  <body>
      <?php
-        session_start();
-        // || !($_COOKIE['session-token'] === "d93jkdg23jkds")
-        // if (!(isset($_SESSION['username']) && isset($_SESSION['password']))) {
-        //     // setcookie("session-token", "", time() - 1);
-        //     session_destroy();
-        //     header('Location: login.php');
-        // }
-        if (!(isset($_SESSION['sessionId']))) {
-            session_destroy();
-            header('Location: login.php');
-        }
+        include 'php-templates/nav.php'
         ?>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-
-         <img class="logo" src="../assets/sleepy_text.png" height="80" alt="logo">
-         <img class="logo2" src="../assets/moon.png" height="60">
-
-         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-             <ul class="navbar-nav ml-auto ">
-                 <li class="nav-item active">
-                     <a class="nav-link text-dark" href="#"> Inbox &nbsp;
-                         <i class="fas fa-envelope" style="color:#D8C47F;"></i>
-                         <!-- <span class="sr-only">(current)</span> -->
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a class="nav-link text-dark" href="#"> Profile &nbsp;
-                         <i class="fas fa-user" style="color:#D8C47F;"></i>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                         <input class="btn ml-2 btn-secondary" type="submit" name="logout" value='Logout' />
-                     </form>
-                     <!-- <a class="btn ml-2 btn-secondary" href="# ">Logout</a> -->
-                 </li>
-             </ul>
-
-         </div>
-     </nav>
-
-     <!-- <div class="container"> -->
      <h1 class="inquiries-title">Inquiries</h1>
-     <!-- </div> -->
-
-     <!-- <br><br><br><br><br> -->
-
-     <div class="messaging">
+     <div class="messaging ">
          <div class="inbox_msg">
              <div class="mesgs">
                  <div class="msg_history">
