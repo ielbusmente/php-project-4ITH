@@ -58,13 +58,13 @@
 
           <ul class="list-unstyled">
             <li>
-              <a href="https://www.facebook.com/sleepyyyph" class="text-white footer-link">Facebook</a>
+              <a href="https://www.facebook.com/sleepyyyph" class="text-white footer-link" target="_blank">Facebook</a>
             </li>
             <li>
-              <a href="https://www.instagram.com/sleepyph_/" class="text-white footer-link">Instagram</a>
+              <a href="https://www.instagram.com/sleepyph_/" class="text-white footer-link" target="_blank">Instagram</a>
             </li>
             <li>
-              <a href="https://shopee.ph/sleepyph_" class="text-white footer-link">Shopee</a>
+              <a href="https://shopee.ph/sleepyph_" class="text-white footer-link" target="_blank">Shopee</a>
             </li>
           </ul>
         </div>

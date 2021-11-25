@@ -13,18 +13,18 @@
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="https://www.facebook.com/sleepyyyph"> &nbsp;
+                    <a class="nav-link text-dark" href="https://www.facebook.com/sleepyyyph" target="_blank"> &nbsp;
                         <i class="bi bi-facebook" style="color:#D8C47F;"></i>
                         <!-- <span class="sr-only">(current)</span> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="https://www.instagram.com/sleepyph_/"> &nbsp;
+                    <a class="nav-link text-dark" href="https://www.instagram.com/sleepyph_/" target="_blank"> &nbsp;
                         <i class="bi bi-instagram" style="color:#D8C47F;"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="https://shopee.ph/sleepyph_"> &nbsp;
+                    <a class="nav-link text-dark" href="https://shopee.ph/sleepyph_" target="_blank"> &nbsp;
                         <i class="bi bi-bag" style="color:#D8C47F;"></i>
                     </a>
                 </li>
