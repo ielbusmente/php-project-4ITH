@@ -223,17 +223,40 @@ img {
   overflow-y: auto;
 }
 
-/* .inquiries-title { */
-/* color: #fff; */
-/* position: absolute; */
-/* width: 245px; */
-/* height: 31px; */
-/* left: 21px;
+.title {
+  /* color: #fff; */
+  /* position: absolute; */
+  /* width: 245px; */
+  /* height: 31px; */
+  /* left: 21px;
   top: 122px; */
-/* padding: 10px;
+  padding: 10px;
   font-weight: bold;
   font-size: 48px;
   line-height: 58px;
 
-  color: #d8c47f; */
-/* } */
+  color: #d8c47f;
+}
+
+.active-tab {
+  border-bottom: #d8c47f solid 5px;
+  color: #d8c47f !important;
+}
+
+a {
+  transition: 0.2s;
+}
+a:hover {
+  border-bottom: #d8c47f solid 5px;
+  /* transition: 1s ease-in; */
+}
+
+.update-btn {
+  background-color: #d8c47f;
+  color: #333;
+  transition: 0.2s;
+}
+.update-btn:hover {
+  color: #d8c47f;
+  background-color: #333;
+}

@@ -1,7 +1,9 @@
  <?php
+    //profile errors clear
+    setcookie('error1', '', time() - 1);
+    setcookie('error2', '', time() - 1);
     $page = 'inbox';
     include 'php-templates/base.php';
-
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -19,7 +21,7 @@
      <?php
         include 'php-templates/nav.php'
         ?>
-     <h1 class="inquiries-title">Inquiries</h1>
+     <h1 class="title">Inquiries</h1>
      <div class="messaging ">
          <div class="inbox_msg">
              <div class="mesgs">

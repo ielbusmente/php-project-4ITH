@@ -60,8 +60,37 @@ class Administrator extends DBInstance
 
         $conn->close();
     }
+    public function updateStr()
+    {
+        $changes = '';
+        include '../php-templates/dbconnect.php';
+        $id = mysqli_real_escape_string($conn, ($this->id));
+        $changes .=  $this->firstName === null ? '' : '`firstName` = ' . "'" . mysqli_real_escape_string($conn, $this->firstName) . "', ";
+        $changes .=  $this->lastName === null ? '' : '`lastName` = ' . "'" . mysqli_real_escape_string($conn, $this->lastName) . "', ";
+        $changes .=  $this->email === null ? '' : '`email` = ' . "'" . mysqli_real_escape_string($conn, $this->email) . "', ";
+        $changes .=  $this->password === null ? '' : '`password` = ' . "'" . mysqli_real_escape_string($conn, md5($this->password)) . "', ";
+        $conn->close();
+        $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
+        return $sql;
+    }
     public function getID()
     {
-        return $this->id;
+        return htmlentities($this->id);
+    }
+    public function getFirstName()
+    {
+        return htmlentities($this->firstName);
+    }
+    public function getLastName()
+    {
+        return htmlentities($this->lastName);
+    }
+    public function getEmail()
+    {
+        return htmlentities($this->email);
+    }
+    public function getPassword()
+    {
+        return htmlentities($this->password);
     }
 }
