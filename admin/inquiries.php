@@ -8,6 +8,7 @@
         session_start();
         // setcookie("session-token", "", time() - 1);
         session_destroy();
+        header('Location: login.php');
     }
     ?>
  <!DOCTYPE html>
@@ -34,6 +35,10 @@
         //     session_destroy();
         //     header('Location: login.php');
         // }
+        if (!(isset($_SESSION['sessionId']))) {
+            session_destroy();
+            header('Location: login.php');
+        }
         ?>
      <nav class="navbar navbar-expand-lg navbar-dark bg-white">
 

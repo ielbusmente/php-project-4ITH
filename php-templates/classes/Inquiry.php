@@ -10,8 +10,7 @@ class Inquiry extends DBInstance
 
     public function __construct($id, $message, $date, $name, $senderEmail)
     {
-        if (!$this->idExist($id, 'inquiry'))
-            $this->id = $id;
+        $this->id = $id;
         $this->message = $message;
         $this->date = $date;
         $this->name = $name;
@@ -20,7 +19,7 @@ class Inquiry extends DBInstance
     public function insertStr()
     {
         // mysqli_real_escape_string - protection for the database
-        include 'dbconnect.php';
+        include 'php-templates/dbconnect.php';
         $id = mysqli_real_escape_string($conn, (($this->id) === NULL) ? 'NULL' : "'" . $this->id . "'");
         $senderEmail = "'" . mysqli_real_escape_string($conn, $this->senderEmail) . "'";
         $date =  mysqli_real_escape_string($conn, (($this->date) === NULL) ? 'NULL' : "'" . $this->date . "'");
