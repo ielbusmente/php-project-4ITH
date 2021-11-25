@@ -1,6 +1,6 @@
  <?php
-    include '../../php-templates/classes.php';
-    include '../../php-templates/db.php';
+    include 'php-templates/classes/Inquiry.php';
+    include 'php-templates/db.php';
     $page = "contact";
 
     if (isset($_POST['insert'])) {
@@ -13,16 +13,18 @@
  <html lang="en">
 
  <head>
-     <?php include '../../php-templates/head.php'; ?>
+     <?php include 'php-templates/head.php'; ?>
+     <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
      <title>Contact Us</title>
      <!-- Core theme CSS (includes Bootstrap)-->
-     <link href="../../css/contact.css" rel="stylesheet" />
+     <link href="css/contact.css" rel="stylesheet" />
      <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
  </head>
 
  <body>
      <!-- Navigation-->
-     <?php include '../../php-templates/navbar.php'; ?>
+     <?php include 'php-templates/navbar.php'; ?>
      <!-- Contact section-->
      <section class="bg-light py-5">
          <div class="container px-5 my-5 px-5">
@@ -79,7 +81,7 @@
              <br><br><br>
      </section>
      <!-- Footer-->
-     <?php include '../../php-templates/footer.php'; ?>
+     <?php include 'php-templates/footer.php'; ?>
  </body>
 
  </html>

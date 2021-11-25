@@ -1,11 +1,12 @@
  <?php
-    include '../../php-templates/classes.php';
-    include '../../php-templates/db.php';
+    $admin = true;
+    include '../php-templates/classes/Inquiry.php';
+    include '../php-templates/db.php';
     // $inquiries = dbconnect('retrieve', null);
 
     if (isset($_POST['logout'])) {
         session_start();
-        setcookie("session-token", "", time() - 1);
+        // setcookie("session-token", "", time() - 1);
         session_destroy();
     }
     ?>
@@ -13,9 +14,11 @@
  <html lang="en">
 
  <head>
-     <?php include '../../php-templates/meta.php';
-        include '../../php-templates/adminhead.php'; ?>
-     <link rel="stylesheet" href="../../css/admin.css">
+     <?php include '../php-templates/meta.php';
+        include '../php-templates/adminhead.php'; ?>
+     <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+     <link rel="stylesheet" href="../css/admin.css">
      <script src="https://kit.fontawesome.com/274d8634a7.js" crossorigin="anonymous"></script>
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
      <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
@@ -25,16 +28,17 @@
  <body>
      <?php
         session_start();
-        if (!(isset($_SESSION['username']) && isset($_SESSION['password'])) || !($_COOKIE['session-token'] === "d93jkdg23jkds")) {
-            setcookie("session-token", "", time() - 1);
-            session_destroy();
-            header('Location: Login.php');
-        }
+        // || !($_COOKIE['session-token'] === "d93jkdg23jkds")
+        // if (!(isset($_SESSION['username']) && isset($_SESSION['password']))) {
+        //     // setcookie("session-token", "", time() - 1);
+        //     session_destroy();
+        //     header('Location: login.php');
+        // }
         ?>
      <nav class="navbar navbar-expand-lg navbar-dark bg-white">
 
-         <img class="logo" src="../../assets/sleepy_text.png" height="80" alt="logo">
-         <img class="logo2" src="../../assets/moon.png" height="60">
+         <img class="logo" src="../assets/sleepy_text.png" height="80" alt="logo">
+         <img class="logo2" src="../assets/moon.png" height="60">
 
          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
              <ul class="navbar-nav ml-auto ">

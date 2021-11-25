@@ -1,18 +1,21 @@
-<?php $page = "home"; ?>
+<?php $page = "home";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php include '../../php-templates/head.php'; ?>
+    <?php include 'php-templates/head.php'; ?>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Home</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../../css/index.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Navigation -->
-    <?php include '../../php-templates/navbar.php'; ?>
+    <?php include 'php-templates/navbar.php'; ?>
     <!-- Masthead-->
     <header class="masthead">
         <div class="container position-relative">
@@ -124,21 +127,21 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="../../assets/img/testimonials-1.jpg" alt="..." />
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
                         <h5>Margaret E.</h5>
                         <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="../../assets/img/testimonials-2.jpg" alt="..." />
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
                         <h5>Fred S.</h5>
                         <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="../../assets/img/testimonials-3.jpg" alt="..." />
+                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
                         <h5>Sarah W.</h5>
                         <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
                     </div>
@@ -148,7 +151,7 @@
     </section>
 
     <!-- Footer-->
-    <?php include '../../php-templates/footer.php'; ?>
+    <?php include 'php-templates/footer.php'; ?>
 </body>
 
 </html>

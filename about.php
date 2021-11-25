@@ -1,23 +1,26 @@
-<?php $page = "about"; ?>
+<?php $page = "about";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php include '../../php-templates/head.php'; ?>
+    <?php include 'php-templates/head.php'; ?>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>About Us</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../../css/index.css" rel="stylesheet" />
-    <link href="../../css/about.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/about.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation-->
-    <?php include '../../php-templates/navbar.php'; ?>
+    <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
     <header class="bg-light py-2">
         <div class="container px-4 px-lg-5 my-5">
@@ -31,7 +34,7 @@
     <div class="bg-white">
         <div class="container py-5">
             <div class="row h-50 align-items-center py-5">
-                <div class="col-lg-6 d-none d-lg-block"><img width="100%" src="../../assets/img/sleepymoon.png" alt="" class="img-fluid"></div>
+                <div class="col-lg-6 d-none d-lg-block"><img width="100%" src="assets/img/sleepymoon.png" alt="" class="img-fluid"></div>
                 <div class="col-lg-6">
                     <h1 class="display-4">SLEEPY</h1>
                     <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -133,7 +136,7 @@
         </div>
     </div>
     <!-- Footer-->
-    <?php include '../../php-templates/footer.php'; ?>
+    <?php include 'php-templates/footer.php'; ?>
 </body>
 
 </html>
