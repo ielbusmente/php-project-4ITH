@@ -48,14 +48,14 @@ class Administrator extends DBInstance
     public function addUser()
     {
         include '../php-templates/dbconnect.php';
-
+        $id = mysqli_real_escape_string($conn, $this->id);
         $fname = mysqli_real_escape_string($conn, $this->firstName);
         $lname = mysqli_real_escape_string($conn, $this->lastName);
         $email = mysqli_real_escape_string($conn, $this->email);
         $pass = mysqli_real_escape_string($conn, md5($this->password));
 
         $sql = "INSERT INTO `adminuser` (`id`, `firstName`, `lastName`, `email`, `password`) 
-            VALUES (NULL, '" . $fname . "', '" . $lname  . "', '" . $email  . "', '" . $pass . "')";
+            VALUES ($id, '" . $fname . "', '" . $lname  . "', '" . $email  . "', '" . $pass . "')";
         $conn->query($sql);
 
         $conn->close();

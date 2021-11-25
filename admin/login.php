@@ -7,7 +7,7 @@ $sql = "SELECT * FROM adminuser";
 
 $result = $conn->query($sql);
 if ($result->num_rows === 0) {
-  $newUser = new Administrator(null, 'admin@test.test', 'Admin123', 'Admin', 'Admin');
+  $newUser = new Administrator(1, 'admin@test.test', 'Admin123', 'Admin', 'Admin');
   $newUser->addUser();
 }
 $conn->close();
