@@ -5,11 +5,11 @@ create database sleepydb;
 CREATE TABLE `sleepydb`.`inquiry` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
     `email` VARCHAR(255) NOT NULL ,  
-    `date` DATETIME NOT NULL ,  
+    `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
     `name` VARCHAR(255) NOT NULL , 
     `message` VARCHAR(255) NOT NULL , 
     `readBool` BOOLEAN NOT NULL DEFAULT FALSE , 
-    `readDate` DATETIME NULL DEFAULT NULL , 
+    `readDate` TIMESTAMP NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)); 
 
 

@@ -1,10 +1,13 @@
-<?php $page = "about"; ?>
+<?php $page = "about";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include 'php-templates/head.php'; ?>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>About Us</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />

@@ -1,10 +1,13 @@
-<?php $page = "products"; ?>
+<?php $page = "products";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php include 'php-templates/head.php'; ?>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Products</title>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/products.css" rel="stylesheet" />
