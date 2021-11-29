@@ -29,7 +29,7 @@
 
     <section id="sidebar">
         <div>
-            <h6 class="p-1 border-bottom  mt-4">Shop By Sleepwear</h6>
+            <h6 class="p-1 border-bottom mt-4">Shop By Sleepwear</h6>
             <ul>
                 <li><a href="#">All</a></li>
                 <li><a href="#">Shorts</a></li>
@@ -49,7 +49,7 @@
     </section>
     <!-- Section-->
     <section class="py-5 products">
-        <div class="container px-4 px-lg-6 mt-4">
+        <div class="container px-4 px-lg-6 mt-4 ml-4" style="margin-right: 10px; margin-left: 200px;">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
