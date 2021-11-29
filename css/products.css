@@ -11318,7 +11318,7 @@ body {
 
 ul {
   list-style: none;
-  padding: 5px
+  margin-top: 0;
 }
 
 li a {
@@ -11374,13 +11374,13 @@ li a:hover {
 }
 
 @media(min-width:991px) {
-  .navbar-nav {
+  /* .navbar-nav {
       margin-left: 35%
   }
 
   .nav-item {
       padding-left: 20px
-  }
+  } */
 
   .card {
       width: 190px;
@@ -11399,13 +11399,13 @@ li a:hover {
 }
 
 @media(min-width:768px) and (max-width:991px) {
-  .navbar-nav {
+  /* .navbar-nav {
       margin-left: 20%
   }
 
   .nav-item {
       padding-left: 10px
-  }
+  } */
 
   .card {
       width: 230px;
@@ -11425,13 +11425,13 @@ li a:hover {
 }
 
 @media(min-width:568px) and (max-width:767px) {
-  .navbar-nav {
+  /* .navbar-nav {
       margin-left: 20%
   }
 
   .nav-item {
       padding-left: 10px
-  }
+  } */
 
   .card {
       width: 205px;
@@ -11455,13 +11455,13 @@ li a:hover {
 }
 
 @media(max-width:567px) {
-  .navbar-nav {
+  /* .navbar-nav {
       margin-left: 0%
   }
 
   .nav-item {
       padding-left: 10px
-  }
+  } */
 
   #sidebar {
       width: 100%;
