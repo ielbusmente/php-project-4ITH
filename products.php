@@ -11,6 +11,7 @@
     <title>Products</title>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/products.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>

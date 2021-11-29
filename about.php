@@ -71,7 +71,7 @@
         <div class="container py-5">
             <div class="row mb-4">
                 <div class="col-lg-5">
-                    <h2 class="display-4 font-weight-light">Meet Our team</h2>
+                    <h2 class="display-4 font-weight-light">Meet the Developers</h2>
                     <!-- <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                 </div>
             </div>
