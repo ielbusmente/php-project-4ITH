@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Home</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -94,7 +94,7 @@
             </div>
         </div>
     </section>
-    <!-- Image Showcases-->
+    <!-- Image Showcases
     <section class="showcase">
         <div class="container-fluid p-0">
             <div class="row g-0">
@@ -119,8 +119,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Testimonials-->
+    </section> -->
+    <!-- Testimonials
     <section class="testimonials text-center bg-light">
         <div class="container">
             <h2 class="mb-5">What people are saying...</h2>
@@ -148,7 +148,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
