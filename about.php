@@ -12,8 +12,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/about.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- <link href="css/about.css" rel="stylesheet" /> -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -71,7 +71,7 @@
         <div class="container py-5">
             <div class="row mb-4">
                 <div class="col-lg-5">
-                    <h2 class="display-4 font-weight-light">Meet Our team</h2>
+                    <h2 class="display-4 font-weight-light">Meet the Developers</h2>
                     <!-- <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                 </div>
             </div>
