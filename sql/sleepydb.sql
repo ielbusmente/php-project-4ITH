@@ -7,7 +7,7 @@ CREATE TABLE `sleepydb`.`inquiry` (
     `email` VARCHAR(255) NOT NULL ,  
     `date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
     `name` VARCHAR(255) NOT NULL , 
-    `message` VARCHAR(255) NOT NULL , 
+    `message` VARCHAR(1000) NOT NULL , 
     `readBool` BOOLEAN NOT NULL DEFAULT FALSE , 
     `readDate` TIMESTAMP NULL DEFAULT NULL , 
     PRIMARY KEY (`id`)); 

@@ -6,15 +6,16 @@ class Inquiry extends DBInstance
     private $date;
     private $name;
     private $senderEmail;
-    private $read = [0, NULL]; //bool and time read
+    private $read; //bool and time read
 
-    public function __construct($id, $message, $date, $name, $senderEmail)
+    public function __construct($id, $message, $date, $name, $senderEmail, $read = [0, NULL])
     {
         $this->id = $id;
         $this->message = $message;
         $this->date = $date;
         $this->name = $name;
         $this->senderEmail = $senderEmail;
+        $this->read = $read;
     }
     public function insertStr()
     {
@@ -43,9 +44,29 @@ class Inquiry extends DBInstance
     // }
     // public function getMessageContent() {
     //     return [$this->message, $this->senderEmail];
-    // }
-    public function getID()
+    // } 
+    public function getName()
     {
-        return $this->id;
+        return htmlentities($this->name);
     }
+    public function getMsg()
+    {
+        return htmlentities($this->message);
+    }
+    public function getMonthDate()
+    {
+        return htmlentities((new DateTime($this->date))->format('M j'));
+    }
+    public function getMonthDateTime()
+    {
+        return htmlentities((new DateTime($this->date))->format('M j, Y | g:i A'));
+    }
+    public function isRead()
+    {
+        return $this->read === 1;
+    }
+    // public function getID()
+    // {
+    //     return $this->id;
+    // }
 }

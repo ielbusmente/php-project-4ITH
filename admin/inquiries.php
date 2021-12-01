@@ -4,6 +4,37 @@
     setcookie('error2', '', time() - 1);
     $page = 'inbox';
     include 'php-templates/base.php';
+    if (!isset($_GET['id']))
+        $_GET['id'] = '';
+    // load inquiries 
+    // get inquiries from db 
+    include '../php-templates/dbconnect.php';
+    $sql = "SELECT * FROM inquiry ORDER BY date DESC";
+    $inquiriesArr = [];
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0)
+        while ($row = $result->fetch_assoc())
+            array_push($inquiriesArr, $row);
+    $conn->close();
+    // print_r($inquiriesArr);
+    //create a Inquiry instance for every array element
+    $inqCount = count($inquiriesArr);
+    $inquiriesObjArr = [];
+    if ($inqCount > 0) {
+        echo "<script>alert(\"this is from php\")</script>";
+        include "../php-templates/classes/Inquiry.php";
+        for ($i = 0; $i <  $inqCount; $i++) {
+            $inquiriesObjArr[$i] = new Inquiry(
+                $inquiriesArr[$i]['id'],
+                $inquiriesArr[$i]['message'],
+                $inquiriesArr[$i]['date'],
+                $inquiriesArr[$i]['name'],
+                $inquiriesArr[$i]['email'],
+                [$inquiriesArr[$i]['readBool'], $inquiriesArr[$i]['readDate']],
+            );
+        }
+    }
+    //todo when clicked, update read value
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -26,49 +57,21 @@
          <div class="inbox_msg">
              <div class="mesgs">
                  <div class="msg_history">
-                     <div class="incoming_msg">
-                         <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                         <div class="received_msg">
-                             <div class="received_withd_msg">
-                                 <p>Test which is a new approach to have all
-                                     solutions</p>
-                                 <span class="time_date"> 11:01 AM | June 9</span>
+                     <?php $userIndex = $_GET['id'];
+
+                        if ($userIndex != '') { ?>
+                         <h3 class="inq-name"><?php
+                                                // print_r($inquiriesArr);
+                                                echo ($inquiriesObjArr[$userIndex]->getName());  ?></h3>
+                         <div class="incoming_msg">
+                             <div class="received_msg">
+                                 <div class="received_withd_msg">
+                                     <p><?php echo $inquiriesObjArr[$userIndex]->getMsg() ?></p>
+                                     <span class="time_date"><?php echo $inquiriesObjArr[$userIndex]->getMonthDateTime() ?></span>
+                                 </div>
                              </div>
                          </div>
-                     </div>
-                     <div class="outgoing_msg">
-                         <div class="sent_msg">
-                             <p>Test which is a new approach to have all
-                                 solutions</p>
-                             <span class="time_date"> 11:01 AM | June 9</span>
-                         </div>
-                     </div>
-                     <div class="incoming_msg">
-                         <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                         <div class="received_msg">
-                             <div class="received_withd_msg">
-                                 <p>Test, which is a new approach to have</p>
-                                 <span class="time_date"> 11:01 AM | Yesterday</span>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="outgoing_msg">
-                         <div class="sent_msg">
-                             <p>Apollo University, Delhi, India Test</p>
-                             <span class="time_date"> 11:01 AM | Today</span>
-                         </div>
-                     </div>
-                     <div class="incoming_msg">
-                         <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                         <div class="received_msg">
-                             <div class="received_withd_msg">
-                                 <p>We work directly with our designers and suppliers,
-                                     and sell direct to you, which means quality, exclusive
-                                     products, at a price anyone can afford.</p>
-                                 <span class="time_date"> 11:01 AM | Today</span>
-                             </div>
-                         </div>
-                     </div>
+                     <?php } ?>
                  </div>
                  <div class="type_msg">
                      <div class="input_msg_write">
@@ -92,76 +95,34 @@
                      </div>
                  </div>
                  <div class="inbox_chat">
-                     <div class="chat_list active_chat">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
+                     <?php
+                        // $inqCount = count($inquiriesArr);
+                        if ($inqCount > 0) {
+                            // if (false) { 
+                            for ($i = 0; $i < $inqCount; $i++) {
+                                $inq = $inquiriesObjArr[$i];
+                                $inqRead = $inq->isRead();
+                                // $dateTime = new DateTime($inq['date']);
+                                // echo $dateTry->format('M j, Y | g:i A');  
+                                echo "<a " . ($i == $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i\"") . "><div class=\"chat_list " .
+                                    ($i == $_GET['id'] ? "active_chat" : "") . "\">
+                                    <div class=\"chat_people\">
+                                    <div class=\"chat_ib\">
+                                        <h5>" . ($inqRead ?  "" : "<b>") .
+                                    $inq->getName() . ($inqRead ?  "" : "</b>") . "<span class=\"chat_date\">" .
+                                    $inq->getMonthDate() . "</span></h5><p>" .
+                                    $inq->getMsg() . "</p></div></div></div></a>";
+                            }
+                        } else { ?>
+                         <div class='basic_padding'>
+                             No Inquiries
                          </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="chat_list">
-                         <div class="chat_people">
-                             <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                             <div class="chat_ib">
-                                 <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
-                                 <p>Test, which is a new approach to have all solutions
-                                     astrology under one roof.</p>
-                             </div>
-                         </div>
-                     </div>
+                     <?php }
+
+                        ?>
+                     <script>
+                         //  alert('Try')
+                     </script>
                  </div>
              </div>
          </div>

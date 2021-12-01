@@ -52,7 +52,7 @@
                          </div>
                          <!-- Message input-->
                          <div class="form-floating mb-3">
-                             <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                             <textarea maxlength="255" minlength="1" class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                              <label for="message">Message</label>
                              <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                          </div>

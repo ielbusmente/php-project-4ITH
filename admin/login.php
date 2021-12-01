@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 
     //invalid cred
     if ($status !== 'Logged In') {
-      setcookie('error', $status, time() + 60);
+      setcookie('error', $status /*. " " . md5($_POST['password'])*/, time() + 60);
       return header('Location: login.php');
     }
     //pasok

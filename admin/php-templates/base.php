@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * includes the logout login 
+ * user data is fetched with the sessionId
+
+ */
+
 session_start();
 if (isset($_POST['logout']) || !(isset($_SESSION['sessionId']))) {
     session_destroy();

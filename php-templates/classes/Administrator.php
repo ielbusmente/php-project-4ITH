@@ -73,10 +73,10 @@ class Administrator extends DBInstance
         $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
         return $sql;
     }
-    public function getID()
-    {
-        return htmlentities($this->id);
-    }
+    // public function getID()
+    // {
+    //     return htmlentities($this->id);
+    // }
     public function getFirstName()
     {
         return htmlentities($this->firstName);
