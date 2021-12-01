@@ -21,7 +21,7 @@
     $inqCount = count($inquiriesArr);
     $inquiriesObjArr = [];
     if ($inqCount > 0) {
-        echo "<script>alert(\"this is from php\")</script>";
+        // echo "<script>alert(\"this is from php\")</script>";
         include "../php-templates/classes/Inquiry.php";
         for ($i = 0; $i <  $inqCount; $i++) {
             $inquiriesObjArr[$i] = new Inquiry(

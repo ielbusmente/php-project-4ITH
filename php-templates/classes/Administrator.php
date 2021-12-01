@@ -1,5 +1,5 @@
 <?php
-include 'DBInstance.php';
+include_once 'DBInstance.php';
 
 class Administrator extends DBInstance
 {
