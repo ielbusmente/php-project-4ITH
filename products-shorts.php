@@ -31,8 +31,8 @@
         <div>
             <h6 class="p-1 border-bottom mt-4">Shop By Sleepwear</h6>
             <ul>
-                <li><a class="active" href="#">All</a></li>
-                <li><a href="products-shorts.php">Shorts</a></li>
+                <li><a href="products.php" >All</a></li>
+                <li><a class="active" href="#">Shorts</a></li>
                 <li><a href="products-pajama.php">Pajama</a></li>
                 <li><a href="products-loungewear.php">Loungewear</a></li>
                 <li><a href="products-nightdress.php">Nightdress</a></li>

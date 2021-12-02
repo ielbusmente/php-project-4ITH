@@ -11327,7 +11327,7 @@ li a {
   text-decoration: none
 }
 
-li a:hover {
+li a:hover, .active {
   text-decoration: none;
   color: #D8C47F;
 }
