@@ -11,61 +11,50 @@
     <title>Home</title>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    
 </head>
 
 <body>
     <!-- Navigation -->
     <?php include 'php-templates/navbar.php'; ?>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container position-relative">
-            <div class="row justify-content-center">
-                <div class="col-xl-6">
-                    <div class="text-center text-white">
-                        <!-- Page heading-->
-                        <h1 class="mb-5">Generate more leads with a professional landing page!</h1>
-                        <!-- Signup form-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Email address input-->
-                            <div class="row">
-                                <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
-                                </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    <p>To activate this form, sign up at</p>
-                                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage">
-                                <div class="text-center text-danger mb-3">Error sending message!</div>
-                            </div>
-                        </form>
+    <!-- Header-->
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <div class="mask flex-center">
+                <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-12 order-md-1 order-2">
+                    <h4>High-Quality <br>
+                        Sleeping Essentials <br>Just For You</h4>
+                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                    <a href="products.php">View Products</a> </div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/sand.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/5.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/pearlwhite.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/midnightblue.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/pillowcase2.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
+                    <div style="text-align:center">
+                        <span class="dot"></span> 
+                        <span class="dot"></span> 
+                        <span class="dot"></span> 
                     </div>
+                </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <!--slide end--> 
+
     <!-- Icons Grid-->
     <section class="features-icons bg-light text-center">
         <div class="container">
@@ -94,64 +83,26 @@
             </div>
         </div>
     </section>
-    <!-- Image Showcases
-    <section class="showcase">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Fully Responsive Design</h2>
-                    <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                <div class="col-lg-6 my-auto showcase-text">
-                    <h2>Updated For Bootstrap 5</h2>
-                    <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 5 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 5!</p>
-                </div>
-            </div>
-            <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                    <h2>Easy to Use & Customize</h2>
-                    <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Testimonials
-    <section class="testimonials text-center bg-light">
-        <div class="container">
-            <h2 class="mb-5">What people are saying...</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                        <h5>Margaret E.</h5>
-                        <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                        <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                        <h5>Sarah W.</h5>
-                        <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
+    </script>
 </body>
 
 </html>
