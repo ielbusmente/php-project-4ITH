@@ -35,6 +35,24 @@
         }
     }
     //todo when clicked, update read value
+    if ($_GET['id'] !== '' && isset($_GET['read'])) {
+        // check if it is read 
+        if (!$inquiriesObjArr[$_GET['id']]->isRead()) {
+            // echo $_GET['read'] . "<br/>";
+            $currInqIndex = $_GET['id'];
+            // insert readbool true and readdate date(format) where id = id
+            // echo $inquiriesObjArr[$currentInqIndex]->getName() . "<br/>";
+            // echo $inquiriesObjArr[$currentInqIndex]->isRead();
+            // echo $inquiriesObjArr[$currentInqIndex]->getReadDate() . "<br/>";
+            // echo date('Y-m-d H:i:s');
+
+            include '../php-templates/dbconnect.php';
+            $dateUpdate = new DateTime();
+            $conn->query($inquiriesObjArr[$currInqIndex]->viewInquiryStr($dateUpdate->format('Y-m-d H:i:s')));
+            $conn->close();
+            // echo $inquiriesObjArr[$currInqIndex]->viewInquiryStr(date('Y-m-d H:i:s'));
+        }
+    }
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -44,8 +62,23 @@
         include '../php-templates/adminhead.php';
         include 'php-templates/private-head.php';
         ?>
-
      <title>Sleepy Inbox</title>
+     <script>
+         $(document).ready(function() {
+             //  $("#inboxChatId").on('beforeunload', function() {
+             //      $("#inboxChatId").scrollTop(0);
+             //      //   $("#inboxChatId").click(function() {
+             //      //       alert('fuckl');
+             //      //   });
+             //  });
+             //  alert("alert")
+
+             //  $("#inboxChatId").on("scroll", function() {
+             //      $("span").html($("#inboxChatId")[0].scrollTop);
+             //  });
+
+         })
+     </script>
  </head>
 
  <body>
@@ -75,7 +108,7 @@
                  </div>
                  <div class="type_msg">
                      <div class="input_msg_write">
-                         <input type="text" class="write_msg" placeholder="Type a message" />
+                         <textarea class="write_msg" placeholder="Type a message"></textarea>
                          <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                      </div>
                  </div>
@@ -94,7 +127,7 @@
                          </div>
                      </div>
                  </div>
-                 <div class="inbox_chat">
+                 <div class="inbox_chat" id="inboxChatId">
                      <?php
                         // $inqCount = count($inquiriesArr);
                         if ($inqCount > 0) {
@@ -104,14 +137,15 @@
                                 $inqRead = $inq->isRead();
                                 // $dateTime = new DateTime($inq['date']);
                                 // echo $dateTry->format('M j, Y | g:i A');  
-                                echo "<a " . ($i == $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i\"") . "><div class=\"chat_list " .
+                                echo "<a " . ($i == $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i&read=" .
+                                    ($inqRead ? 1 : 0) . "\"") . "><div class=\"chat_list " .
                                     ($i == $_GET['id'] ? "active_chat" : "") . "\">
                                     <div class=\"chat_people\">
                                     <div class=\"chat_ib\">
                                         <h5>" . ($inqRead ?  "" : "<b>") .
-                                    $inq->getName() . ($inqRead ?  "" : "</b>") . "<span class=\"chat_date\">" .
+                                    $inq->getName() . "<span class=\"chat_date\">" .
                                     $inq->getMonthDate() . "</span></h5><p>" .
-                                    $inq->getMsg() . "</p></div></div></div></a>";
+                                    $inq->getMsg() . "</p></div></div></div></a>" . ($inqRead ?  "" : "</b>");
                             }
                         } else { ?>
                          <div class='basic_padding'>
