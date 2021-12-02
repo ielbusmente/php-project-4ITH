@@ -1,6 +1,6 @@
 <section id="sidebar">
-        <div>
-            <h6 class="p-1 border-bottom mt-4">Shop By Sleepwear</h6>
+        <div style="margin-top: 50px;">
+            <h6 class="p-1 border-bottom mt-4" >Shop By Sleepwear</h6>
             <ul>
                 <li><a class="<?php echo $page == "products" ? "active" : "" ?>" href="products.php">All</a></li>
                 <li><a class="<?php echo $page == "products-shorts" ? "active" : "" ?>"  href="products-shorts.php">Shorts</a></li>

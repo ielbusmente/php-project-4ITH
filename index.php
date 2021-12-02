@@ -9,17 +9,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Home</title>
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" />
-
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
     <script>
     $(function(){
         $('.fadein img:gt(0)').hide();
@@ -73,7 +70,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="title text-center">
-					<h2> Product Category </h2>
+					<h2> Product Categories </h2>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -82,7 +79,6 @@
 						<img src="assets/img/2.jpg" alt="" />
 						<div class="content">
 							<h3>Sleepwear</h3>
-							<!-- <p>Shop New Season Clothing</p> -->
 						</div>
 					</a>	
 				</div>
@@ -93,7 +89,6 @@
 						<img src="assets/img/pillowcase3.jpg" alt="" />
 						<div class="content">
 							<h3>Essentials</h3>
-							<!-- <p>Special Design Comes First</p> -->
 						</div>
 					</a>	
 				</div>
