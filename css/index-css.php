@@ -1,3 +1,5 @@
+<?php ?>
+<style>
 #myCarousel .carousel-item .mask {
     position: absolute;
     top: 0;
@@ -315,3 +317,4 @@
 .category-box .content p {
   margin: 6px 0 0;
 }
+</style>

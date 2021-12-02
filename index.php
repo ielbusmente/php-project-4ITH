@@ -10,10 +10,10 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Home</title>
     <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <?php include "css/index-css.php" ?>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <?php include "css/styles-css.php" ?>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

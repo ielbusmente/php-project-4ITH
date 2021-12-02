@@ -10,8 +10,8 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Products</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/products.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <?php include "css/products-css.php" ?>
+    <?php include "css/styles-css.php" ?>
 </head>
 
 <body>

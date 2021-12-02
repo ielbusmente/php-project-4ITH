@@ -1,3 +1,6 @@
+<?php ?>
+<style>
+
 .feature {
   display: inline-flex;
   align-items: center;
@@ -13,3 +16,5 @@
   border: none;
   box-shadow: none;
 }
+
+</style>
