@@ -16,6 +16,8 @@ class Inquiry extends DBInstance
         $this->name = $name;
         $this->senderEmail = $senderEmail;
         $this->read = $read;
+        // print_r($this);
+        // echo "<br/>";
     }
     public function insertStr()
     {
@@ -32,6 +34,14 @@ class Inquiry extends DBInstance
         return "INSERT INTO `inquiry` (
             `id`, `email`, `date`, `name`, `message`, `readBool`, `readDate`) 
             VALUES ($id, $senderEmail, $date, $name, $message, $readBool, $readDate)";
+    }
+    public function viewInquiryStr($date) //called from inquiries.php
+    {
+        include '../php-templates/dbconnect.php';
+        $sql = "UPDATE `sleepydb`.`inquiry` SET `date` = '" . $this->date . "',`readBool` = 1, `readDate` = '$date' WHERE `inquiry`.id=" .
+            mysqli_real_escape_string($conn, $this->id) . "";
+        $conn->close();
+        return $sql;
     }
     // public function viewInquiry($date) {
     //     $this->read = [true,$date]; 
@@ -63,10 +73,19 @@ class Inquiry extends DBInstance
     }
     public function isRead()
     {
-        return $this->read === 1;
+        // return $this->read[0] == 1;
+        return $this->read[0];
+    }
+    public function getReadDate()
+    {
+        if ($this->isRead())
+            return $this->read[1];
+        return "Not Read";
     }
     // public function getID()
     // {
     //     return $this->id;
     // }
+
+
 }
