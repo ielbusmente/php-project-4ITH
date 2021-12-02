@@ -10,15 +10,13 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Home</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" />
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/styles.css" rel="stylesheet" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-
-    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
     
 </head>
 
@@ -123,15 +121,17 @@
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
 
+    
+
     <script>
-        var myIndex = 0;
+        var myIndex = 0; $myIndex = 0
         carousel();
 
         function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
         }
         myIndex++;
         if (myIndex > x.length) {myIndex = 1}    
@@ -139,6 +139,9 @@
         setTimeout(carousel, 5000); // Change image every 2 seconds
         }
     </script>
+
+
+
 </body>
 
 </html>

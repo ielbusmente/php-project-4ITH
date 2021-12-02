@@ -11374,6 +11374,32 @@ li a:hover {
   margin: 0
 }
 
+@media(min-width:1200px) {
+  /* .navbar-nav {
+      margin-left: 35%
+  }
+
+  .nav-item {
+      padding-left: 20px
+  } */
+
+  .card {
+      width: 500px;
+      display: inline-block;
+      height: 350px
+  }
+
+  .card-img-top {
+      width: 500px;
+      height: 250px
+  }
+
+  #mobile-filter {
+      display: none
+  }
+}
+
+
 @media(min-width:991px) {
   /* .navbar-nav {
       margin-left: 35%
