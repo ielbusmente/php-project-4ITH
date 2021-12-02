@@ -17,7 +17,15 @@
     <link href="css/styles.css" rel="stylesheet" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script>
+    $(function(){
+        $('.fadein img:gt(0)').hide();
+        setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 5000);
+    });
+    </script>
 </head>
 
 <body>
@@ -30,24 +38,30 @@
             <div class="mask flex-center">
                 <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-7 col-12 order-md-1 order-2">
-                    <h4>High-Quality <br>
-                        Sleeping Essentials <br>Just For You</h4>
-                    <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                        necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                    <a href="products.php">View Products</a> </div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-1.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-2.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-3.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-4.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-5.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div style="text-align:center">
-                        <span class="dot"></span> 
-                        <span class="dot"></span> 
-                        <span class="dot"></span> 
+                    <div class="col-md-7 col-12 order-md-1 order-2" style="top: 190px;">
+                        <h4>High-Quality <br>
+                            Sleeping Essentials <br>Just For You</h4>
+                        <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
+                            necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                        <a href="products.php">View Products</a> 
+                    </div>
+                    <div class="mySlides fadein col-md-5 col-12 order-md-2 order-1 ">
+                        <?php 
+                        // display images from directory
+                        $dir = "assets/img/banner/";
+                        
+                        $scan_dir = scandir($dir); //list files inside the directory
+                        foreach($scan_dir as $img):
+                            if(in_array($img,array('.','..'))){
+                                continue;
+                            }   
+                        ?>
+                        <img src="<?php echo $dir.$img ?>" class="mx-auto" style="height: 640px;" alt="<?php echo $img ?>">
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 </div>
+               
             </div>
         </div>
     </div>
@@ -75,7 +89,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="category-box">
-					<a href="products.php">
+					<a href="products-essentials.php">
 						<img src="assets/img/pillowcase3.jpg" alt="" />
 						<div class="content">
 							<h3>Essentials</h3>
@@ -120,25 +134,6 @@
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
-
-    <script>
-        var myIndex = 0; 
-        carousel();
-
-        function carousel() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-            }
-            myIndex++;
-            if (myIndex > x.length) {
-                myIndex = 1
-            }    
-            x[myIndex-1].style.display = "block";  
-            setTimeout(carousel, 5000); // Change image every 2 seconds
-        }
-    </script>
 
 </body>
 
