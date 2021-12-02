@@ -1,4 +1,5 @@
-<?php $page = "products";
+<?php 
+    $page = "products-eyemask";
 ?>
 
 <!DOCTYPE html>
@@ -26,28 +27,10 @@
             </div>
         </div>
     </header>
+    
+    <!-- Sidebar -->
+    <?php include 'php-templates/products-sidebar.php'; ?>
 
-    <section id="sidebar">
-        <div>
-            <h6 class="p-1 border-bottom mt-4">Shop By Sleepwear</h6>
-            <ul>
-                <li><a href="products.php">All</a></li>
-                <li><a href="products-shorts.php">Shorts</a></li>
-                <li><a href="products-pajama.php">Pajama</a></li>
-                <li><a href="products-loungewear.php">Loungewear</a></li>
-                <li><a href="products-nightdress.php">Nightdress</a></li>
-            </ul>
-        </div>
-        <div>
-            <h6 class="p-1 border-bottom">Shop By Essentials</h6>
-            <ul>
-                <li><a href="products-essentials.php">All</a></li>
-                <li><a class="active" href="#">Eyemask</a></li>
-                <li><a href="products-pillowcase.php">Pillowcase</a></li>
-
-            </ul>
-        </div>
-    </section>
     <!-- Section-->
     <section class="py-5 products">
         <div class="container px-4 px-lg-6 mt-4 ml-4" style="margin-right: 10px; margin-left: 200px;">
