@@ -141,11 +141,11 @@
                                     ($inqRead ? 1 : 0) . "\"") . "><div class=\"chat_list " .
                                     ($i == $_GET['id'] ? "active_chat" : "") . "\">
                                     <div class=\"chat_people\">
-                                    <div class=\"chat_ib\">
-                                        <h5>" . ($inqRead ?  "" : "<b>") .
+                                    <div class=\"chat_ib " .
+                                    ($inqRead ?  "" : "unread") . "\"><h5>" .
                                     $inq->getName() . "<span class=\"chat_date\">" .
                                     $inq->getMonthDate() . "</span></h5><p>" .
-                                    $inq->getMsg() . "</p></div></div></div></a>" . ($inqRead ?  "" : "</b>");
+                                    $inq->getMsg() . "</p></div></div></div></a>";
                             }
                         } else { ?>
                          <div class='basic_padding'>
