@@ -36,11 +36,11 @@
                     <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                         necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
                     <a href="products.php">View Products</a> </div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/sand.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/5.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/pearlwhite.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/midnightblue.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
-                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/pillowcase2.jpg" class="mx-auto"  style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-1.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-2.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-3.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-4.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
+                    <div class="mySlides fade col-md-5 col-12 order-md-2 order-1"><img src="assets/img/banner/banner-5.jpg" class="mx-auto" style="height: 650px;" alt="slide"></div>
                     <div style="text-align:center">
                         <span class="dot"></span> 
                         <span class="dot"></span> 
@@ -121,10 +121,8 @@
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
 
-    
-
     <script>
-        var myIndex = 0; $myIndex = 0
+        var myIndex = 0; 
         carousel();
 
         function carousel() {
@@ -132,15 +130,15 @@
             var x = document.getElementsByClassName("mySlides");
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 5000); // Change image every 2 seconds
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 5000); // Change image every 2 seconds
         }
     </script>
-
-
 
 </body>
 

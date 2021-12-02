@@ -184,6 +184,18 @@
 }
 
 /* Fading animation */
+/* .fadein { 
+  position:relative; height:332px; width:500px; margin:0 auto;
+  background: #ebebeb;
+  padding: 10px;
+   }
+  .fadein img{
+    position:absolute;
+    width: calc(96%);
+      height: calc(94%);
+      object-fit: scale-down;
+  }
+   */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 4.8s;
