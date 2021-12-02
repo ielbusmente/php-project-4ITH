@@ -1,3 +1,4 @@
+<?php ?>
 <style>
   body {
     margin: 0;
@@ -275,5 +276,11 @@
   .update-btn:hover {
     color: #d8c47f;
     background-color: #333;
+  }
+
+  .unread h5,
+  .unread p {
+    font-weight: bold !important;
+    color: #333 !important;
   }
 </style>
