@@ -31,7 +31,7 @@
         <div>
             <h6 class="p-1 border-bottom mt-4">Shop By Sleepwear</h6>
             <ul>
-                <li><a class="active" href="#">All</a></li>
+                <li><a href="products.php">All</a></li>
                 <li><a href="products-shorts.php">Shorts</a></li>
                 <li><a href="products-pajama.php">Pajama</a></li>
                 <li><a href="products-loungewear.php">Loungewear</a></li>
@@ -43,7 +43,7 @@
             <ul>
                 <li><a href="products-essentials.php">All</a></li>
                 <li><a href="products-eyemask.php">Eyemask</a></li>
-                <li><a href="products-pillowcase.php">Pillowcase</a></li>
+                <li><a class="active" href="#">Pillowcase</a></li>
 
             </ul>
         </div>
