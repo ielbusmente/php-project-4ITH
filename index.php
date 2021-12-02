@@ -55,6 +55,42 @@
     </div>
     <!--slide end--> 
 
+    
+<section class="product-category section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="title text-center">
+					<h2> Product Category </h2>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="category-box">
+					<a href="products.php">
+						<img src="assets/img/2.jpg" alt="" />
+						<div class="content">
+							<h3>Sleepwear</h3>
+							<!-- <p>Shop New Season Clothing</p> -->
+						</div>
+					</a>	
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="category-box">
+					<a href="products.php">
+						<img src="assets/img/pillowcase3.jpg" alt="" />
+						<div class="content">
+							<h3>Essentials</h3>
+							<!-- <p>Special Design Comes First</p> -->
+						</div>
+					</a>	
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
     <!-- Icons Grid-->
     <section class="features-icons bg-light text-center">
         <div class="container">
