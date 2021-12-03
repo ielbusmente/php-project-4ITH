@@ -162,16 +162,16 @@
 
   .mesgs {
     float: left;
-    padding: 30px 15px 0 25px;
+    padding: 15px 15px 0 25px;
     min-width: 60%;
     max-width: 60%;
     width: 60%;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: end;
     flex-grow: 1;
     overflow: auto;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .sent_msg p {
@@ -238,7 +238,7 @@
   }
 
   .msg_history {
-    height: 58vh;
+    height: 55vh;
     overflow-y: auto;
     padding-bottom: 20px;
   }

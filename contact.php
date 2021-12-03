@@ -1,13 +1,12 @@
  <?php
-    include 'php-templates/classes/Inquiry.php';
+    include_once 'php-templates/classes/Inquiry.php';
+    include_once 'php-templates/classes/Administrator.php';
     include 'php-templates/db.php';
     $page = "contact";
 
-    if (isset($_POST['insert'])) {
-        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+    if (isset($_POST['insert']))
+        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message']))
             insertInquiry([$_POST['name'], $_POST['email'], $_POST['message']]);
-        }
-    }
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -67,12 +66,6 @@
                                  <div class="fw-bolder">Inquiry Submitted!</div>
 
                              </div>
-                         </div>
-                         <!-- Submit error message-->
-                         <!-- This is what your users will see when there is-->
-                         <!-- an error submitting the form-->
-                         <div class="d-none" id="submitErrorMessage">
-                             <div class="text-center text-danger mb-3">Error sending inquiry!</div>
                          </div>
                          <!-- Submit Button-->
                          <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" name='insert' type="submit">Submit</button></div>

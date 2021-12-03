@@ -79,18 +79,9 @@
 
         // mail 
         //todo mail code
-        // update database
-        include '../php-templates/dbconnect.php';
-        $sqlUpdateReply = $inquiriesObjArr[$theId]->replyStr($msg);
-        $conn->query($sqlUpdateReply);
-        // echo $sqlUpdateReply;
-        $conn->close();
-
-        // echo $_GET['id'] . "<br/>";
-        // echo $inquiriesObjArr[$_GET['id']]->getName() . "<br/>";
-        // echo $inquiriesObjArr[$_GET['id']]->getSenderEmail() . "<br/>";
-
-        header("Location:inquiries.php?id=$theId&read=1");
+        $dateOfInq = $inquiriesObjArr[$theId]->getMonthDateTime();
+        $emailOfInqSender = $inquiriesObjArr[$theId]->getSenderEmail();
+        include "../phpmailer/send-reply-mail.php";
     }
     ?>
  <!DOCTYPE html>
@@ -130,6 +121,7 @@
                      </div>
                  <?php } ?>
              </div>
+             <?php echo $replyAlert ?>
              <div class="type_msg">
                  <form class="input_msg_write" method="post">
                      <textarea class="write_msg" placeholder="Type a message" name="reply-msg"></textarea>
@@ -192,6 +184,10 @@
                      window.onbeforeunload = function(e) {
                          localStorage.setItem('scrollpos', inbox.scrollTop);
                      };
+
+                     //  if (window.history.replaceState) {
+                     //      window.history.replaceState(null, null, window.location.href)
+                     //  }
                      //  const searchButton = document.getElementById('search-btn')
                      //  searchButton.addEventListener('click', (e) => {
                      //      e.preventDefault()

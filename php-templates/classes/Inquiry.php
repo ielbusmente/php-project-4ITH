@@ -54,18 +54,6 @@ class Inquiry extends DBInstance
         $conn->close();
         return $sql;
     }
-    // public function viewInquiry($date) {
-    //     $this->read = [true,$date]; 
-    // }
-    // public function inquiryReadStatus() {
-    //     return $this->read[0];
-    // }
-    // public function inquiryReadDate() {
-    //     return $this->read[1];
-    // }
-    // public function getMessageContent() {
-    //     return [$this->message, $this->senderEmail];
-    // } 
     public function getName()
     {
         return htmlentities($this->name);
@@ -97,10 +85,4 @@ class Inquiry extends DBInstance
             return $this->read[1];
         return "Not Read";
     }
-    // public function getID()
-    // {
-    //     return $this->id;
-    // }
-
-
 }
