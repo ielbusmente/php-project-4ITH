@@ -43,6 +43,17 @@ class Inquiry extends DBInstance
         $conn->close();
         return $sql;
     }
+    public function replyStr($msg)  //called from inquiries.php 
+    {
+        include '../php-templates/dbconnect.php';
+        $msgAppendedReply = $this->message . "\n\nReplied:\n$msg";
+        $repliedMessage = mysqli_real_escape_string($conn, $msgAppendedReply);
+        $sql = "UPDATE `sleepydb`.`inquiry` SET `date` = '" .
+            $this->date . "', message = '$repliedMessage' WHERE `inquiry`.id=" .
+            mysqli_real_escape_string($conn, $this->id) . "";
+        $conn->close();
+        return $sql;
+    }
     // public function viewInquiry($date) {
     //     $this->read = [true,$date]; 
     // }
@@ -59,9 +70,13 @@ class Inquiry extends DBInstance
     {
         return htmlentities($this->name);
     }
+    public function getSenderEmail()
+    {
+        return htmlentities($this->senderEmail);
+    }
     public function getMsg()
     {
-        return htmlentities($this->message);
+        return nl2br(htmlentities($this->message));
     }
     public function getMonthDate()
     {

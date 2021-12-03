@@ -6,6 +6,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-wrap: break-word;
   }
 
   img {
@@ -15,36 +16,21 @@
   .inbox_people {
     background: #f8f8f8 none repeat scroll 0 0;
     float: right;
-    overflow: hidden;
-    width: 40%;
+    overflow: auto;
     border-right: 1px solid #c4c4c4;
-  }
-
-  .inbox_msg {
-    border: 1px solid #c4c4c4;
-    clear: both;
-    overflow: hidden;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .top_spac {
     margin: 20px 0 0;
   }
 
-  .recent_heading {
-    float: left;
-    width: 40%;
-  }
-
-  .srch_bar {
-    display: inline-block;
-    text-align: right;
-    width: 60%;
-  }
-
   .headind_srch {
-    padding: 10px 29px 10px 20px;
-    overflow: hidden;
+    width: 100%;
     border-bottom: 1px solid #c4c4c4;
   }
 
@@ -57,8 +43,8 @@
   .srch_bar input {
     border: 1px solid #cdcdcd;
     border-width: 0 0 1px 0;
-    width: 80%;
-    padding: 2px 0 4px 6px;
+    width: 100%;
+    padding: 2px 25px 4px 6px;
     background: none;
   }
 
@@ -129,8 +115,7 @@
   }
 
   .inbox_chat {
-    /* height: 550px; */
-    height: 70vh;
+    height: 69vh;
     overflow-y: scroll;
   }
 
@@ -140,8 +125,6 @@
 
   .inq-name {
     color: #d8c47f;
-    margin-bottom: 20px;
-    font-weight: bold;
   }
 
   .incoming_msg_img {
@@ -180,8 +163,15 @@
   .mesgs {
     float: left;
     padding: 30px 15px 0 25px;
+    min-width: 60%;
+    max-width: 60%;
     width: 60%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: end;
+    flex-grow: 1;
+    overflow: auto;
   }
 
   .sent_msg p {
@@ -192,6 +182,11 @@
     color: #fff;
     padding: 5px 10px 5px 12px;
     width: 100%;
+  }
+
+  .write_msg {
+    width: calc(100% - 40px);
+    height: 15vh;
   }
 
   .outgoing_msg {
@@ -216,6 +211,7 @@
   .type_msg {
     border-top: 1px solid #c4c4c4;
     position: relative;
+    padding-top: 10px;
   }
 
   .msg_send_btn {
@@ -237,12 +233,14 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: stretch;
   }
 
   .msg_history {
-    height: 60vh;
+    height: 58vh;
     overflow-y: auto;
+    padding-bottom: 20px;
   }
 
   .title {
@@ -264,7 +262,6 @@
 
   a.nav-link:hover {
     border-bottom: #d8c47f solid 5px;
-    /* transition: 1s ease-in; */
   }
 
   .update-btn {
