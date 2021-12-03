@@ -1,3 +1,5 @@
+<?php ?>
+<style>
 #myCarousel .carousel-item .mask {
     position: absolute;
     top: 0;
@@ -184,37 +186,18 @@
 }
 
 /* Fading animation */
-/* .fadein { 
-  position:relative; height:332px; width:500px; margin:0 auto;
-  background: #ebebeb;
-  padding: 10px;
+.fadein { 
+  position:relative; height:330px; width:500px; margin:0 auto;
+  /* background: #ebebeb; */
    }
-  .fadein img{
-    position:absolute;
-    width: calc(96%);
-      height: calc(94%);
-      object-fit: scale-down;
-  }
-   */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 4.8s;
-    animation-name: fade;
-    animation-duration: 4.8s;
-  }
+   
+.fadein img{
+  position:absolute;
+  width: calc(96%);
+    height: calc(94%);
+    object-fit: scale-down;
+}
   
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-/* Product Category */
-
 .title {
   padding: 20px 0 30px;
 }
@@ -334,3 +317,4 @@
 .category-box .content p {
   margin: 6px 0 0;
 }
+</style>

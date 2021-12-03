@@ -11,28 +11,22 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <title>Products</title>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/products.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <?php include "css/products-css.php" ?>
+    <?php include "css/styles-css.php" ?>
 </head>
 
 <body>
     <!-- Navigation-->
     <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Products</h1>
-                <!-- <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p> -->
-            </div>
-        </div>
-    </header>
-
+    <?php include 'php-templates/products-header.php'; ?>
     <!-- Sidebar -->
     <?php include 'php-templates/products-sidebar.php'; ?>
     
+    <h1 class="mt-4">Loungewear</h1>
+
     <!-- Section-->
-    <section class="py-5 products">
+    <section class="py-2 products">
         <div class="container px-4 px-lg-6 mt-4 ml-4" style="margin-right: 10px; margin-left: 200px;">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">

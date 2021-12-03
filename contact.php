@@ -18,8 +18,8 @@
      <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
      <title>Contact Us</title>
      <!-- Core theme CSS (includes Bootstrap)-->
-     <link href="css/styles.css" rel="stylesheet" />
-     <link href="css/contact.css" rel="stylesheet" />
+     <?php include "css/styles-css.php" ?>
+     <?php include "css/contact-css.php" ?>
      <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
  </head>
 

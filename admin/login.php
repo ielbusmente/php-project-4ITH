@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
   <title>Sleepy Login</title>
-  <link rel="stylesheet" href="../css/login.css">
+  <?php include "../css/login-css.php" ?>
 </head>
 
 <body>

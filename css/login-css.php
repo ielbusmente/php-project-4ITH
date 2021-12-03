@@ -1,3 +1,5 @@
+<?php ?>
+<style>
 /* BASIC */
 
 /* html {
@@ -46,9 +48,7 @@ body {
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input[type="submit"] {
   background-color: #d8c47f;
   border: none;
   color: white;
@@ -70,15 +70,12 @@ input[type="reset"] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+\\
+input[type="submit"]:hover {
   background-color: #ac9f6d;
 }
 
-input[type="button"]:active,
-input[type="submit"]:active,
-input[type="reset"]:active {
+input[type="submit"]:active {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -205,24 +202,6 @@ input[type="password"]:placeholder {
   animation-delay: 0.4s;
 }
 
-/* .fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-
-.fadeIn.third {
-  -webkit-animation-delay: 0.8s;
-  -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-
-.fadeIn.fourth {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
-} */
-
 /* OTHERS */
 
 *:focus {
@@ -234,3 +213,4 @@ input[type="password"]:placeholder {
   padding-top: 10%;
   padding-bottom: 10%;
 }
+</style>
