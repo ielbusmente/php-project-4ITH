@@ -10,8 +10,8 @@ CREATE TABLE `sleepydb`.`inquiry` (
     `message` VARCHAR(5000) NOT NULL , 
     `readBool` BOOLEAN NOT NULL DEFAULT FALSE , 
     `readDate` TIMESTAMP NULL DEFAULT NULL , 
-    PRIMARY KEY (`id`)); 
-
+    PRIMARY KEY (`id`) UNIQUE (`id`,`email`)); 
+-- ALTER TABLE `adminuser` ADD UNIQUE(`email`);
 
 CREATE TABLE `sleepydb`.`adminuser` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
@@ -19,7 +19,7 @@ CREATE TABLE `sleepydb`.`adminuser` (
    `lastName` VARCHAR(255) NOT NULL , 
    `email` VARCHAR(255) NOT NULL , 
    `password` VARCHAR(255) NOT NULL ,  
-    PRIMARY KEY (`id`)); 
+    PRIMARY KEY (`id`) UNIQUE (`id`); 
 
 CREATE TABLE `sleepydb`.`product` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
@@ -28,7 +28,7 @@ CREATE TABLE `sleepydb`.`product` (
    `price` INT NOT NULL,  
    `category` INT NOT NULL,  
    `size` INT ,  
-    PRIMARY KEY (`id`)); 
+    PRIMARY KEY (`id`) UNIQUE (`id`); 
 -- INSERT INTO `inquiry` (`id`, `message`, `date`, `readBool`, `readDate`) VALUES (NULL, 'ASDF', '2021-11-22 10:16:17.000000', '0', '2021-11-22 10:16:17.000000')
 
 

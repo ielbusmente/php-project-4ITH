@@ -18,10 +18,10 @@ if (isset($_SESSION['sessionId'])) {
 }
 // echo $admin;
 if (isset($_POST['submit'])) {
-  if (!empty($_POST['id']) && !empty($_POST['password'])) {
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
     include '../php-templates/dbconnect.php';
 
-    $user = new Administrator($_POST['id'], null, $_POST['password'], null, null);
+    $user = new Administrator(null, $_POST['email'], $_POST['password'], null, null);
     $status = $user->login();
     // $username = mysqli_real_escape_string($conn, );
     // $password = mysqli_real_escape_string($conn, );
@@ -31,13 +31,13 @@ if (isset($_POST['submit'])) {
     // setcookie("session-token", $token, time() + 24 * 60 * 60);
 
     //invalid cred
-    if ($status !== 'Logged In') {
-      setcookie('error', $status /*. " " . md5($_POST['password'])*/, time() + 60);
+    if (substr($status, 0, 9) !== 'Logged In') {
+      setcookie('error', $status . " " . $_POST['email']/*. " " . md5($_POST['password'])*/, time() + 60);
       return header('Location: login.php');
     }
     //pasok
     setcookie('error', '', time() - 1);
-    $_SESSION['sessionId'] = htmlentities($_POST['id']);
+    $_SESSION['sessionId'] = htmlentities(substr($status, 10));
     header('Location: inquiries.php');
   } else {
     echo "All input fields are required!";
@@ -60,7 +60,9 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-
+  <script>
+    localStorage.setItem('scrollpos', 0);
+  </script>";
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Icon -->
@@ -80,7 +82,7 @@ if (isset($_POST['submit'])) {
       }
       ?>
       <form method="POST">
-        <input type="text" id="id" class="fadeIn second" name="id" placeholder="ID" required>
+        <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required>
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
         <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
       </form>
