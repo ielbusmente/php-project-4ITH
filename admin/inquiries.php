@@ -1,4 +1,5 @@
 <?php
+$replyAlert = '';
 $page = 'inbox';
 // if (headers_sent()) {
 //     header_remove();
