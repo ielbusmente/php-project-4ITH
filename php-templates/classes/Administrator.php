@@ -31,8 +31,8 @@ class Administrator extends DBInstance
                 //there is a user matched 
                 $rec = $result->fetch_assoc();
                 // echo md5($rec['password']);
-                echo $rec['id'] . "<br/>";
-                echo $rec['password'] . "<br/>";
+                // echo $rec['id'] . "<br/>";
+                // echo $rec['password'] . "<br/>";
                 //encrypt input then get pass from db 
                 $inputPass = md5($userPassword);
                 $encryptedPass = $rec['password'];
@@ -49,7 +49,7 @@ class Administrator extends DBInstance
     public function addUser()
     {
         include '../php-templates/dbconnect.php';
-        $id = mysqli_real_escape_string($conn, $this->id);
+        $id = $this->id !== null ? (mysqli_real_escape_string($conn, $this->id)) : 'null';
         $fname = mysqli_real_escape_string($conn, $this->firstName);
         $lname = mysqli_real_escape_string($conn, $this->lastName);
         $email = mysqli_real_escape_string($conn, $this->email);
@@ -58,7 +58,7 @@ class Administrator extends DBInstance
         $sql = "INSERT INTO `adminuser` (`id`, `firstName`, `lastName`, `email`, `password`) 
             VALUES ($id, '" . $fname . "', '" . $lname  . "', '" . $email  . "', '" . $pass . "')";
         $conn->query($sql);
-
+        // echo $sql;
         $conn->close();
     }
     public function updateStr()

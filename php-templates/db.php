@@ -37,7 +37,7 @@ function getAdminUserEmails()
                 $adminUsersArr[$i]['email'],
                 null,
                 null,
-                null,
+                null
             );
         }
     }

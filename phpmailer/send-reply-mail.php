@@ -12,17 +12,17 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'eltomasino.ipea@gmail.com';
+    $mail->Username = 'officialsleepyph@gmail.com';
     $mail->Password = 'A very hard password!';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = '587';
-    $mail->setFrom('eltomasino.ipea@gmail.com');
+    $mail->setFrom('officialsleepyph@gmail.com');
     $mail->addAddress($emailOfInqSender);
     $mail->isHTML(true);
     $mail->Subject = 'Reply from SleepyPH';
     $mail->Body =
         "<h3>From SleepyPH - This is a reply to your inquiry from $dateOfInq.</h3>
-        <br/><p>$msg</p><br/>
+        <br/><p>" . nl2br($msg) . "</p><br/>
         <p>Thank you for contacting us. Have a nice day!</p>";
     $mail->send();
 

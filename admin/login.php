@@ -3,7 +3,7 @@ include '../php-templates/classes/Administrator.php';
 //check user db if there is a user 
 include '../php-templates/dbconnect.php';
 
-$sql = "SELECT * FROM adminuser";
+$sql = "SELECT id FROM adminuser";
 
 $result = $conn->query($sql);
 if ($result->num_rows === 0) {
@@ -16,8 +16,9 @@ session_start();
 if (isset($_SESSION['sessionId'])) {
   header('Location: inquiries.php');
 }
-// echo $admin;
+// echo $admin; 
 if (isset($_POST['submit'])) {
+  $_POST['submit'] = null;
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     include '../php-templates/dbconnect.php';
 
@@ -32,20 +33,28 @@ if (isset($_POST['submit'])) {
 
     //invalid cred
     if (substr($status, 0, 9) !== 'Logged In') {
+      if (isset($_COOKIE['error'])) unset($_COOKIE['error']);
       setcookie('error', $status . " " . $_POST['email']/*. " " . md5($_POST['password'])*/, time() + 60);
       return header('Location: login.php');
     }
     //pasok
-    setcookie('error', '', time() - 1);
+    // setcookie('error', '', time() - 1); //error in deployment
+
+    if (isset($_COOKIE['error'])) {
+      unset($_COOKIE['error']);
+      setcookie('error', '', time() - 3600); // empty value and old timestamp
+    }
     $_SESSION['sessionId'] = htmlentities(substr($status, 10));
-    header('Location: inquiries.php');
+    if (!isset($_COOKIE['error']))
+      echo '<script>
+              window.location.href = "inquiries.php";
+            </script>';
+    // header('Location: inquiries.php'); //error in deployment 
   } else {
     echo "All input fields are required!";
   }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +71,7 @@ if (isset($_POST['submit'])) {
 <body>
   <script>
     localStorage.setItem('scrollpos', 0);
-  </script>";
+  </script>
   <div class="wrapper fadeInDown">
     <div id="formContent">
       <!-- Icon -->
@@ -86,11 +95,6 @@ if (isset($_POST['submit'])) {
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
         <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
       </form>
-
-      <!-- Forgot Password -->
-      <!-- <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div> -->
 
     </div>
   </div>

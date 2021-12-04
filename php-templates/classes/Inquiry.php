@@ -38,7 +38,7 @@ class Inquiry extends DBInstance
     public function viewInquiryStr($date) //called from inquiries.php
     {
         include '../php-templates/dbconnect.php';
-        $sql = "UPDATE `sleepydb`.`inquiry` SET `date` = '" . $this->date . "',`readBool` = 1, `readDate` = '$date' WHERE `inquiry`.id=" .
+        $sql = "UPDATE `inquiry` SET `date` = '" . $this->date . "',`readBool` = 1, `readDate` = '$date' WHERE `inquiry`.id=" .
             mysqli_real_escape_string($conn, $this->id) . "";
         $conn->close();
         return $sql;
@@ -48,7 +48,7 @@ class Inquiry extends DBInstance
         include '../php-templates/dbconnect.php';
         $msgAppendedReply = $this->message . "\n\nReplied:\n$msg";
         $repliedMessage = mysqli_real_escape_string($conn, $msgAppendedReply);
-        $sql = "UPDATE `sleepydb`.`inquiry` SET `date` = '" .
+        $sql = "UPDATE `inquiry` SET `date` = '" .
             $this->date . "', message = '$repliedMessage' WHERE `inquiry`.id=" .
             mysqli_real_escape_string($conn, $this->id) . "";
         $conn->close();

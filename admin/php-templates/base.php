@@ -2,12 +2,14 @@
 
 /**
  * includes the logout login 
- * user data is fetched with the sessionId
-
+ * user data is fetched with the sessionId 
  */
-
 session_start();
 if (isset($_POST['logout']) || !(isset($_SESSION['sessionId']))) {
+    if (isset($_COOKIE['error'])) {
+        unset($_COOKIE['error']);
+        setcookie('error', '', time() - 3600); // empty value and old timestamp
+    }
     session_destroy();
     header('Location: login.php');
 }
@@ -38,7 +40,7 @@ if (
         $rec['email'],
         $rec['password'],
         $rec['firstName'],
-        $rec['lastName'],
+        $rec['lastName']
     );
     $_SESSION['current-user-id'] = $currentUser->getID();
     $_SESSION['current-user-firstName'] = $currentUser->getFirstName();

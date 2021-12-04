@@ -1,7 +1,15 @@
 <?php
 $page = 'profile';
 include 'php-templates/base.php';
+
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle): bool
+    {
+        return '' === $needle || false !== strpos($haystack, $needle);
+    }
+}
 if (isset($_POST['profile-mod'])) {
+    $_POST['profile-mod'] = null;
     $errors = [];
     //palit pass 
     if ($_POST['new-pass'] !== '') {
@@ -23,10 +31,10 @@ if (isset($_POST['profile-mod'])) {
                 $_POST['email'] === $_SESSION['current-user-email'] ? null : $_POST['email'],
                 $_POST['new-pass'] === '' ? null : $_POST['new-pass'],
                 $_POST['fname'] === $_SESSION['current-user-firstName'] ? null : $_POST['fname'],
-                $_POST['lname'] === $_SESSION['current-user-lastName'] ? null : $_POST['lname'],
+                $_POST['lname'] === $_SESSION['current-user-lastName'] ? null : $_POST['lname']
             );
             $sql = $updatedUser->updateStr();
-            echo $sql;
+            // echo $sql;
             include '../php-templates/dbconnect.php';
             $conn->query($sql);
             $conn->close();
@@ -36,7 +44,7 @@ if (isset($_POST['profile-mod'])) {
                 $_POST['email'],
                 md5($_POST['new-pass']),
                 $_POST['fname'],
-                $_POST['lname'],
+                $_POST['lname']
             );
             if (str_contains($sql, "`email` = "))
                 $_SESSION['current-user-email'] = $currentUser->getEmail();
