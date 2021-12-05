@@ -43,6 +43,13 @@ class Inquiry extends DBInstance
         $conn->close();
         return $sql;
     }
+    public function deleteStr() //called from inquiries.php 
+    {
+        include '../php-templates/dbconnect.php';
+        $sql = "DELETE FROM `inquiry` WHERE `inquiry`.`id` = " . mysqli_real_escape_string($conn, $this->id);
+        $conn->close();
+        return $sql;
+    }
     public function replyStr($msg)  //called from inquiries.php 
     {
         include '../php-templates/dbconnect.php';

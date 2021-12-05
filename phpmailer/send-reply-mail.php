@@ -28,8 +28,8 @@ try {
 
     // $replyAlert =  "<div class=\"alert-success\"><span>Message Sent!</span></div>"; 
     // update database
-    include '../php-templates/dbconnect.php';
     $sqlUpdateReply = $inquiriesObjArr[$theId]->replyStr($msg);
+    include '../php-templates/dbconnect.php';
     $conn->query($sqlUpdateReply);
     // echo $sqlUpdateReply;
     $conn->close();

@@ -1,4 +1,6 @@
-<?php ?>
+<?php $bgNoneRepScroll00 = "none repeat scroll 0 0";
+$mainYellow = "#d8c47f";
+$mPad = "padding: 16px;"; ?>
 <style>
   body {
     margin: 0;
@@ -14,7 +16,7 @@
   }
 
   .inbox_people {
-    background: #f8f8f8 none repeat scroll 0 0;
+    background: #f8f8f8 <?php echo $bgNoneRepScroll00; ?>;
     float: right;
     overflow: auto;
     border-right: 1px solid #c4c4c4;
@@ -35,7 +37,7 @@
   }
 
   .recent_heading h4 {
-    color: #d8c47f;
+    color: <?php echo $mainYellow; ?>;
     font-size: 21px;
     margin: auto;
   }
@@ -49,7 +51,7 @@
   }
 
   .srch_bar .input-group-addon button {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) <?php echo $bgNoneRepScroll00; ?>;
     border: medium none;
     padding: 0;
     color: #707070;
@@ -124,29 +126,12 @@
   }
 
   .inq-name {
-    color: #d8c47f;
+    color: <?php echo $mainYellow; ?>;
   }
 
   .incoming_msg_img {
     display: inline-block;
     width: 6%;
-  }
-
-  .received_msg {
-    display: inline-block;
-    padding: 0 0 0 10px;
-    vertical-align: top;
-    width: 92%;
-  }
-
-  .received_withd_msg p {
-    background: #ebebeb none repeat scroll 0 0;
-    border-radius: 3px;
-    color: #646464;
-    font-size: 14px;
-    margin: 0;
-    padding: 20px;
-    width: 100%;
   }
 
   .time_date {
@@ -174,38 +159,9 @@
     justify-content: space-around;
   }
 
-  .sent_msg p {
-    background: #d8c47f none repeat scroll 0 0;
-    border-radius: 3px;
-    font-size: 14px;
-    margin: 0;
-    color: #fff;
-    padding: 5px 10px 5px 12px;
-    width: 100%;
-  }
-
   .write_msg {
     width: calc(100% - 40px);
     height: 15vh;
-  }
-
-  .outgoing_msg {
-    overflow: hidden;
-    margin: 26px 0 26px;
-  }
-
-  .sent_msg {
-    float: right;
-    width: 46%;
-  }
-
-  .input_msg_write input {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: medium none;
-    color: #4c4c4c;
-    font-size: 15px;
-    min-height: 48px;
-    width: 100%;
   }
 
   .type_msg {
@@ -215,7 +171,6 @@
   }
 
   .msg_send_btn {
-    background: #d8c47f none repeat scroll 0 0;
     border: medium none;
     border-radius: 50%;
     color: #fff;
@@ -223,9 +178,18 @@
     font-size: 17px;
     height: 33px;
     position: absolute;
-    right: 0;
-    top: 11px;
     width: 33px;
+    right: 0;
+  }
+
+  .reply_btn {
+    background: <?php echo "$mainYellow $bgNoneRepScroll00"; ?>;
+    top: 11px;
+  }
+
+  .delete_btn {
+    background: #d87f7f <?php echo $bgNoneRepScroll00; ?>;
+    top: calc(33px + 11px + 10px);
   }
 
   .messaging {
@@ -248,12 +212,12 @@
     font-weight: bold;
     font-size: 48px;
     line-height: 58px;
-    color: #d8c47f;
+    color: <?php echo $mainYellow; ?>;
   }
 
   .active-tab {
-    border-bottom: #d8c47f solid 5px;
-    color: #d8c47f !important;
+    border-bottom: <?php echo $mainYellow; ?> solid 5px;
+    color: <?php echo $mainYellow; ?> !important;
   }
 
   a {
@@ -261,17 +225,17 @@
   }
 
   a.nav-link:hover {
-    border-bottom: #d8c47f solid 5px;
+    border-bottom: <?php echo $mainYellow; ?> solid 5px;
   }
 
   .update-btn {
-    background-color: #d8c47f;
+    background-color: <?php echo $mainYellow; ?>;
     color: #333;
     transition: 0.2s;
   }
 
   .update-btn:hover {
-    color: #d8c47f;
+    color: <?php echo $mainYellow; ?>;
     background-color: #333;
   }
 
@@ -279,5 +243,88 @@
   .unread p {
     font-weight: bold !important;
     color: #333 !important;
+  }
+
+  /* modal  */
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 30vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0
+    }
+
+    to {
+      top: 0;
+      opacity: 1
+    }
+  }
+
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0
+    }
+
+    to {
+      top: 0;
+      opacity: 1
+    }
+  }
+
+  /* The Close Button */
+  .close {
+    color: #ddd;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    background-color: <?php echo $mainYellow; ?>;
+    color: white;
+    <?php echo $mPad; ?>
+  }
+
+  .modal-body,
+  .modal-footer {
+    <?php echo $mPad; ?>
   }
 </style>

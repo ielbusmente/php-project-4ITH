@@ -81,7 +81,8 @@ if ($_GET['id'] !== '' && isset($_GET['read'])) {
         // echo $inquiriesObjArr[$currInqIndex]->viewInquiryStr(date('Y-m-d H:i:s'));
     }
 }
-if (isset($_POST['reply'])) {
+//reply to inquiry
+if (isset($_POST['reply']) && $_POST['reply-msg'] != '') {
     $msg = $_POST['reply-msg'];
     $theId = $_GET['id'];
     // echo "<script>alert(\"Replied: " . $_POST['reply-msg'] . "\")</script>";
@@ -94,6 +95,20 @@ if (isset($_POST['reply'])) {
     $dateOfInq = $inquiriesObjArr[$theId]->getMonthDateTime();
     $emailOfInqSender = $inquiriesObjArr[$theId]->getSenderEmail();
     include "../phpmailer/send-reply-mail.php";
+}
+//delete inquiry 
+if (isset($_POST['delete'])) {
+    $targetId = $inquiriesObjArr[$_GET['id']]->getId();
+    if ($targetId != '') {
+        $deleteSql = $inquiriesObjArr[$_GET['id']]->deleteStr();
+        include '../php-templates/dbconnect.php';
+        $conn->query($deleteSql);
+        $conn->close();
+        echo "<script>alert(\"Successfully deleted the Inquiry.\")</script>";
+        echo '<script>
+            window.location.href = "inquiries.php";
+        </script>';
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -113,12 +128,14 @@ if (isset($_POST['reply'])) {
     <h1 class="title">Inquiries</h1>
     <div class="messaging ">
         <div class="mesgs">
-            <div class="msg_history">
-                <?php $userIndex = $_GET['id'];
+            <?php $userIndex = $_GET['id'];
 
-                if ($userIndex != '') { ?>
+            if ($userIndex != '') { ?>
+                <div class="msg_history">
                     <h3 class="inq-name">
-                        <b><?php echo ($inquiriesObjArr[$userIndex]->getName());  ?></b>
+                        <b><?php
+                            $currentInqName = $inquiriesObjArr[$userIndex]->getName();
+                            echo $currentInqName;  ?></b>
                     </h3>
                     <h5 class="inq-name mb-5">
                         <?php echo ($inquiriesObjArr[$userIndex]->getSenderEmail());  ?>
@@ -131,20 +148,29 @@ if (isset($_POST['reply'])) {
                             </div>
                         </div>
                     </div>
-                <?php } ?>
-            </div>
-            <?php echo $replyAlert ?>
-            <div class="type_msg">
-                <form class="input_msg_write" method="post">
-                    <textarea class="write_msg" placeholder="Type a message" name="reply-msg"></textarea>
-                    <button class="msg_send_btn" type="submit" title="Reply" name="reply"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                </form>
-            </div>
+                </div>
+                <?php echo $replyAlert; ?>
+                <div class="type_msg">
+                    <form class="input_msg_write" method="post">
+                        <textarea class="write_msg" placeholder="Type a message" name="reply-msg" required></textarea>
+                        <button class="msg_send_btn reply_btn" type="submit" title="Reply" name="reply">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                    <!-- <form method="post"> -->
+                    <button class="msg_send_btn delete_btn" type="button" title="Delete This Inquiry" id="butt_delete">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                    <!-- </form> -->
+                </div>
+            <?php
+            }
+            ?>
         </div>
         <div class="inbox_people">
             <div class="headind_srch row p-0 m-0">
                 <div class="recent_heading col-md-6 py-2 px-4">
-                    <h4>Recent</h4>
+                    <h4>Inbox</h4>
                 </div>
                 <div class="srch_bar col-md-6 p-2" title="Press Enter After Typing">
                     <form method="GET">
@@ -186,48 +212,95 @@ if (isset($_POST['reply'])) {
                 <script>
                     //  alert('Try')
                 </script>
-                <!-- js to save scroll position of the inbox_chat  -->
-                <script>
-                    const inbox = document.getElementById('inbox')
-                    document.addEventListener("DOMContentLoaded", function(event) {
-                        var scrollpos = localStorage.getItem('scrollpos');
-                        if (scrollpos) inbox.scrollTo(0, scrollpos);
-                    });
-                    window.onbeforeunload = function(e) {
-                        localStorage.setItem('scrollpos', inbox.scrollTop);
-                    };
 
-                    //  if (window.history.replaceState) {
-                    //      window.history.replaceState(null, null, window.location.href)
-                    //  }
-                    //  const searchButton = document.getElementById('search-btn')
-                    //  searchButton.addEventListener('click', (e) => {
-                    //      e.preventDefault()
-                    //  })
-                    //  const searchBox = document.getElementById('search-box')
-
-                    //  searchBox.addEventListener('keyup', (e) => {
-                    //      alert('wiw')
-                    //  })
-
-                    /* $(document).ready(function() {
-                         //  $("#inboxChatId").on('beforeunload', function() {
-                         //      $("#inboxChatId").scrollTop(0);
-                         //      //   $("#inboxChatId").click(function() {
-                         //      //      
-                         //      //   });
-                         //  });
-                         //  alert("alert")
-
-                         //  $("#inboxChatId").on("scroll", function() {
-                         //      $("span").html($("#inboxChatId")[0].scrollTop);
-                         //  });
-
-                     })*/
-                </script>
             </div>
         </div>
     </div>
+    <!-- delete modal  -->
+    <div id="delete_modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Inquiry</h2>
+                <span class="close">&times;</span>
+
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this Inquiry of <?php echo $currentInqName ?>?</p>
+            </div>
+            <div class="modal-footer">
+                <form method="post" class="m-0 p-0">
+                    <button class="btn btn-outline-danger px-5" type='submit' id="butt_delete_yes" name="delete">Yes</button>
+                </form>
+                <button class="btn btn-outline-dark px-5" id="butt_delete_no">No</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        //save scroll position of the inbox_chat
+        const inbox = document.getElementById('inbox')
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) inbox.scrollTo(0, scrollpos);
+        });
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', inbox.scrollTop);
+        };
+        //delete modal 
+        const modal = document.getElementById("delete_modal");
+        const buttDelete = document.getElementById("butt_delete");
+        const span = document.getElementsByClassName("close")[0];
+        const buttDeleteNo = document.getElementById("butt_delete_no");
+
+        // When the user clicks the button, open the modal 
+        buttDelete.onclick = function() {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x) or No, close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        buttDeleteNo.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+        //  if (window.history.replaceState) {
+        //      window.history.replaceState(null, null, window.location.href)
+        //  }
+        //  const searchButton = document.getElementById('search-btn')
+        //  searchButton.addEventListener('click', (e) => {
+        //      e.preventDefault()
+        //  })
+        //  const searchBox = document.getElementById('search-box')
+
+        //  searchBox.addEventListener('keyup', (e) => {
+        //      alert('wiw')
+        //  })
+
+        /* $(document).ready(function() {
+             //  $("#inboxChatId").on('beforeunload', function() {
+             //      $("#inboxChatId").scrollTop(0);
+             //      //   $("#inboxChatId").click(function() {
+             //      //      
+             //      //   });
+             //  });
+             //  alert("alert")
+
+             //  $("#inboxChatId").on("scroll", function() {
+             //      $("span").html($("#inboxChatId")[0].scrollTop);
+             //  });
+
+         })*/
+    </script>
 </body>
 
 </html>
