@@ -1,5 +1,41 @@
 <?php
 include_once "php-templates/classes/Product.php";
+include_once 'php-templates/unsupported-functions/str_contains_function.php';
+function checkCategoryAndSize($str)
+{
+    $appendToSQL = '';
+    if ($str != '') {
+        if (str_contains($str, 'eye mask')) {
+            $appendToSQL .= 'OR category = 1 ';
+        }
+        if (str_contains($str, 'pillow case')) {
+            $appendToSQL .= 'OR category = 2 ';
+        }
+        if (str_contains($str, 'shorts')) {
+            $appendToSQL .= 'OR category = 3 ';
+        }
+        if (str_contains($str, 'pajama')) {
+            $appendToSQL .= 'OR category = 4 ';
+        }
+        if (str_contains($str, 'nightdress')) {
+            $appendToSQL .= 'OR category = 5 ';
+        }
+        if (str_contains($str, 'loungewear')) {
+            $appendToSQL .= 'OR category = 6 ';
+        }
+        if (str_contains($str, 'free size')) {
+            $appendToSQL .= 'OR size = 0 OR size = 3 OR size = 4 OR size = 6 ';
+        }
+        if (str_contains($str, 'plus size')) {
+            $appendToSQL .= 'OR size = 1 OR size = 3 OR size = 5 OR size = 6 ';
+        }
+        if (str_contains($str, 'one size')) {
+            $appendToSQL .= 'OR size = 2 OR size = 4 OR size = 5 OR size = 6 ';
+        }
+    }
+    return $appendToSQL;
+}
+
 $page = "products";
 if (!isset($_GET['filter']))
     $_GET['filter'] = 'all';
@@ -19,13 +55,22 @@ else {
             $_GET['filter'] = 'all';
     }
 }
+if (!isset($_GET['search'])) {
+    $_GET['search'] = '';
+}
 $productsArr = [];
 // get products from the db 
 include 'php-templates/dbconnect.php';
-$whereSize = $_GET['filter'] === 'sleepingessentials' ?
-    'WHERE size IS NULL' : ($_GET['filter'] === 'sleepwear' ?
-        'WHERE size >= 0 AND size <= 6' : ('WHERE category =' . $_GET['filter']));
-$getProductsSql = "SELECT * FROM product " . ($_GET['filter'] === 'all' ? '' : $whereSize);
+$searchStr = mysqli_real_escape_string($conn, $_GET['search']);
+$whereStr = "
+WHERE (id LIKE '%$searchStr%' OR
+name LIKE '%$searchStr%' OR
+description LIKE '%$searchStr%' " . checkCategoryAndSize(strtolower($searchStr)) . ")
+";
+$filterStr = $_GET['filter'] === 'sleepingessentials' ?
+    'AND size IS NULL' : ($_GET['filter'] === 'sleepwear' ?
+        'AND (size >= 0 AND size <= 6)' : ('AND category =' . $_GET['filter']));
+$getProductsSql = "SELECT * FROM product $whereStr" . ($_GET['filter'] === 'all' ? '' : $filterStr);
 // echo $getProductsSql;
 $result = $conn->query($getProductsSql);
 if ($result->num_rows > 0)
@@ -80,12 +125,10 @@ switch ($_GET['filter']) {
     case 6:
         $filterTitle = 'Sleepwear: Nightdress';
         break;
-
     default:
-        # code...
+        $filterTitle = '';
         break;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -110,12 +153,18 @@ switch ($_GET['filter']) {
     <?php include 'php-templates/products-header.php'; ?>
     <!-- Sidebar -->
 
-    <h1 class="mt-4" style="margin-left:20%; margin-bottom:20px;"><?php echo $filterTitle ?></h1>
-    <div class="row p-0 m-0">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <h1 class="mt-4"><?php echo $filterTitle ?></h1>
+        </div>
+    </div>
+    <div class="row p-0 me-5">
         <?php include 'php-templates/products-sidebar.php'; ?>
         <!-- px-lg-6 ml-4 not in css  -->
-        <div class="mt-4 col-md-8 col-12">
-            <div class="row gx-4 gx-lg-5 row-cols-md-3 row-cols-2  row-cols-xl-4 justify-content-center p-0 m-0">
+        <div class="mt-4 col-md-9 col-12">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-xl-4 p-0 m-0">
                 <?php
                 if ($prodCount > 0)
                     for ($i = 0; $i < $prodCount; $i++)

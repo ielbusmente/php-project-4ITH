@@ -36,3 +36,5 @@ CREATE TABLE `product` (
 -- DROP TABLE ` inquiry `
 
 -- INSERT INTO `product` (`id`, `name`, `description`, `price`, `category`, `size`) VALUES (NULL, 'Awesome Eye Mask', 'This is a description nyenye', '123', '1', NULL), (NULL, 'Dope Shorts', 'tada klees here \r\nlife is not dadada', '1000', '3', '0')
+
+-- INSERT INTO `product` (`id`, `name`, `description`, `price`, `category`, `size`, `img`) VALUES (NULL, 'AAhhhhhh', 'kaljsdfklj asfd \r\nasdfasdf\r\n\r\n\r\nasdfadfsfasdf asdf as d fsa dfas d', '2222', '5', '4', 'assets/img/blushluxe.jpg')

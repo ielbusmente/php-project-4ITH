@@ -245,6 +245,10 @@
         padding: 0.25rem !important;
     }
 
+    .p-2 {
+        padding: 0.5rem !important;
+    }
+
     .p-3 {
         padding: 1rem !important;
     }
@@ -322,6 +326,10 @@
         margin-right: auto !important;
     }
 
+    .me-5 {
+        margin-right: 3rem !important;
+    }
+
     .mx-1 {
         margin-right: 0.25rem !important;
         margin-left: 0.25rem !important;
@@ -371,15 +379,17 @@
 
     /* md width  */
 
-    @media (min-width: 768px) {
+    @media (max-width:1127px) {
+        .me-5 {
+            margin: auto !important;
+        }
 
-        .row-cols-md-3>* {
-            flex: 0 0 auto;
-            width: 33.3333333333%;
+        .col-md-9 {
+            text-align: center;
         }
     }
 
-    @media (min-width: 950px) {
+    @media (min-width: 1128px) {
         .col-md-2 {
             flex: 0 0 auto;
             width: 16.66666667%;
@@ -926,5 +936,20 @@
 
     .modal-body p {
         font-size: 20px;
+    }
+
+    .search-icon {
+        border-radius: 0 !important;
+        border-top-right-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        border: #333 solid 1px;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #333;
+    }
+
+    .search-icon:hover {
+        background-color: #fff;
     }
 </style>

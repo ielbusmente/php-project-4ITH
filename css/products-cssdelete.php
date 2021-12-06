@@ -4475,9 +4475,6 @@
     margin-right: 1.5rem !important;
   }
 
-  .me-5 {
-    margin-right: 3rem !important;
-  }
 
 
   .mb-1 {
@@ -4529,10 +4526,6 @@
 
   .p-1 {
     padding: 0.25rem !important;
-  }
-
-  .p-2 {
-    padding: 0.5rem !important;
   }
 
 
