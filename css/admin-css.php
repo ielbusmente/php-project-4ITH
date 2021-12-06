@@ -1,6 +1,5 @@
 <?php $bgNoneRepScroll00 = "none repeat scroll 0 0";
-$mainYellow = "#d8c47f";
-$mPad = "padding: 16px;"; ?>
+$mainYellow = "#d8c47f";  ?>
 <style>
   body {
     margin: 0;
@@ -325,6 +324,6 @@ $mPad = "padding: 16px;"; ?>
 
   .modal-body,
   .modal-footer {
-    <?php echo $mPad; ?>
+    padding: 16px;
   }
 </style>

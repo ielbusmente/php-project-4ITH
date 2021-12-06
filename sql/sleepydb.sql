@@ -24,12 +24,15 @@ CREATE TABLE `adminuser` (
 CREATE TABLE `product` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
     `name` VARCHAR(255) NOT NULL ,  
-   `description` VARCHAR(255) NOT NULL , 
+   `description` VARCHAR(5000), 
    `price` INT NOT NULL,  
    `category` INT NOT NULL,  
    `size` INT ,  
+   `img` VARCHAR(8000) NOT NULL,
     PRIMARY KEY (`id`)); 
 -- INSERT INTO `inquiry` (`id`, `message`, `date`, `readBool`, `readDate`) VALUES (NULL, 'ASDF', '2021-11-22 10:16:17.000000', '0', '2021-11-22 10:16:17.000000')
 
 
 -- DROP TABLE ` inquiry `
+
+-- INSERT INTO `product` (`id`, `name`, `description`, `price`, `category`, `size`) VALUES (NULL, 'Awesome Eye Mask', 'This is a description nyenye', '123', '1', NULL), (NULL, 'Dope Shorts', 'tada klees here \r\nlife is not dadada', '1000', '3', '0')
