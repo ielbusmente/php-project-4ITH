@@ -4103,9 +4103,6 @@
     width: 75% !important;
   }
 
-  .w-100 {
-    width: 100% !important;
-  }
 
   .w-auto {
     width: auto !important;
@@ -4573,13 +4570,6 @@
   .py-1 {
     padding-top: 0.25rem !important;
     padding-bottom: 0.25rem !important;
-  }
-
-  /* save  */
-
-  .py-3 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
   }
 
   .py-4 {

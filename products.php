@@ -22,8 +22,8 @@ else {
 $productsArr = [];
 // get products from the db 
 include 'php-templates/dbconnect.php';
-$whereSize = $_GET['filter'] === 'sleepwear' ?
-    'WHERE size IS NULL' : ($_GET['filter'] === 'sleepingessentials' ?
+$whereSize = $_GET['filter'] === 'sleepingessentials' ?
+    'WHERE size IS NULL' : ($_GET['filter'] === 'sleepwear' ?
         'WHERE size >= 0 AND size <= 6' : ('WHERE category =' . $_GET['filter']));
 $getProductsSql = "SELECT * FROM product " . ($_GET['filter'] === 'all' ? '' : $whereSize);
 // echo $getProductsSql;
@@ -51,6 +51,41 @@ if ($prodCount > 0) {
     }
 }
 // print_r($productsObjArr);
+$filterTitle = '';
+switch ($_GET['filter']) {
+    case 'all':
+        $filterTitle = 'All Products';
+        break;
+    case 'sleepwear':
+        $filterTitle = 'All Sleepwear';
+        break;
+    case 'sleepingessentials':
+        $filterTitle = 'All Sleeping Essentials';
+        break;
+    case 1:
+        $filterTitle = 'Sleeping Essentials: Eyemasks';
+        break;
+    case 2:
+        $filterTitle = 'Sleeping Essentials: Pillowcases';
+        break;
+    case 3:
+        $filterTitle = 'Sleepwear: Shorts';
+        break;
+    case 4:
+        $filterTitle = 'Sleepwear: Pajama';
+        break;
+    case 5:
+        $filterTitle = 'Sleepwear: Loungewear';
+        break;
+    case 6:
+        $filterTitle = 'Sleepwear: Nightdress';
+        break;
+
+    default:
+        # code...
+        break;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -75,14 +110,21 @@ if ($prodCount > 0) {
     <?php include 'php-templates/products-header.php'; ?>
     <!-- Sidebar -->
 
-    <h1 class="mt-4" style="margin-left:20%; margin-bottom:20px;">All Sleepwear</h1>
+    <h1 class="mt-4" style="margin-left:20%; margin-bottom:20px;"><?php echo $filterTitle ?></h1>
     <div class="row p-0 m-0">
         <?php include 'php-templates/products-sidebar.php'; ?>
         <!-- px-lg-6 ml-4 not in css  -->
         <div class="mt-4 col-md-8 col-12">
             <div class="row gx-4 gx-lg-5 row-cols-md-3 row-cols-2  row-cols-xl-4 justify-content-center p-0 m-0">
-                <?php for ($i = 0; $i < $prodCount; $i++)
-                    echo $productsObjArr[$i]->productDisplayStr($i);
+                <?php
+                if ($prodCount > 0)
+                    for ($i = 0; $i < $prodCount; $i++)
+                        echo $productsObjArr[$i]->productDisplayStr($i);
+                else { ?>
+                    <div class="card p-5 w-100 text-center mt-4">
+                        <?php echo "Alaws Products Available"; ?>
+                    </div>
+                <?php  }
                 ?>
             </div>
         </div>

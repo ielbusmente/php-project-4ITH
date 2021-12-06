@@ -266,6 +266,11 @@
         padding-bottom: 0.5rem !important;
     }
 
+    .py-3 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
     .py-5 {
         padding-top: 3rem !important;
         padding-bottom: 3rem !important;
@@ -282,6 +287,10 @@
 
     .m-3 {
         margin: 1rem !important;
+    }
+
+    .m-5 {
+        margin: 3rem !important;
     }
 
     .mt-4 {
@@ -762,6 +771,10 @@
 
     .h-100 {
         height: 100% !important;
+    }
+
+    .w-100 {
+        width: 100% !important;
     }
 
     .btn {
