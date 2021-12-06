@@ -83,7 +83,7 @@ if ($prodCount > 0) {
                             <p><b>Category:</b> <?php echo $product->getCategory(); ?></p>
                             <?php
                             try {
-                                echo "<p><b>Size:</b>" . $product->getSize() . "</p>";
+                                echo "<p><b>Size: </b>" . $product->getSize() . "</p>";
                             } catch (Error $e) {
                             }
                             ?>
