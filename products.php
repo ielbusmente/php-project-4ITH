@@ -79,7 +79,7 @@ if ($prodCount > 0) {
                         </div>
                         <div class="m-3">
                             <p><b>Php <?php echo $product->getPrice(); ?></b></p>
-                            <p><b>Description:</b> <br /> <?php echo $product->getDescription(); ?></p>
+                            <?php echo $product->getDescription() == null ? '' : '<p><b>Description:</b> <br />' . $product->getDescription() . ' </p>'; ?>
                             <p><b>Category:</b> <?php echo $product->getCategory(); ?></p>
                             <?php
                             try {
