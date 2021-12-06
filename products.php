@@ -1,11 +1,33 @@
 <?php
 include_once "php-templates/classes/Product.php";
 $page = "products";
-
+if (!isset($_GET['filter']))
+    $_GET['filter'] = 'all';
+else {
+    switch ($_GET['filter']) {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+        case 'sleepingessentials':
+        case 'sleepwear':
+        case 'all':
+            break;
+        default:
+            $_GET['filter'] = 'all';
+    }
+}
 $productsArr = [];
 // get products from the db 
 include 'php-templates/dbconnect.php';
-$result = $conn->query("SELECT * FROM product");
+$whereSize = $_GET['filter'] === 'sleepwear' ?
+    'WHERE size IS NULL' : ($_GET['filter'] === 'sleepingessentials' ?
+        'WHERE size >= 0 AND size <= 6' : ('WHERE category =' . $_GET['filter']));
+$getProductsSql = "SELECT * FROM product " . ($_GET['filter'] === 'all' ? '' : $whereSize);
+// echo $getProductsSql;
+$result = $conn->query($getProductsSql);
 if ($result->num_rows > 0)
     while ($row = $result->fetch_assoc())
         array_push($productsArr, $row);

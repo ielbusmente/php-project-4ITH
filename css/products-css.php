@@ -124,6 +124,10 @@
         color: #0a58ca;
     }
 
+    a.disabled {
+        pointer-events: none;
+    }
+
     a:not([href]):not([class]),
     a:not([href]):not([class]):hover {
         color: inherit;
@@ -701,66 +705,6 @@
         }
     }
 
-    /* 
-    @media(min-width:991px) {
-        .card {
-            width: 240px;
-            display: inline-block;
-            height: 350px
-        }
-
-         .card-img-top {
-            width: 240px;
-            height: 250px
-        }  
-
-    }
-
-    @media(min-width:768px) and (max-width:991px) {
-
-        .card {
-            width: 230px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px
-        }
-
-        .card-img-top {
-            width: 230px;
-            height: 210px
-        }
-    } 
-
-    @media(min-width:568px) and (max-width:767px) {
-        .card {
-            width: 205px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px
-        }
-
-        .card-img-top {
-            width: 203px;
-            height: 210px
-        }
-    }
-
-    @media(max-width:567px) {
-
-        .card {
-            width: 230px;
-            display: inline-block;
-            height: 300px;
-            margin-bottom: 10px;
-            margin-top: 10px
-        }
-
-        .card-img-top {
-            width: 230px;
-            height: 210px
-        }
-    }
-*/
     .card {
         position: relative;
         display: flex;
@@ -936,7 +880,6 @@
         -webkit-animation-duration: 0.4s;
         animation-name: animatetop;
         animation-duration: 0.4s;
-        /* height: 80vh; */
     }
 
     /* Add Animation */
@@ -963,32 +906,6 @@
             opacity: 1
         }
     }
-
-    /* The Close Button */
-    /* .close {
-        color: #ddd;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-    } */
-
-    /* 
-    .modal-header {
-        background-color: <?php // echo $mainYellow; 
-                            ?>;
-        color: white;
-        <?php //echo $mPad; 
-        ?>
-    } 
-    , .modal-footer
-    */
 
     .modal-body {
         padding: 16px;
