@@ -25,7 +25,7 @@ class Inquiry extends DBInstance
         include 'php-templates/dbconnect.php';
         $id = mysqli_real_escape_string($conn, (($this->id) === NULL) ? 'NULL' : "'" . $this->id . "'");
         $senderEmail = "'" . mysqli_real_escape_string($conn, $this->senderEmail) . "'";
-        $date =  mysqli_real_escape_string($conn, (($this->date) === NULL) ? 'NULL' : "'" . $this->date . "'");
+        $date = "'" .   mysqli_real_escape_string($conn, (($this->date) === NULL) ? 'NULL' : $this->date) . "'";
         $name = "'" . mysqli_real_escape_string($conn, $this->name) . "'";
         $message = "'" . mysqli_real_escape_string($conn, $this->message) . "'";
         $readBool = mysqli_real_escape_string($conn, $this->read[0]);

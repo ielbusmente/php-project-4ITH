@@ -1,14 +1,16 @@
  <?php
-    date_default_timezone_set('Asia/Singapore');
+    // date_default_timezone_set('Asia/Singapore');
     include_once 'php-templates/classes/Inquiry.php';
     include_once 'php-templates/classes/Administrator.php';
     include 'php-templates/db.php';
     $page = "contact";
 
     if (isset($_POST['insert']))
-        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message']))
+        if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+            $_POST['insert'] = null;
             insertInquiry([$_POST['name'], $_POST['email'], $_POST['message']]);
-    // echo "<script>alert('hi')</script>";
+        }
+    // echo "<script>alert('" . $_POST['name'] . " " . $_POST['email'] . " " . $_POST['message'] . "')</script>";
     ?>
  <!DOCTYPE html>
  <html lang="en">
