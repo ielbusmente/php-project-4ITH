@@ -25,7 +25,7 @@
         <h6 class="p-1 border-bottom">Shop By Essentials</h6>
         <ul>
             <li><a class="<?php echo $_GET['filter'] === "sleepingessentials" ? "active disabled" : "" ?>" href="products.php?filter=sleepingessentials&search=<?php echo $searchStr ?>">All</a></li>
-            <li><a class="<?php echo $_GET['filter'] === "1" ? "active disabled" : "" ?>" href="products.php?filter=1&search=<?php echo $searchStr ?>">Eyemask</a></li>
+            <li><a class="<?php echo $_GET['filter'] === "1" ? "active disabled" : "" ?>" href="products.php?filter=1&search=<?php echo $searchStr ?>">Eye Mask</a></li>
             <li><a class="<?php echo $_GET['filter'] === "2" ? "active disabled" : "" ?>" href="products.php?filter=2&search=<?php echo $searchStr ?>">Pillowcase</a></li>
         </ul>
     </div>

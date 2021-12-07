@@ -13,15 +13,6 @@
     <?php include "css/index-css.php" ?>
     <!-- Core theme CSS (includes Bootstrap)-->
     <?php include "css/styles-css.php" ?>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-    $(function(){
-        $('.fadein img:gt(0)').hide();
-        setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 5000);
-    });
-    </script>
 </head>
 
 <body>
@@ -101,23 +92,23 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                        <h3>Fully Responsive</h3>
-                        <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/handwash.png" width="100" class="m-auto text-primary" alt=""></div>
+                        <h3 style="color: #bfad6d">hand wash only</h3>
+                        <!-- <p class="lead mb-0">hand wash only</p> -->
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                        <h3>Bootstrap 5 Ready</h3>
-                        <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/detergent.png" width="100" class="m-auto text-primary" alt=""></div>
+                        <h3 style="color: #bfad6d">use mild detergent</h3>
+                        <!-- <p class="lead mb-0">use mild detergent</p> -->
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                        <h3>Easy to Use</h3>
-                        <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/bleach.png" width="100" class="m-auto text-primary" alt=""></div>
+                        <h3 style="color: #bfad6d">no bleach</h3>
+                        <!-- <p class="lead mb-0">no bleach</p> -->
                     </div>
                 </div>
             </div>
@@ -126,6 +117,16 @@
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $('.fadein img:gt(0)').hide();
+        setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 5000);
+    });
+    </script>
 
 </body>
 

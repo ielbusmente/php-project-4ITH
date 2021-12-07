@@ -108,22 +108,22 @@ switch ($_GET['filter']) {
         $filterTitle = 'All Sleeping Essentials';
         break;
     case 1:
-        $filterTitle = 'Sleeping Essentials: Eyemasks';
+        $filterTitle = 'Sleeping Essentials - Eye Mask';
         break;
     case 2:
-        $filterTitle = 'Sleeping Essentials: Pillowcases';
+        $filterTitle = 'Sleeping Essentials - Pillowcase';
         break;
     case 3:
-        $filterTitle = 'Sleepwear: Shorts';
+        $filterTitle = 'Sleepwear - Shorts';
         break;
     case 4:
-        $filterTitle = 'Sleepwear: Pajama';
+        $filterTitle = 'Sleepwear - Pajama';
         break;
     case 5:
-        $filterTitle = 'Sleepwear: Loungewear';
+        $filterTitle = 'Sleepwear - Loungewear';
         break;
     case 6:
-        $filterTitle = 'Sleepwear: Nightdress';
+        $filterTitle = 'Sleepwear - Nightdress';
         break;
     default:
         $filterTitle = '';
@@ -151,8 +151,8 @@ switch ($_GET['filter']) {
     <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
     <?php include 'php-templates/products-header.php'; ?>
-    <!-- Sidebar -->
 
+    <!-- Sidebar -->
     <div class="row">
         <div class="col-md-3">
         </div>
@@ -171,7 +171,7 @@ switch ($_GET['filter']) {
                         echo $productsObjArr[$i]->productDisplayStr($i);
                 else { ?>
                     <div class="card p-5 w-100 text-center mt-4">
-                        <?php echo "Alaws Products Available"; ?>
+                        <?php echo "No Products Available"; ?>
                     </div>
                 <?php  }
                 ?>
@@ -210,6 +210,7 @@ switch ($_GET['filter']) {
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
+    
     <script>
         <?php
         for ($i = 0; $i < $prodCount; $i++) {

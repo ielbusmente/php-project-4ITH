@@ -74,42 +74,47 @@
 
             <div class="row text-center justify-content-center">
                 <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="assets/devs/daneah.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
+                    <div class="bg-white rounded shadow py-5 px-4"><img src="assets/devs/daneah.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Daneah Marelle M. Sarmiento</h5><span class="small text-uppercase text-muted"> Developer</span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
+                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
+                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
                     </div>
                 </div>
                 <!-- End-->
 
                 <!-- Team item-->
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
+                    <div class="bg-white rounded shadow py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Edward Daniel J. Busmente</h5><span class="small text-uppercase text-muted"> Developer </span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
+                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
+                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
                     </div>
                 </div>
                 <!-- End-->
 
                 <!-- Team item-->
 
-                <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
+                    <div class="bg-white rounded shadow py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Richmond Andrei E. Francisco</h5><span class="small text-uppercase text-muted"> Developer </span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
+                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
+                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
                     </div>
                 </div>
                 <!-- End-->
