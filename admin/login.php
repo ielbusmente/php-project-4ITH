@@ -95,6 +95,7 @@ if (isset($_POST['submit'])) {
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
         <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
       </form>
+      <a href="forgot-pass.php">Forgot Password?</a>
 
     </div>
   </div>

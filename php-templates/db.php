@@ -3,14 +3,16 @@ function insertInquiry($inp)
 {
     include('dbconnect.php');
     $inq = new Inquiry(null, $inp[2], null, $inp[0], $inp[1]);
-    if (!$conn->query($inq->insertStr())) {
+    $gumanaBa = $conn->query($inq->insertStr());
+    // echo $gumanaBa;
+    if (!$gumanaBa) {
         echo "<script>alert('Error: " . $conn->error . "')</script>";
     } else {
         echo "<script>alert('Message Sent!')</script>";
         //get all adminusers
-        $adminUsersObjArr = getAdminUserEmails();
+        // $adminUsersObjArr = getAdminUserEmails();
         // email them all
-        include "phpmailer/send-notif-mail.php";
+        // include "phpmailer/send-notif-mail.php";
         // header("Location:contact.php");
     }
 
