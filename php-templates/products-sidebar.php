@@ -1,5 +1,5 @@
-<section class='col-md-3 col-12 p-5'>
-    <div style="margin-top: 30px;">
+<section class='col-md-3 col-12 px-5 pt-4' style="margin-bottom: 150px;">
+    <div>
         <form method="get" class='d-flex w-100' title='Press Enter after typing'>
             <input id="search-box" type="search" class="p-2" name='search' placeholder="Search and Press Enter" value="<?php echo $searchStr ?>">
             <button type="submit" class="btn search-icon"><i class="bi bi-search w-100"></i></button>

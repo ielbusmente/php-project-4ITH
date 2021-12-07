@@ -261,8 +261,27 @@
         padding: 3rem !important;
     }
 
-    .pt-0 {
+    .pt-1 {
+        padding: 0.25rem !important;
+    }
+
+    .p-0 {
         padding-top: 0 !important;
+    }
+    .pt-2 {
+        padding-top: 0.5rem !important;
+    }
+
+    .pt-3 {
+        padding-top: 1rem !important;
+    }
+
+    .pt-4 {
+        padding-top: 1.5rem !important;
+    }
+
+    .pt-5 {
+        padding-top: 3rem !important;
     }
 
     .py-2 {
@@ -283,6 +302,12 @@
     .px-4 {
         padding-right: 1.5rem !important;
         padding-left: 1.5rem !important;
+    }
+
+    
+    .px-5 {
+        padding-right: 3rem !important;
+        padding-left: 3rem !important;
     }
 
     .m-0 {
@@ -871,7 +896,6 @@
         background-color: transparent;
     }
 
-
     /* modal  */
     /* The Modal (background) */
     .modal {
@@ -889,6 +913,28 @@
         background-color: rgba(0, 0, 0, 0.4);
 
     }
+
+    
+  .modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+  }
+
+  .modal-header .btn-close {
+    padding: 0.5rem 0.5rem;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+  }
+
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
 
     /* Modal Content */
     .modal-content {
