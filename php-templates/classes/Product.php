@@ -59,7 +59,7 @@ class Product extends DBInstance
             <img class="card-img-top" src="' . $this->img . '" alt="' . $index . ' ' . $this->name . '" />
             <div class="card-body p-4 text-center">
                 <h5 class="fw-bolder" style="color:#d8c47f;">' . $this->name . '</h5>
-                Php ' . $this->price . '
+                ₱ ' . $this->price . '
             </div>
             <!-- Product actions-->
              <div class="text-center p-4 pt-0">

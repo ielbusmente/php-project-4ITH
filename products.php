@@ -194,7 +194,7 @@ switch ($_GET['filter']) {
                             <img style="max-width: 60%; " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
                         </div>
                         <div class="m-3">
-                            <p><b>Php <?php echo $product->getPrice(); ?></b></p>
+                            <p><b>₱ <?php echo $product->getPrice(); ?></b></p>
                             <?php echo $product->getDescription() == null ? '' : '<p><b>Description:</b> <br />' . $product->getDescription() . ' </p>'; ?>
                             <p><b>Category:</b> <?php echo $product->getCategory(); ?></p>
                             <?php
