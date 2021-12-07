@@ -128,11 +128,6 @@ $mainYellow = "#d8c47f";  ?>
     color: <?php echo $mainYellow; ?>;
   }
 
-  .incoming_msg_img {
-    display: inline-block;
-    width: 6%;
-  }
-
   .time_date {
     color: #747474;
     display: block;
@@ -141,6 +136,23 @@ $mainYellow = "#d8c47f";  ?>
   }
 
   .received_withd_msg {
+    width: 100%;
+  }
+
+  .received_msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 92%;
+  }
+
+  .received_withd_msg p {
+    background: #ebebeb none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 20px;
     width: 100%;
   }
 

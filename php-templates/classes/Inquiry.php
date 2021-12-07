@@ -89,7 +89,7 @@ class Inquiry extends DBInstance
     public function getReadDate()
     {
         if ($this->isRead())
-            return $this->read[1];
+            return (new DateTime($this->read[1]))->format('M j, Y | g:i A');
         return "Not Read";
     }
 }

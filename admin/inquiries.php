@@ -1,10 +1,7 @@
 <?php
+date_default_timezone_set('Asia/Singapore');
 $replyAlert = '';
 $page = 'inbox';
-// if (headers_sent()) {
-//     header_remove();
-//     header('inquiries.php');
-// }
 include 'php-templates/base.php';
 //profile errors clear
 // if (isset($_COOKIE['error1'])) {
@@ -135,17 +132,18 @@ if (isset($_POST['delete'])) {
                     <h3 class="inq-name">
                         <b><?php
                             $currentInqName = $inquiriesObjArr[$userIndex]->getName();
+                            $readDate = $inquiriesObjArr[$userIndex]->getReadDate();
+                            $readViewedMsg = $readDate === 'Not Read';
                             echo $currentInqName;  ?></b>
                     </h3>
                     <h5 class="inq-name mb-5">
                         <?php echo ($inquiriesObjArr[$userIndex]->getSenderEmail());  ?>
                     </h5>
-                    <div class="incoming_msg">
-                        <div class="received_msg">
-                            <div class="received_withd_msg">
-                                <p><?php echo $inquiriesObjArr[$userIndex]->getMsg() ?></p>
-                                <span class="time_date"><?php echo $inquiriesObjArr[$userIndex]->getMonthDateTime() ?></span>
-                            </div>
+                    <div class="received_msg" title="<?php echo $readViewedMsg ? '' : ("Read " . $readDate) ?>">
+                        <div class="received_withd_msg">
+                            <p><?php echo $inquiriesObjArr[$userIndex]->getMsg() ?></p>
+                            <span class="time_date"><?php echo $inquiriesObjArr[$userIndex]->getMonthDateTime()
+                                                        . ($readViewedMsg ? '' : (' - - <i>Read: ' . $readDate . '</i>')) ?></span>
                         </div>
                     </div>
                 </div>
@@ -193,7 +191,7 @@ if (isset($_POST['delete'])) {
                         // $dateTime = new DateTime($inq['date']);
                         // echo $dateTry->format('M j, Y | g:i A');  
                         echo "<a " . ($i === $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i&read=" .
-                            ($inqRead ? 1 : 0) . "\"") . "><div class=\"chat_list " .
+                            ($inqRead ? 1 : 0) . "\"") . " title=\"" . ($inqRead ? '' : 'Unread Message') . "\"><div class=\"chat_list " .
                             ($i === $_GET['id'] ? "active_chat" : "") . "\">
                                     <div class=\"chat_people\">
                                     <div class=\"chat_ib " .
