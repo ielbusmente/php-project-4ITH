@@ -1,5 +1,5 @@
-<section class='col-md-3 col-12 p-5'>
-    <div style="margin-top: 30px;">
+<section class='col-md-3 col-12 px-5 pt-4' style="margin-bottom: 150px;">
+    <div>
         <form method="get" class='d-flex w-100' title='Press Enter after typing'>
             <input id="search-box" type="search" class="p-2" name='search' placeholder="Search and Press Enter" value="<?php echo $searchStr ?>">
             <button type="submit" class="btn search-icon"><i class="bi bi-search w-100"></i></button>
@@ -25,7 +25,7 @@
         <h6 class="p-1 border-bottom">Shop By Essentials</h6>
         <ul>
             <li><a class="<?php echo $_GET['filter'] === "sleepingessentials" ? "active disabled" : "" ?>" href="products.php?filter=sleepingessentials&search=<?php echo $searchStr ?>">All</a></li>
-            <li><a class="<?php echo $_GET['filter'] === "1" ? "active disabled" : "" ?>" href="products.php?filter=1&search=<?php echo $searchStr ?>">Eyemask</a></li>
+            <li><a class="<?php echo $_GET['filter'] === "1" ? "active disabled" : "" ?>" href="products.php?filter=1&search=<?php echo $searchStr ?>">Eye Mask</a></li>
             <li><a class="<?php echo $_GET['filter'] === "2" ? "active disabled" : "" ?>" href="products.php?filter=2&search=<?php echo $searchStr ?>">Pillowcase</a></li>
         </ul>
     </div>

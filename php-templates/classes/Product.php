@@ -63,7 +63,7 @@ class Product extends DBInstance
             </div>
             <!-- Product actions-->
              <div class="text-center p-4 pt-0">
-                <button class="btn btn-outline-dark mt-auto px-4" id="product_view_' . $index . '"> View </button>
+                <button class="btn btn-outline-dark mt-auto px-4" id="product_view_' . $index . '"> View Product </button>
             </div>  
         </div>
         </div> ';

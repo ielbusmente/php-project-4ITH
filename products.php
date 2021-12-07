@@ -108,22 +108,22 @@ switch ($_GET['filter']) {
         $filterTitle = 'All Sleeping Essentials';
         break;
     case 1:
-        $filterTitle = 'Sleeping Essentials: Eyemasks';
+        $filterTitle = 'Sleeping Essentials - Eye Mask';
         break;
     case 2:
-        $filterTitle = 'Sleeping Essentials: Pillowcases';
+        $filterTitle = 'Sleeping Essentials - Pillowcase';
         break;
     case 3:
-        $filterTitle = 'Sleepwear: Shorts';
+        $filterTitle = 'Sleepwear - Shorts';
         break;
     case 4:
-        $filterTitle = 'Sleepwear: Pajama';
+        $filterTitle = 'Sleepwear - Pajama';
         break;
     case 5:
-        $filterTitle = 'Sleepwear: Loungewear';
+        $filterTitle = 'Sleepwear - Loungewear';
         break;
     case 6:
-        $filterTitle = 'Sleepwear: Nightdress';
+        $filterTitle = 'Sleepwear - Nightdress';
         break;
     default:
         $filterTitle = '';
@@ -151,8 +151,8 @@ switch ($_GET['filter']) {
     <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
     <?php include 'php-templates/products-header.php'; ?>
-    <!-- Sidebar -->
 
+    <!-- Sidebar -->
     <div class="row">
         <div class="col-md-3">
         </div>
@@ -171,7 +171,7 @@ switch ($_GET['filter']) {
                         echo $productsObjArr[$i]->productDisplayStr($i);
                 else { ?>
                     <div class="card p-5 w-100 text-center mt-4">
-                        <?php echo "Alaws Products Available"; ?>
+                        <?php echo "No Products Available"; ?>
                     </div>
                 <?php  }
                 ?>
@@ -184,11 +184,14 @@ switch ($_GET['filter']) {
     ?>
         <div id="<?php echo "product_modal$i" ?>" class="modal">
             <div class="modal-content">
+                <div class="modal-header">
+                    <span onclick="document.getElementById('<?php echo "product_modal$i"?>').style.display='none'" class="close btn-close pull-right"></span>
+                </div>
                 <div class="modal-body m-3">
-                    <h2 class="text-center"><?php echo $prodName ?></h2>
+                <h2 class="text-center"><?php echo $prodName ?></h2>
                     <div class="p-3 d-flex list-group-vertical card">
                         <div class="text-center m-3 w-100 ">
-                            <img style="max-width: 80%;    " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
+                            <img style="max-width: 60%; " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
                         </div>
                         <div class="m-3">
                             <p><b>Php <?php echo $product->getPrice(); ?></b></p>
@@ -210,6 +213,7 @@ switch ($_GET['filter']) {
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
+    
     <script>
         <?php
         for ($i = 0; $i < $prodCount; $i++) {
@@ -237,6 +241,7 @@ switch ($_GET['filter']) {
             }
             ?>
         }
+        
         // const butt = document.getElementById('product_view_0')
         // butt.onclick = function() {
         //     alert('fuck')
