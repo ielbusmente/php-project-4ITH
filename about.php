@@ -68,7 +68,7 @@
         <div class="container py-5">
             <div class="row mb-4">
                 <div class="col-lg-5">
-                    <h2 class="display-4 font-weight-light">Meet the Developers</h2>
+                    <h2 class="display-4 font-weight-light">Meet the Team</h2>
                 </div>
             </div>
 
@@ -76,17 +76,17 @@
                 <?php
                 $devs = ['Daneah Marelle M. Sarmiento', 'Edward Daniel J. Busmente', 'Richmond Andrei E. Francisco'];
                 $fb = [
-                    'https://www.facebook.com',
+                    'https://www.facebook.com/nmsarm/',
                     'https://www.facebook.com/daniel.bsmnt/',
                     'https://www.facebook.com'
                 ];
                 $ins = [
-                    'https://www.instagram.com',
+                    'https://www.instagram.com/nmsarm/',
                     'https://www.instagram.com/ielbusmente/',
                     'https://www.instagram.com'
                 ];
                 $li = [
-                    'https://www.linkedin.com',
+                    'https://www.linkedin.com/in/daneahsarmiento/',
                     'https://www.linkedin.com/in/daniel-busmente-23544720b/',
                     'https://www.linkedin.com'
                 ];
