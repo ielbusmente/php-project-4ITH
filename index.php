@@ -28,8 +28,8 @@
                     <div class="col-md-7 col-12 order-md-1 order-2" style="top: 190px;">
                         <h4>High-Quality <br>
                             Sleeping Essentials <br>Just For You</h4>  
-                        <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                            necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
+                        <p>Providing you with comfy and classy sleepwears without breaking your pocket!</p>
+                        <p>DTI Registered.</p>
                         <a href="products.php">View Products</a> 
                     </div>
                     <div class="mySlides fadein col-md-5 col-12 order-md-2 order-1 ">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="category-box">
-                        <a href="products.php">
+                        <a href="products.php?filter=sleepwear&search=">
                             <img src="assets/img/2.jpg" alt="" />
                             <div class="content">
                                 <h3>Sleepwear</h3>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="category-box">
-                        <a href="products-essentials.php">
+                        <a href="products.php?filter=sleepingessentials&search=">
                             <img src="assets/img/pillowcase3.jpg" alt="" />
                             <div class="content">
                                 <h3>Essentials</h3>
@@ -90,27 +90,18 @@
     <section class="features-icons bg-light text-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/handwash.png" width="100" class="m-auto text-primary" alt=""></div>
-                        <h3 style="color: #bfad6d">hand wash only</h3>
-                        <!-- <p class="lead mb-0">hand wash only</p> -->
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/detergent.png" width="100" class="m-auto text-primary" alt=""></div>
-                        <h3 style="color: #bfad6d">use mild detergent</h3>
-                        <!-- <p class="lead mb-0">use mild detergent</p> -->
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex mb-4"><img src="assets/icons/bleach.png" width="100" class="m-auto text-primary" alt=""></div>
-                        <h3 style="color: #bfad6d">no bleach</h3>
-                        <!-- <p class="lead mb-0">no bleach</p> -->
-                    </div>
-                </div>
+                <?php
+                    $img = ['assets/icons/handwash.png','assets/icons/detergent.png','assets/icons/bleach.png'];
+                    $h3 = [ 'hand wash only','use mild detergent','no bleach'];
+                    for ($i = 0; $i < 3; $i++) {
+                    ?>
+                        <div class="col-lg-4">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <div class="features-icons-icon d-flex mb-4"><img src="<?php echo $img[$i] ?>" width="100" class="m-auto text-primary" alt=""></div>
+                                <h3 style="color: #bfad6d"><?php echo $h3[$i] ?></h3>
+                            </div>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
     </section>
