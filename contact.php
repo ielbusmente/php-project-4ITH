@@ -8,6 +8,7 @@
     if (isset($_POST['insert']))
         if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message']))
             insertInquiry([$_POST['name'], $_POST['email'], $_POST['message']]);
+    // echo "<script>alert('hi')</script>";
     ?>
  <!DOCTYPE html>
  <html lang="en">
