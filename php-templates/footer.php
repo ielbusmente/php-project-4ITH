@@ -28,6 +28,10 @@
             <i class="bi bi-geo-alt-fill"></i>&nbsp; 
             Taytay, Rizal
           </p>
+          <p class="text-white">
+            <i class="bi bi-envelope"></i>&nbsp; 
+            sleepyphp@gmail.com
+          </p>
         </div>
         <!--Grid column-->
 

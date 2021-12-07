@@ -25,7 +25,6 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center">
                 <h1 class="display-4 fw-bolder about-font">About Us</h1>
-                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
             </div>
         </div>
     </header>
@@ -36,10 +35,9 @@
                 <div class="col-lg-6 d-none d-lg-block"><img width="100%" src="assets/img/sleepymoon.png" alt="" class="img-fluid"></div>
                 <div class="col-lg-6">
                     <h1 class="display-4">SLEEPY</h1>
-                    <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.</p>
+                    <p class="lead text-muted mb-0">SLeepy was founded by SL. Because of her love for sleeping and classy sleepwears, she was inspired to launch her own line of high 
+                        quality sleeping essentials at an affordable price. All fabrics are hand-picked and sourced locally. Each product are proudly made locally and the quality 
+                        is ensured for the comfort of everyone.</p>
                 </div>
 
 
@@ -65,20 +63,19 @@
         </div>
         </div>
     </div> -->
-
+  
     <div class="bg-light py-5">
         <div class="container py-5">
             <div class="row mb-4">
                 <div class="col-lg-5">
                     <h2 class="display-4 font-weight-light">Meet the Developers</h2>
-                    <!-- <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                 </div>
             </div>
 
             <div class="row text-center justify-content-center">
                 <!-- Team item-->
                 <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="assets/devs/daneah.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Daneah Marelle M. Sarmiento</h5><span class="small text-uppercase text-muted"> Developer</span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -91,7 +88,7 @@
 
                 <!-- Team item-->
                 <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Edward Daniel J. Busmente</h5><span class="small text-uppercase text-muted"> Developer </span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -105,7 +102,7 @@
                 <!-- Team item-->
 
                 <div class="col-xl-3 col-sm-6 mb-5">
-                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">Richmond Andrei E. Francisco</h5><span class="small text-uppercase text-muted"> Developer </span>
                         <ul class="social mb-0 list-inline mt-3">
                             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
@@ -115,20 +112,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- End-->
-
-                <!-- Team item-->
-                <!-- <div class="col-xl-3 col-sm-6 mb-5">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
-                <ul class="social mb-0 list-inline mt-3">
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-            </div> -->
                 <!-- End-->
 
             </div>

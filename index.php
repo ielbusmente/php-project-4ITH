@@ -1,5 +1,4 @@
-<?php $page = "home";
-?>
+<?php $page = "home"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +36,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-7 col-12 order-md-1 order-2" style="top: 190px;">
                         <h4>High-Quality <br>
-                            Sleeping Essentials <br>Just For You</h4>
+                            Sleeping Essentials <br>Just For You</h4>  
                         <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                             necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
                         <a href="products.php">View Products</a> 
@@ -57,45 +56,43 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                </div>
-               
+                </div>         
             </div>
         </div>
-    </div>
+    </div> 
     <!--slide end--> 
-
-    
-<section class="product-category section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="title text-center">
-					<h2> Product Categories </h2>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box">
-					<a href="products.php">
-						<img src="assets/img/2.jpg" alt="" />
-						<div class="content">
-							<h3>Sleepwear</h3>
-						</div>
-					</a>	
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box">
-					<a href="products-essentials.php">
-						<img src="assets/img/pillowcase3.jpg" alt="" />
-						<div class="content">
-							<h3>Essentials</h3>
-						</div>
-					</a>	
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+        
+    <section class="product-category section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title text-center">
+                        <h2> Product Categories </h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="category-box">
+                        <a href="products.php">
+                            <img src="assets/img/2.jpg" alt="" />
+                            <div class="content">
+                                <h3>Sleepwear</h3>
+                            </div>
+                        </a>	
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="category-box">
+                        <a href="products-essentials.php">
+                            <img src="assets/img/pillowcase3.jpg" alt="" />
+                            <div class="content">
+                                <h3>Essentials</h3>
+                            </div>
+                        </a>	
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Icons Grid-->
