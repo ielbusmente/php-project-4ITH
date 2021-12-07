@@ -1,13 +1,8 @@
 <?php
 $page = 'profile';
 include 'php-templates/base.php';
+include_once '../php-templates/unsupported-functions/str_contains_function.php';
 
-if (!function_exists('str_contains')) {
-    function str_contains(string $haystack, string $needle): bool
-    {
-        return '' === $needle || false !== strpos($haystack, $needle);
-    }
-}
 if (isset($_POST['profile-mod'])) {
     $_POST['profile-mod'] = null;
     $errors = [];

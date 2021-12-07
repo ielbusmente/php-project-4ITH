@@ -192,9 +192,9 @@ if (isset($_POST['delete'])) {
                         $inqRead = $inq->isRead();
                         // $dateTime = new DateTime($inq['date']);
                         // echo $dateTry->format('M j, Y | g:i A');  
-                        echo "<a " . ($i == $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i&read=" .
+                        echo "<a " . ($i === $_GET['id'] ? "type=\"button\" style=\"width:100%;\"" : "href=\"inquiries.php?id=$i&read=" .
                             ($inqRead ? 1 : 0) . "\"") . "><div class=\"chat_list " .
-                            ($i == $_GET['id'] ? "active_chat" : "") . "\">
+                            ($i === $_GET['id'] ? "active_chat" : "") . "\">
                                     <div class=\"chat_people\">
                                     <div class=\"chat_ib " .
                             ($inqRead ?  "" : "unread") . "\"><h5>" .
