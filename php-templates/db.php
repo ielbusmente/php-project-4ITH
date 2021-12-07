@@ -1,19 +1,29 @@
 <?php
+
 function insertInquiry($inp)
 {
+    date_default_timezone_set('Asia/Singapore');
     include('dbconnect.php');
-    $inq = new Inquiry(null, $inp[2], null, $inp[0], $inp[1]);
-    $gumanaBa = $conn->query($inq->insertStr());
+    $inq = new Inquiry(null, $inp[2], ((new DateTime())->format('Y-m-d H:i:s')), $inp[0], $inp[1]);
+    $sqlStr = $inq->insertStr();
+    $gumanaBa = $conn->query($sqlStr);
     // echo $gumanaBa;
     if (!$gumanaBa) {
         echo "<script>alert('Error: " . $conn->error . "')</script>";
     } else {
-        echo "<script>alert('Message Sent!')</script>";
+        echo "<script>
+            alert('Message Sent!') 
+        </script> 
+        ";
+
         //get all adminusers
         // $adminUsersObjArr = getAdminUserEmails();
         // email them all
         // include "phpmailer/send-notif-mail.php";
-        // header("Location:contact.php");
+        echo "<script> 
+        window.location.href = \"index.php\";
+    </script> 
+    ";
     }
 
     // echo $inq->insertStr();
