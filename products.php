@@ -188,7 +188,7 @@ switch ($_GET['filter']) {
                     <h2 class="text-center"><?php echo $prodName ?></h2>
                     <div class="p-3 d-flex list-group-vertical card">
                         <div class="text-center m-3 w-100 ">
-                            <img style="max-width: 80%;    " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
+                            <img style="max-width: 60%;    " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
                         </div>
                         <div class="m-3">
                             <p><b>Php <?php echo $product->getPrice(); ?></b></p>
