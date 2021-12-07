@@ -19,7 +19,10 @@ if (isset($_SESSION['sessionId'])) {
 // echo $admin; 
 if (isset($_POST['submit'])) {
   $_POST['submit'] = null;
+
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    if (isset($_COOKIE['user-email'])) unset($_COOKIE['user-email']);
+    setcookie('user-email', $_POST['email'], time() + 60);
     include '../php-templates/dbconnect.php';
 
     $user = new Administrator(null, $_POST['email'], $_POST['password'], null, null);
@@ -91,7 +94,7 @@ if (isset($_POST['submit'])) {
       }
       ?>
       <form method="POST">
-        <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required>
+        <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required value="<?php echo $_COOKIE['user-email'] ?? '' ?>">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
         <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
       </form>

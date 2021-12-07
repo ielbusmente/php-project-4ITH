@@ -4,22 +4,22 @@ if (isset($_POST['forgot'])) {
     $sql = "SELECT id FROM adminuser WHERE email = '" . $_POST['email'] . "'";
     // echo $sql;
     $res = $conn->query($sql);
-
+    if (isset($_COOKIE['error-fp'])) unset($_COOKIE['error-fp']);
     if ($res->num_rows === 1) {
-        if (isset($_COOKIE['error-fp'])) unset($_COOKIE['error-fp']);
         $code = rand(100000, 999999);
         include '../php-templates/dbconnect.php';
         $conn->query("UPDATE `adminuser` SET `reset-pass-code` = $code");
         $conn->close();
-        // include '../phpmailer/send-reset-pass-mail.php';
+        include '../phpmailer/send-reset-pass-mail.php';
 
-        // echo '<script>alert("Please check your email! ' . $code . '")
-        // window.location.href = "index.php"
-        // </script>';
-        echo "<a href='http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "'>Click Here</a>";
+        echo '<script>alert("Please check your email!")
+        window.location.href = "index.php"
+        </script>';
+        // echo "<a href='http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "'>Click Here</a>";
     } else {
-        if (isset($_COOKIE['error-fp'])) unset($_COOKIE['error-fp']);
         setcookie('error-fp', "No such Email in the Database", time() + 60);
+        if (isset($_COOKIE['reset-pass-user-email'])) unset($_COOKIE['reset-pass-user-email']);
+        setcookie('reset-pass-user-email',  $_POST['email'], time() + 60);
         header('Location: forgot-password.php');
     }
 }
@@ -53,7 +53,7 @@ if (isset($_POST['forgot'])) {
             }
             ?>
             <form method="POST">
-                <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required>
+                <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required value="<?php echo $_COOKIE['reset-pass-user-email'] ?? '' ?>">
                 <input type="submit" name="forgot" class="fadeIn fourth" value="Get Reset Password Link">
             </form>
             <div id="formFooter">
