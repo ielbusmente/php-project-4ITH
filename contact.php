@@ -33,7 +33,7 @@
      <section class="bg-light py-5">
          <div class="container px-5 my-5 px-5">
              <div class="text-center mb-5">
-                 <div class="feature bg-gradient text-white rounded-3 mb-3" style="background-color: #d8c47f !important;"><i class="bi bi-envelope"></i></div>
+                 <div class="feature bg-gradient text-white rounded-3 mb-3 hover-tilt" style="background-color: #d8c47f !important;"><i class="bi bi-envelope"></i></div>
                  <h2 class="fw-bolder">Contact Us!</h2>
                  <p class="lead mb-0">We'd love to hear from you</p>
              </div>
@@ -72,7 +72,7 @@
                              </div>
                          </div>
                          <!-- Submit Button-->
-                         <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" name='insert' type="submit">Submit</button></div>
+                         <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" name='insert' type="submit"><span class="hover-enlarge">Submit</span></button></div>
                      </form>
                  </div>
              </div>
