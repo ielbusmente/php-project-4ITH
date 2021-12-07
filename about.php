@@ -78,29 +78,28 @@
                 $fb = [
                     'https://www.facebook.com',
                     'https://www.facebook.com/daniel.bsmnt/',
-                    'https://www.facebook.com'
+                    'https://www.facebook.com.richmondfran33'
                 ];
                 $ins = [
                     'https://www.instagram.com',
                     'https://www.instagram.com/ielbusmente/',
-                    'https://www.instagram.com'
+                    'https://www.instagram.com/_.dreeeiii/'
                 ];
                 $li = [
                     'https://www.linkedin.com',
                     'https://www.linkedin.com/in/daniel-busmente-23544720b/',
-                    'https://www.linkedin.com'
+                    'https://www.linkedin.com/in/richmond-andrei-francisco-4b092a224/'
                 ];
                 $desc = [
                     'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
                             necessitatibus praesentium voluptatum deleniti atque corrupti.',
                     'As a 4th-year student, developing this project was an exciting thing to finish considering there is a lot new to me. It makes me want to learn more about programming and software development.',
-                    'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
-                            necessitatibus praesentium voluptatum deleniti atque corrupti.'
+                    'Developing this project using PHP codes can be challenging and fun at the same time, but there are a lot of new things that can be learned through this.'
                 ];
                 $img = [
                     'assets/devs/daneah.jpg',
                     'assets/devs/daniel.png',
-                    'assets/devs/'
+                    'assets/devs/richmond.jpg'
                 ];
                 for ($i = 0; $i < 3; $i++) {
                 ?>
