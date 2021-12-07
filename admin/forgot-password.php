@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+if (isset($_SESSION['sessionId'])) {
+    header('Location: inquiries.php');
+}
 if (isset($_POST['forgot'])) {
     include '../php-templates/dbconnect.php';
     $sql = "SELECT id FROM adminuser WHERE email = '" . $_POST['email'] . "'";
@@ -10,6 +15,10 @@ if (isset($_POST['forgot'])) {
         include '../php-templates/dbconnect.php';
         $conn->query("UPDATE `adminuser` SET `reset-pass-code` = $code");
         $conn->close();
+        if (isset($_COOKIE['code_sleepyph'])) unset($_COOKIE['code_sleepyph']);
+        setcookie('code_sleepyph', '', time() - 1);
+        if (isset($_COOKIE['email_sleepyph'])) unset($_COOKIE['email_sleepyph']);
+        setcookie('email_sleepyph', '', time() - 1);
         include '../phpmailer/send-reset-pass-mail.php';
 
         echo '<script>alert("Please check your email!")

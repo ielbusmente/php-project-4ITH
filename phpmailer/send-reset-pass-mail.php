@@ -25,8 +25,8 @@ try {
     //   https://sleepyph.000webhostapp.com/admin
     $mail->Body =
         "<h3>Click the link below to continue password reset.</h3>
-        <br/><p>Please login to the admin site of 
-        <a href='http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "'>Click Here</a> ";
+        <br/><p>
+        <a href='http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "'>http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "</a> ";
     $mail->send();
 } catch (Exception $e) {
 }

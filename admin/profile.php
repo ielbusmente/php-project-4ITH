@@ -49,6 +49,7 @@ if (isset($_POST['profile-mod'])) {
                 $_SESSION['current-user-lastName'] = $currentUser->getLastName();
             if (str_contains($sql, "`password` = "))
                 $_SESSION['current-user-password'] = $currentUser->getPassword();
+            echo "<script>alert('Profile Updated')</script>";
         } else {
             setcookie('error2', 'Failed to Update: Invalid Email', time() + 60 * 60 * 1000);
             array_push($errors, 'error2');
