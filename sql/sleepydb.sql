@@ -19,6 +19,7 @@ CREATE TABLE `adminuser` (
    `lastName` VARCHAR(255) NOT NULL , 
    `email` VARCHAR(255) NOT NULL , 
    `password` VARCHAR(255) NOT NULL ,  
+   `reset-pass-code` INT,  
     PRIMARY KEY (`id`)); 
 
 CREATE TABLE `product` ( 

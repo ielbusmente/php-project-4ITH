@@ -35,9 +35,34 @@
     background-color: #f6f6f6;
     border-top: 1px solid #dce8f1;
     padding: 25px;
+    color: #333;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
+  }
+
+  /* Simple CSS3 Fade-in Animation */
+  .underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #d8c47f;
+    content: "";
+    transition: width 0.2s;
+  }
+
+  .underlineHover:hover {
+    color: #0d0d0d;
+  }
+
+  .underlineHover:hover:after {
+    width: 100%;
+  }
+
+  .underlineHover {
+    color: #333;
   }
 
   /* FORM TYPOGRAPHY*/
@@ -64,7 +89,8 @@
     transition: all 0.3s ease-in-out;
   }
 
-  \\ input[type="submit"]:hover {
+  input[type="submit"]:hover {
+    cursor: pointer;
     background-color: #ac9f6d;
   }
 
@@ -98,13 +124,13 @@
     border-radius: 5px 5px 5px 5px;
   }
 
-  input[type="text"]:focus,
+  input[type="email"]:focus,
   input[type="password"]:focus {
     background-color: #fff;
     border-bottom: 2px solid #d8c47f;
   }
 
-  input[type="text"]:placeholder,
+  input[type="email"]:placeholder,
   input[type="password"]:placeholder {
     color: #cccccc;
   }

@@ -37,7 +37,7 @@ class Administrator extends DBInstance
                 $inputPass = md5($userPassword);
                 $encryptedPass = $rec['password'];
                 // echo $rec['password'];
-                $status = $inputPass === $encryptedPass ? "Logged In " . $rec['id'] : "ID or Password is Incorrect!";
+                $status = $inputPass === $encryptedPass ? "Logged In " . $rec['id'] : "Email or Password is Incorrect!";
             } else {
                 // no user found 
                 $status = 'Email or Password is Incorrect!';
@@ -61,18 +61,47 @@ class Administrator extends DBInstance
         // echo $sql;
         $conn->close();
     }
-    public function updateStr()
+    // public function updateStr()
+    // {
+    //     $changes = '';
+    //     include '../php-templates/dbconnect.php';
+    //     $id = mysqli_real_escape_string($conn, ($this->id));
+    //     $changes .=  $this->firstName === null ? '' : '`firstName` = ' . "'" . mysqli_real_escape_string($conn, $this->firstName) . "', ";
+    //     $changes .=  $this->lastName === null ? '' : '`lastName` = ' . "'" . mysqli_real_escape_string($conn, $this->lastName) . "', ";
+    //     $changes .=  $this->email === null ? '' : '`email` = ' . "'" . mysqli_real_escape_string($conn, $this->email) . "', ";
+    //     $changes .=  $this->password === null ? '' : '`password` = ' . "'" . mysqli_real_escape_string($conn, md5($this->password)) . "', ";
+    //     $conn->close();
+    //     $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
+    //     return $sql;
+    // }
+    //overloading
+    public function __call($fname, $args)
     {
-        $changes = '';
-        include '../php-templates/dbconnect.php';
-        $id = mysqli_real_escape_string($conn, ($this->id));
-        $changes .=  $this->firstName === null ? '' : '`firstName` = ' . "'" . mysqli_real_escape_string($conn, $this->firstName) . "', ";
-        $changes .=  $this->lastName === null ? '' : '`lastName` = ' . "'" . mysqli_real_escape_string($conn, $this->lastName) . "', ";
-        $changes .=  $this->email === null ? '' : '`email` = ' . "'" . mysqli_real_escape_string($conn, $this->email) . "', ";
-        $changes .=  $this->password === null ? '' : '`password` = ' . "'" . mysqli_real_escape_string($conn, md5($this->password)) . "', ";
-        $conn->close();
-        $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
-        return $sql;
+        switch ($fname) {
+            case 'updateStr': //params: price, categ, desc, size
+                $changes = '';
+                include '../php-templates/dbconnect.php';
+                $id = mysqli_real_escape_string($conn, ($this->id));
+                $email = mysqli_real_escape_string($conn, ($this->email));
+                $changes .=  $this->password === null ? '' : '`password` = ' . "'" . mysqli_real_escape_string($conn, md5($this->password)) . "', ";
+                $counter = count($args);
+                switch ($counter) {
+                    case 0:
+                        $changes .=  $this->firstName === null ? '' : '`firstName` = ' . "'" . mysqli_real_escape_string($conn, $this->firstName) . "', ";
+                        $changes .=  $this->lastName === null ? '' : '`lastName` = ' . "'" . mysqli_real_escape_string($conn, $this->lastName) . "', ";
+                        $changes .=  $this->email === null ? '' : '`email` = ' . "'" . mysqli_real_escape_string($conn, $this->email) . "', ";
+                        $conn->close();
+                        $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
+                        return $sql;
+                    case 1:
+                        $conn->close();
+                        $sql = "UPDATE `adminuser` SET `reset-pass-code`=NULL, " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`email` = '$email' AND `adminuser`.`reset-pass-code` = " . $args[0];
+                        return $sql;
+                    default:
+                        echo 'Arguments for updateStr() can only be 0 or 1.';
+                }
+                break;
+        }
     }
     public function getFirstName()
     {

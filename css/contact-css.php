@@ -19,6 +19,6 @@
 
   .btn-primary:hover,
   .btn-primary:active {
-    background-color: #333 !important;
+    background-color: #f3dddb !important;
   }
 </style>

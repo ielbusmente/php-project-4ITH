@@ -17,21 +17,16 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = '587';
     $mail->setFrom('officialsleepyph@gmail.com');
-    //add recipients
-    $adminCount = count($adminUsersObjArr);
-    for ($i = 0; $i <  $adminCount; $i++)
-        $mail->addAddress($adminUsersObjArr[$i]->getEmail());
+    $mail->addAddress($_POST['email']);
 
     $mail->isHTML(true);
-    $mail->Subject = 'SleepyPH Notification - There is an Inquiry to check.';
-
-    //kung itest lagay niyo ung url ng login.php niyo
+    $mail->Subject = 'SleepyPH Reset Password - Continue through the given link.';
     // http://localhost/php-project/LabActivity4_Group3/admin/login.php
+    //   https://sleepyph.000webhostapp.com/admin
     $mail->Body =
-        "<h3>From SleepyPH - This is notification.</h3>
+        "<h3>Click the link below to continue password reset.</h3>
         <br/><p>Please login to the admin site of 
-        <a href='https://sleepyph.000webhostapp.com/admin'>SleepyPH</a></p><br/>
-        <p>Have a nice day!</p>";
+        <a href='http://localhost/php-project/LabActivity4_Group3/admin/reset-password.php?code=$code&e=" . $_POST['email'] . "'>Click Here</a> ";
     $mail->send();
 } catch (Exception $e) {
 }

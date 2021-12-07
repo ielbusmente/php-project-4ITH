@@ -34,8 +34,8 @@ if (isset($_POST['submit'])) {
     //invalid cred
     if (substr($status, 0, 9) !== 'Logged In') {
       if (isset($_COOKIE['error'])) unset($_COOKIE['error']);
-      setcookie('error', $status . " " . $_POST['email']/*. " " . md5($_POST['password'])*/, time() + 60);
-      return header('Location: login.php');
+      setcookie('error', $status /*. " " . $_POST['email']. " " . md5($_POST['password'])*/, time() + 60);
+      return header('Location: index.php');
     }
     //pasok
     // setcookie('error', '', time() - 1); //error in deployment
@@ -95,7 +95,9 @@ if (isset($_POST['submit'])) {
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
         <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
       </form>
-      <a href="forgot-pass.php">Forgot Password?</a>
+      <div id="formFooter">
+        <a class="underlineHover" href="forgot-password.php">Forgot Password?</a>
+      </div>
 
     </div>
   </div>

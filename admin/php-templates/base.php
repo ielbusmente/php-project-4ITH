@@ -11,7 +11,7 @@ if (isset($_POST['logout']) || !(isset($_SESSION['sessionId']))) {
         setcookie('error', '', time() - 3600); // empty value and old timestamp
     }
     session_destroy();
-    header('Location: login.php');
+    header('Location: index.php');
 }
 
 // get current user data 

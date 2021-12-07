@@ -100,7 +100,8 @@ if (isset($_POST['profile-mod'])) {
                 <div class="form-control w-auto m-3">
                     <input type="password" name='conf-pass' id='conf-pass' placeholder="Confirm Password" class="col-12" />
                 </div>
-                <div class="alert alert-danger w-auto m-3" id='error-msg' style="display:none  ;"> Passwords do not match
+                <div class="alert alert-danger w-auto m-3" id='error-msg' style="display:none  ;">
+                    Passwords do not match
                 </div>
 
                 <?php

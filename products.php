@@ -185,10 +185,10 @@ switch ($_GET['filter']) {
         <div id="<?php echo "product_modal$i" ?>" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span onclick="document.getElementById('<?php echo "product_modal$i"?>').style.display='none'" class="close btn-close pull-right"></span>
+                    <span onclick="document.getElementById('<?php echo "product_modal$i" ?>').style.display='none'" class="close btn-close pull-right"></span>
                 </div>
                 <div class="modal-body m-3">
-                <h2 class="text-center"><?php echo $prodName ?></h2>
+                    <h2 class="text-center"><?php echo $prodName ?></h2>
                     <div class="p-3 d-flex list-group-vertical card">
                         <div class="text-center m-3 w-100 ">
                             <img style="max-width: 60%; " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
@@ -213,7 +213,7 @@ switch ($_GET['filter']) {
 
     <!-- Footer-->
     <?php include 'php-templates/footer.php'; ?>
-    
+
     <script>
         <?php
         for ($i = 0; $i < $prodCount; $i++) {
@@ -221,7 +221,7 @@ switch ($_GET['filter']) {
             const modal$i = document.getElementById('product_modal$i');
             const productView$i = document.getElementById('product_view_$i') 
             productView$i.onclick = function() {
-                //    alert('fuck$i')
+                //    alert('asdf$i')
                 modal$i.style.display = \"block\";
             } 
             
@@ -241,10 +241,10 @@ switch ($_GET['filter']) {
             }
             ?>
         }
-        
+
         // const butt = document.getElementById('product_view_0')
         // butt.onclick = function() {
-        //     alert('fuck')
+        //     alert('asdf')
         // }
     </script>
 
