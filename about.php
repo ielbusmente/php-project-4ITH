@@ -35,8 +35,8 @@
                 <div class="col-lg-6 d-none d-lg-block"><img width="100%" src="assets/img/sleepymoon.png" alt="" class="img-fluid"></div>
                 <div class="col-lg-6">
                     <h1 class="display-4">SLEEPY</h1>
-                    <p class="lead text-muted mb-0">SLeepy was founded by SL. Because of her love for sleeping and classy sleepwears, she was inspired to launch her own line of high 
-                        quality sleeping essentials at an affordable price. All fabrics are hand-picked and sourced locally. Each product are proudly made locally and the quality 
+                    <p class="lead text-muted mb-0">SLeepy was founded by SL. Because of her love for sleeping and classy sleepwears, she was inspired to launch her own line of high
+                        quality sleeping essentials at an affordable price. All fabrics are hand-picked and sourced locally. Each product are proudly made locally and the quality
                         is ensured for the comfort of everyone.</p>
                 </div>
 
@@ -63,7 +63,7 @@
         </div>
         </div>
     </div> -->
-  
+
     <div class="bg-light py-5">
         <div class="container py-5">
             <div class="row mb-4">
@@ -73,52 +73,51 @@
             </div>
 
             <div class="row text-center justify-content-center">
-                <!-- Team item-->
-                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
-                    <div class="bg-white rounded shadow py-5 px-4"><img src="assets/devs/daneah.jpg" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Daneah Marelle M. Sarmiento</h5><span class="small text-uppercase text-muted"> Developer</span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
-                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
+                <?php
+                $devs = ['Daneah Marelle M. Sarmiento', 'Edward Daniel J. Busmente', 'Richmond Andrei E. Francisco'];
+                $fb = [
+                    'https://www.facebook.com',
+                    'https://www.facebook.com/daniel.bsmnt/',
+                    'https://www.facebook.com'
+                ];
+                $ins = [
+                    'https://www.instagram.com',
+                    'https://www.instagram.com/ielbusmente/',
+                    'https://www.instagram.com'
+                ];
+                $li = [
+                    'https://www.linkedin.com',
+                    'https://www.linkedin.com/in/daniel-busmente-23544720b/',
+                    'https://www.linkedin.com'
+                ];
+                $desc = [
+                    'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
+                            necessitatibus praesentium voluptatum deleniti atque corrupti.',
+                    'As a 4th-year student, developing this project was an exciting thing to finish considering there is a lot new to me. It makes me want to learn more about programming and software development.',
+                    'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
+                            necessitatibus praesentium voluptatum deleniti atque corrupti.'
+                ];
+                $img = [
+                    'assets/devs/daneah.jpg',
+                    'assets/devs/daniel.png',
+                    'assets/devs/'
+                ];
+                for ($i = 0; $i < 3; $i++) {
+                ?>
+                    <!-- Team item-->
+                    <div class="col-xl-4 col-sm-6 mb-5 mt-4">
+                        <div class="bg-white rounded shadow py-5 px-4"><img src="<?php echo $img[$i] ?>" alt="<?php echo $devs[$i] ?>" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0"><?php echo $devs[$i] ?></h5><span class="small text-uppercase text-muted">Developer</span>
+                            <ul class="social mb-0 list-inline mt-3">
+                                <li class="list-inline-item"><a href="<?php echo $fb[$i] ?>" target="_blank" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="<?php echo $ins[$i] ?>" target="_blank" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="<?php echo $li[$i] ?>" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                            <p class="small text-center text-muted m-4"><?php echo $desc[$i] ?></p>
+                        </div>
                     </div>
-                </div>
-                <!-- End-->
-
-                <!-- Team item-->
-                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
-                    <div class="bg-white rounded shadow py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Edward Daniel J. Busmente</h5><span class="small text-uppercase text-muted"> Developer </span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
-                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
-                    </div>
-                </div>
-                <!-- End-->
-
-                <!-- Team item-->
-
-                <div class="col-xl-4 col-sm-6 mb-5 mt-4">
-                    <div class="bg-white rounded shadow py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                        <h5 class="mb-0">Richmond Andrei E. Francisco</h5><span class="small text-uppercase text-muted"> Developer </span>
-                        <ul class="social mb-0 list-inline mt-3">
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                        <p class="small text-center text-muted m-4"> Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum
-                            necessitatibus praesentium voluptatum deleniti atque corrupti. </p>
-                    </div>
-                </div>
-                <!-- End-->
-
+                    <!-- End-->
+                <?php } ?>
             </div>
         </div>
     </div>
