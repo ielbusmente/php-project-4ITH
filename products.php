@@ -184,11 +184,14 @@ switch ($_GET['filter']) {
     ?>
         <div id="<?php echo "product_modal$i" ?>" class="modal">
             <div class="modal-content">
+                <div class="modal-header">
+                    <span onclick="document.getElementById('<?php echo "product_modal$i"?>').style.display='none'" class="close btn-close pull-right"></span>
+                </div>
                 <div class="modal-body m-3">
-                    <h2 class="text-center"><?php echo $prodName ?></h2>
+                <h2 class="text-center"><?php echo $prodName ?></h2>
                     <div class="p-3 d-flex list-group-vertical card">
                         <div class="text-center m-3 w-100 ">
-                            <img style="max-width: 60%;    " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
+                            <img style="max-width: 60%; " src="<?php echo $product->getImg(); ?>" alt="<?php echo "$i$prodName" ?>" />
                         </div>
                         <div class="m-3">
                             <p><b>Php <?php echo $product->getPrice(); ?></b></p>
@@ -238,6 +241,7 @@ switch ($_GET['filter']) {
             }
             ?>
         }
+        
         // const butt = document.getElementById('product_view_0')
         // butt.onclick = function() {
         //     alert('fuck')
