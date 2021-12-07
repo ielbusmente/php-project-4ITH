@@ -47,18 +47,17 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
-                </div>         
             </div>
         </div>
-    </div> 
-    <!--slide end--> 
-        
-    <section class="product-category section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title text-center">
-                        <h2> Product Categories </h2>
+        <!--slide end-->
+
+        <section class="product-category section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title text-center">
+                            <h2> Product Categories </h2>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -82,8 +81,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
     <!-- Icons Grid-->
@@ -103,21 +101,22 @@
                         </div>
                     <?php } ?>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer-->
-    <?php include 'php-templates/footer.php'; ?>
+        <!-- Footer-->
+        <?php include 'php-templates/footer.php'; ?>
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-    $(function(){
-        $('.fadein img:gt(0)').hide();
-        setInterval(function(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 5000);
-    });
-    </script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('.fadein img:gt(0)').hide();
+                setInterval(function() {
+                    $('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');
+                }, 5000);
+            });
+        </script>
 
 </body>
 

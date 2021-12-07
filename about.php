@@ -13,6 +13,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <?php include "css/styles-css.php" ?>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -31,8 +32,8 @@
 
     <div class="bg-white py-5">
         <div class="container py-5">
-            <div class="row align-items-center py-5">
-                <div class="col-lg-6 d-none d-lg-block"><img width="100%" src="assets/img/sleepymoon.png" alt="sleepy logo" class="img-fluid"></div>
+            <div class="row h-50 align-items-center py-5">
+                <div class="col-lg-6 d-none d-lg-block hover-tilt"><img width="100%" src="assets/img/sleepymoon.png" alt="" class="img-fluid"></div>
                 <div class="col-lg-6">
                     <h1 class="display-4">SLEEPY</h1>
                     <p class="lead text-muted mb-0">SLeepy was founded by SL. Because of her love for sleeping and classy sleepwears, she was inspired to launch her own line of high
@@ -85,12 +86,12 @@
                 ?>
                     <!-- Team item-->
                     <div class="col-xl-4 col-sm-6 mb-5 mt-4">
-                        <div class="bg-white rounded shadow py-5 px-4"><img src="<?php echo $img[$i] ?>" alt="<?php echo $devs[$i] ?>" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <div class="bg-white rounded shadow py-5 px-4"><img <?php echo $i === 1 ? 'style="z-index: 999;"' : 'style="z-index: 99;"' ?> src="<?php echo $img[$i] ?>" alt="<?php echo $devs[$i] ?>" width="200" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm hover-enlarge">
                             <h5 class="mb-0"><?php echo $devs[$i] ?></h5><span class="small text-uppercase text-muted">Developer</span>
                             <ul class="social mb-0 list-inline mt-3">
-                                <li class="list-inline-item"><a href="<?php echo $fb[$i] ?>" target="_blank" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-                                <li class="list-inline-item"><a href="<?php echo $ins[$i] ?>" target="_blank" class="social-link"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="<?php echo $li[$i] ?>" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item hover-enlarge"><a href="<?php echo $fb[$i] ?>" target="_blank" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item hover-enlarge"><a href="<?php echo $ins[$i] ?>" target="_blank" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item hover-enlarge"><a href="<?php echo $li[$i] ?>" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                             <p class="small text-center text-muted m-4"><?php echo $desc[$i] ?></p>
                         </div>
