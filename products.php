@@ -1,6 +1,8 @@
 <?php
 include_once "php-templates/classes/Product.php";
 include_once 'php-templates/unsupported-functions/str_contains_function.php';
+
+//appended string to the sql when search string contains something from the ff
 function checkCategoryAndSize($str)
 {
     $appendToSQL = '';
@@ -35,7 +37,6 @@ function checkCategoryAndSize($str)
     }
     return $appendToSQL;
 }
-
 $page = "products";
 if (!isset($_GET['filter']))
     $_GET['filter'] = 'all';
@@ -120,10 +121,10 @@ switch ($_GET['filter']) {
         $filterTitle = 'Sleepwear - Pajama';
         break;
     case 5:
-        $filterTitle = 'Sleepwear - Loungewear';
+        $filterTitle = 'Sleepwear - Nightdress';
         break;
     case 6:
-        $filterTitle = 'Sleepwear - Nightdress';
+        $filterTitle = 'Sleepwear - Loungewear';
         break;
     default:
         $filterTitle = '';

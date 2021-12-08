@@ -17,8 +17,8 @@
             <li><a class="<?php echo $_GET['filter'] === "sleepwear" ? "active disabled" : "" ?>" href="products.php?filter=sleepwear&search=<?php echo $searchStr ?>">All</a></li>
             <li><a class="<?php echo $_GET['filter'] === "3" ? "active disabled" : "" ?>" href="products.php?filter=3&search=<?php echo $searchStr ?>">Shorts</a></li>
             <li><a class="<?php echo $_GET['filter'] === "4" ? "active disabled" : "" ?>" href="products.php?filter=4&search=<?php echo $searchStr ?>">Pajama</a></li>
-            <li><a class="<?php echo $_GET['filter'] === "5" ? "active disabled" : "" ?>" href="products.php?filter=5&search=<?php echo $searchStr ?>">Loungewear</a></li>
-            <li><a class="<?php echo $_GET['filter'] === "6" ? "active disabled" : "" ?>" href="products.php?filter=6&search=<?php echo $searchStr ?>">Nightdress</a></li>
+            <li><a class="<?php echo $_GET['filter'] === "5" ? "active disabled" : "" ?>" href="products.php?filter=5&search=<?php echo $searchStr ?>">Nightdress</a></li>
+            <li><a class="<?php echo $_GET['filter'] === "6" ? "active disabled" : "" ?>" href="products.php?filter=6&search=<?php echo $searchStr ?>">Loungewear</a></li>
         </ul>
     </div>
     <div>

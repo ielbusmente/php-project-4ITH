@@ -10,8 +10,7 @@ CREATE TABLE `inquiry` (
     `message` VARCHAR(5000) NOT NULL , 
     `readBool` BOOLEAN NOT NULL DEFAULT FALSE , 
     `readDate` TIMESTAMP NULL DEFAULT NULL , 
-    PRIMARY KEY (`id`)); 
--- ALTER TABLE `adminuser` ADD UNIQUE(`email`);
+    PRIMARY KEY (`id`));  
 
 CREATE TABLE `adminuser` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
@@ -31,6 +30,9 @@ CREATE TABLE `product` (
    `size` INT ,  
    `img` VARCHAR(8000) NOT NULL,
     PRIMARY KEY (`id`)); 
+
+
+-- ALTER TABLE `adminuser` ADD UNIQUE(`email`);
 -- INSERT INTO `inquiry` (`id`, `message`, `date`, `readBool`, `readDate`) VALUES (NULL, 'ASDF', '2021-11-22 10:16:17.000000', '0', '2021-11-22 10:16:17.000000')
 
 
