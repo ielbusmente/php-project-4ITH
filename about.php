@@ -108,7 +108,8 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 order-2 order-lg-1">
                     <h1 class="font-weight-light display-4">About the Website</h2>
-                    <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="lead text-muted mb-4">The purpose of this website is to provide Sleepy PH an online catalogue to showcase the products of the business and to provide a 
+                        platform to manage inquiries sent through the site's contact page. </p>
                 </div>
                 <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://bootstrapious.com/i/snippets/sn-about/img-2.jpg" alt="" class="img-fluid mb-4 mb-lg-0"></div>
             </div>

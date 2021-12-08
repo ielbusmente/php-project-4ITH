@@ -122,7 +122,7 @@ if (isset($_POST['delete'])) {
 
 <body>
     <?php include 'php-templates/nav.php' ?>
-    <h1 class="title">Inquiries</h1>
+    <h1 class="title ml-4">Inquiries</h1>
     <div class="messaging ">
         <div class="mesgs">
             <?php $userIndex = $_GET['id'];
