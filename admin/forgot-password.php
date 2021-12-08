@@ -63,7 +63,7 @@ if (isset($_POST['forgot'])) {
             ?>
             <form method="POST">
                 <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required value="<?php echo $_COOKIE['reset-pass-user-email'] ?? '' ?>">
-                <input type="submit" name="forgot" class="fadeIn fourth" value="Get Reset Password Link">
+                <input type="submit" name="forgot" class="fadeIn fourth mt-3" value="Get Reset Password Link">
             </form>
             <div id="formFooter">
                 <a class="underlineHover" href="index.php">Login</a>
