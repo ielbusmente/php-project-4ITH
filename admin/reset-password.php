@@ -78,11 +78,11 @@ if (isset($_POST['reset-pass'])) {
             <div class="alert alert-danger w-auto m-3" id='error-msg-r' style="display:none  ;">
                 Passwords do not match
             </div>
-            Enter new Password below:
+            <p>Enter Your New Password</p>
             <form method="POST">
                 <input type="password" id="pass-r" class="fadeIn second" name="pass" placeholder="New Password" required>
                 <input type="password" id="conf-pass-r" class="fadeIn second" name="conf-pass" placeholder="Confirm Password" required>
-                <input type="submit" id="reset-pass-butt" name="reset-pass" disabled class="fadeIn fourth" value="Reset Password" style="cursor:no-drop;">
+                <input type="submit" id="reset-pass-butt" name="reset-pass" disabled class="fadeIn fourth mt-3" value="Reset Password" style="cursor:no-drop;">
             </form>
             <div id="formFooter">
                 <a class="underlineHover" href="index.php">Login</a>

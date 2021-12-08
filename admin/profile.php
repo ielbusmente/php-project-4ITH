@@ -73,9 +73,8 @@ if (isset($_POST['profile-mod'])) {
 
 <body>
     <?php include 'php-templates/nav.php' ?>
-    <h1 class="title">Profile</h1>
-    <div class='container '>
-
+    <h1 class="title ml-4">Profile</h1>
+    <div class='container mt-4'>
         <form method="post" class="form-control m-auto d-flex justify-content-center align-items-center py-5">
             <div class="col-md-8">
                 ID

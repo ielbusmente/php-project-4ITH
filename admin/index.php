@@ -96,7 +96,7 @@ if (isset($_POST['submit'])) {
       <form method="POST">
         <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" required value="<?php echo $_COOKIE['user-email'] ?? '' ?>">
         <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
-        <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
+        <input type="submit" name="submit" class="fadeIn fourth mt-3" value="Log In">
       </form>
       <div id="formFooter">
         <a class="underlineHover" href="forgot-password.php">Forgot Password?</a>
