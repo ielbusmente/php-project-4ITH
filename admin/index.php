@@ -1,10 +1,9 @@
 <?php
 include '../php-templates/classes/Administrator.php';
+
 //check user db if there is a user 
 include '../php-templates/dbconnect.php';
-
 $sql = "SELECT id FROM adminuser";
-
 $result = $conn->query($sql);
 if ($result->num_rows === 0) {
   $newUser = new Administrator(1, 'admin@test.test', 'Admin123', 'Admin', 'Admin');
@@ -12,27 +11,21 @@ if ($result->num_rows === 0) {
 }
 $conn->close();
 
+// redirect when there is a sessionid
 session_start();
 if (isset($_SESSION['sessionId'])) {
   header('Location: inquiries.php');
 }
-// echo $admin; 
+// login 
 if (isset($_POST['submit'])) {
   $_POST['submit'] = null;
 
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     if (isset($_COOKIE['user-email'])) unset($_COOKIE['user-email']);
     setcookie('user-email', $_POST['email'], time() + 60);
-    include '../php-templates/dbconnect.php';
 
     $user = new Administrator(null, $_POST['email'], $_POST['password'], null, null);
     $status = $user->login();
-    // $username = mysqli_real_escape_string($conn, );
-    // $password = mysqli_real_escape_string($conn, );
-    // $_SESSION['username'] = htmlentities($_POST['username']);
-    // $_SESSION['password'] = htmlentities($_POST['password']);
-    // $token = "d93jkdg23jkds";
-    // setcookie("session-token", $token, time() + 24 * 60 * 60);
 
     //invalid cred
     if (substr($status, 0, 9) !== 'Logged In') {
@@ -40,9 +33,7 @@ if (isset($_POST['submit'])) {
       setcookie('error', $status /*. " " . $_POST['email']. " " . md5($_POST['password'])*/, time() + 60);
       return header('Location: index.php');
     }
-    //pasok
-    // setcookie('error', '', time() - 1); //error in deployment
-
+    //pasok 
     if (isset($_COOKIE['error'])) {
       unset($_COOKIE['error']);
       setcookie('error', '', time() - 3600); // empty value and old timestamp

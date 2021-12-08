@@ -152,8 +152,6 @@ switch ($_GET['filter']) {
     <?php include 'php-templates/navbar.php'; ?>
     <!-- Header-->
     <?php include 'php-templates/products-header.php'; ?>
-
-    <!-- Sidebar -->
     <div class="row">
         <div class="col-md-3">
         </div>
@@ -161,9 +159,12 @@ switch ($_GET['filter']) {
             <h1 class="mt-4"><?php echo $filterTitle ?></h1>
         </div>
     </div>
+    <!-- body  -->
     <div class="row p-0 me-5">
+        <!-- Sidebar -->
         <?php include 'php-templates/products-sidebar.php'; ?>
         <!-- px-lg-6 ml-4 not in css  -->
+        <!-- products  -->
         <div class="mt-4 col-md-9 col-12">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-xl-4 p-0 m-0">
                 <?php

@@ -1,8 +1,7 @@
  <?php
-    // date_default_timezone_set('Asia/Singapore');
     include_once 'php-templates/classes/Inquiry.php';
     include_once 'php-templates/classes/Administrator.php';
-    include 'php-templates/db.php';
+    include 'php-templates/contact-db-function.php';
     $page = "contact";
 
     if (isset($_POST['insert']))

@@ -15,15 +15,14 @@ function insertInquiry($inp)
             alert('Message Sent!') 
         </script> 
         ";
-
         //get all adminusers
-        // $adminUsersObjArr = getAdminUserEmails();
+        $adminUsersObjArr = getAdminUserEmails();
         // email them all
-        // include "phpmailer/send-notif-mail.php";
+        include "phpmailer/send-notif-mail.php";
         echo "<script> 
-        window.location.href = \"index.php\";
-    </script> 
-    ";
+            window.location.href = \"index.php\";
+        </script> 
+        ";
     }
 
     // echo $inq->insertStr();

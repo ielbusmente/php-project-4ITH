@@ -19,7 +19,7 @@ class Inquiry extends DBInstance
         // print_r($this);
         // echo "<br/>";
     }
-    public function insertStr()
+    public function insertStr() //called from contact.php
     {
         // mysqli_real_escape_string - protection for the database
         include 'php-templates/dbconnect.php';

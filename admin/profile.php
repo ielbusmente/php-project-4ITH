@@ -12,7 +12,6 @@ if (isset($_POST['profile-mod'])) {
         setcookie('error1', '', time() - 1);
         //check current pass input 
         if (!($_POST['new-pass'] === $_POST['conf-pass'] && $_SESSION['current-user-password'] === md5($_POST['curr-pass']))) {
-
             array_push($errors, 'error1');
             setcookie('error1', 'Failed to Update: Wrong Password', time() + 60 * 60 * 1000);
         }

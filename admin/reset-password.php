@@ -4,18 +4,21 @@ if (isset($_SESSION['sessionId'])) {
     header('Location: inquiries.php');
 }
 include '../php-templates/classes/Administrator.php';
+
 if (!isset($_COOKIE['code_sleepyph']))
     setcookie('code_sleepyph', $_GET['code'], time() + 3600);
 if (!isset($_COOKIE['email_sleepyph']))
     setcookie('email_sleepyph', $_GET['e'], time() + 3600);
+
 if (isset($_POST['reset-pass'])) {
     $_POST['reset-pass'] = null;
-    // echo $_GET['e'];
-    $user = new Administrator(null, $_COOKIE['email_sleepyph'], $_POST['pass'], null, null);
-    $sqlResetPassowrd = $user->updateStr($_COOKIE['code_sleepyph']);
-    include '../php-templates/dbconnect.php';
     if (isset($_COOKIE['error-rp'])) unset($_COOKIE['error-rp']);
     setcookie('error-rp', '', time() - 1);
+
+    $user = new Administrator(null, $_COOKIE['email_sleepyph'], $_POST['pass'], null, null);
+    $sqlResetPassowrd = $user->updateStr($_COOKIE['code_sleepyph']);
+
+    include '../php-templates/dbconnect.php';
     $res = $conn->query($sqlResetPassowrd);
     // echo $sqlResetPassowrd . "<br/>";
     // echo $res . "<br/>";
@@ -28,6 +31,7 @@ if (isset($_POST['reset-pass'])) {
         setcookie('code_sleepyph', '', time() - 1);
         if (isset($_COOKIE['email_sleepyph'])) unset($_COOKIE['email_sleepyph']);
         setcookie('email_sleepyph', '', time() - 1);
+
         echo "<script>
             alert('Password Changed Successfully!') 
         </script> 
@@ -42,8 +46,6 @@ if (isset($_POST['reset-pass'])) {
         setcookie('error-rp', 'Something went wrong.', time() + 3600);
         header("Location: reset-password.php");
     }
-
-
     // echo $sqlResetPassowrd;
 }
 ?>

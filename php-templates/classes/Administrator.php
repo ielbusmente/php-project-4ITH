@@ -55,30 +55,17 @@ class Administrator extends DBInstance
         $email = mysqli_real_escape_string($conn, $this->email);
         $pass = mysqli_real_escape_string($conn, md5($this->password));
 
-        $sql = "INSERT INTO `adminuser` (`id`, `firstName`, `lastName`, `email`, `password`) 
-            VALUES ($id, '" . $fname . "', '" . $lname  . "', '" . $email  . "', '" . $pass . "')";
+        $sql = "INSERT INTO `adminuser` (`id`, `firstName`, `lastName`, `email`, `password`, `reset-pass-code`) 
+            VALUES ($id, '" . $fname . "', '" . $lname  . "', '" . $email  . "', '" . $pass . "', NULL)";
         $conn->query($sql);
         // echo $sql;
         $conn->close();
     }
-    // public function updateStr()
-    // {
-    //     $changes = '';
-    //     include '../php-templates/dbconnect.php';
-    //     $id = mysqli_real_escape_string($conn, ($this->id));
-    //     $changes .=  $this->firstName === null ? '' : '`firstName` = ' . "'" . mysqli_real_escape_string($conn, $this->firstName) . "', ";
-    //     $changes .=  $this->lastName === null ? '' : '`lastName` = ' . "'" . mysqli_real_escape_string($conn, $this->lastName) . "', ";
-    //     $changes .=  $this->email === null ? '' : '`email` = ' . "'" . mysqli_real_escape_string($conn, $this->email) . "', ";
-    //     $changes .=  $this->password === null ? '' : '`password` = ' . "'" . mysqli_real_escape_string($conn, md5($this->password)) . "', ";
-    //     $conn->close();
-    //     $sql = "UPDATE `adminuser` SET " . substr($changes, 0, strlen($changes) - 2) . " WHERE `adminuser`.`id` = $id";
-    //     return $sql;
-    // }
     //overloading
     public function __call($fname, $args)
     {
         switch ($fname) {
-            case 'updateStr': //params: price, categ, desc, size
+            case 'updateStr':
                 $changes = '';
                 include '../php-templates/dbconnect.php';
                 $id = mysqli_real_escape_string($conn, ($this->id));

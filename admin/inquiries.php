@@ -3,15 +3,9 @@ date_default_timezone_set('Asia/Singapore');
 $replyAlert = '';
 $page = 'inbox';
 include 'php-templates/base.php';
-//profile errors clear
-// if (isset($_COOKIE['error1'])) {
-//     unset($_COOKIE['error1']);
+
 setcookie('error1', '', time() - 1);
-// }
-// if (isset($_COOKIE['error2'])) {
-//     unset($_COOKIE['error2']);
 setcookie('error2', '', time() - 1);
-// }
 
 if (!isset($_GET['id']))
     $_GET['id'] = '';
@@ -63,14 +57,8 @@ if ($inqCount > 0) {
 if ($_GET['id'] !== '' && isset($_GET['read'])) {
     // check if it is read 
     if (!$inquiriesObjArr[$_GET['id']]->isRead()) {
-        // echo $_GET['read'] . "<br/>";
         $currInqIndex = $_GET['id'];
-        // insert readbool true and readdate date(format) where id = id
-        // echo $inquiriesObjArr[$currentInqIndex]->getName() . "<br/>";
-        // echo $inquiriesObjArr[$currentInqIndex]->isRead();
-        // echo $inquiriesObjArr[$currentInqIndex]->getReadDate() . "<br/>";
-        // echo date('Y-m-d H:i:s');
-
+        // insert readbool true and readdate date(format) where id = id  
         include '../php-templates/dbconnect.php';
         $dateUpdate = new DateTime();
         $conn->query($inquiriesObjArr[$currInqIndex]->viewInquiryStr($dateUpdate->format('Y-m-d H:i:s')));
@@ -82,13 +70,9 @@ if ($_GET['id'] !== '' && isset($_GET['read'])) {
 if (isset($_POST['reply']) && $_POST['reply-msg'] != '') {
     $msg = $_POST['reply-msg'];
     $theId = $_GET['id'];
-    // echo "<script>alert(\"Replied: " . $_POST['reply-msg'] . "\")</script>";
-    // echo $_POST['reply-msg'];
     $_POST['reply'] = null;
     $_POST['reply-msg'] = null;
-
-    // mail 
-    //todo mail code
+    // mail  
     $dateOfInq = $inquiriesObjArr[$theId]->getMonthDateTime();
     $emailOfInqSender = $inquiriesObjArr[$theId]->getSenderEmail();
     include "../phpmailer/send-reply-mail.php";
