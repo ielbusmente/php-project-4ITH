@@ -8,6 +8,7 @@ if (isset($_POST['profile-mod'])) {
     $errors = [];
     //palit pass 
     if ($_POST['new-pass'] !== '') {
+        if (isset($_COOKIE['error1'])) unset($_COOKIE['error1']);
         setcookie('error1', '', time() - 1);
         //check current pass input 
         if (!($_POST['new-pass'] === $_POST['conf-pass'] && $_SESSION['current-user-password'] === md5($_POST['curr-pass']))) {
@@ -18,6 +19,7 @@ if (isset($_POST['profile-mod'])) {
     }
     if (empty($errors)) {
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            if (isset($_COOKIE['error2'])) unset($_COOKIE['error2']);
             setcookie('error2', '', time() - 1);
             include '../php-templates/classes/Administrator.php';
             //procede change

@@ -10,7 +10,7 @@ CREATE TABLE `inquiry` (
     `message` VARCHAR(5000) NOT NULL , 
     `readBool` BOOLEAN NOT NULL DEFAULT FALSE , 
     `readDate` TIMESTAMP NULL DEFAULT NULL , 
-    PRIMARY KEY (`id`), UNIQUE (`email`)); 
+    PRIMARY KEY (`id`)); 
 -- ALTER TABLE `adminuser` ADD UNIQUE(`email`);
 
 CREATE TABLE `adminuser` ( 
@@ -20,7 +20,7 @@ CREATE TABLE `adminuser` (
    `email` VARCHAR(255) NOT NULL , 
    `password` VARCHAR(255) NOT NULL ,  
    `reset-pass-code` INT,  
-    PRIMARY KEY (`id`)); 
+    PRIMARY KEY (`id`), UNIQUE (`email`)); 
 
 CREATE TABLE `product` ( 
     `id` INT NOT NULL AUTO_INCREMENT, 
